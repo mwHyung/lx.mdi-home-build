@@ -1,0 +1,34 @@
+.unordered_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: black;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 3.6rem;
+  letter-spacing: -0.04rem;
+
+  li {
+    padding-left: 3rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      top: 1.6rem;
+      left: 1rem;
+    }
+  }
+}
+
+.text {
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.52rem;
+  letter-spacing: -0.028rem;
+}

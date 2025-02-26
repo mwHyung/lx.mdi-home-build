@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  next:
+    container_name: "lxmdi_mi_portal_home_frontend"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # volumes:
+      # - ./out/:/usr/src/app/
+      # - ./conf/:/etc/nginx/conf.d
+    ports:
+      - "3000:3000"
+
+# docker-compose -f docker-compose.yml --project-name portal up --build

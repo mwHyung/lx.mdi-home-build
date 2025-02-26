@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --main-black: 240 5.9% 10%;
+    --main-gray: 240 3.8% 46.1%;
+    --main-white: 0 0% 100%;
+
+    --snow-white: 0 0% 98%;
+
+    --gray-ash: 210 17% 89%;
+    --gray-charcoal: 210 2% 47%;
+
+    /* navy1: 233 16% 20% */
+    /* navy2: 205 27% 23% */
+    --bsg-navy: 233 16% 20%;
+    --bsg-navy-foreground: 215 37% 45%;
+    --bsg-blue: 201 94% 36%;
+    --bsg-yellow: 46 96% 54%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --muted: 240 4.8% 95.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 146 52% 43%;
+    --success-background: 146 100% 91%;
+    --success-foreground: 0 0% 98%;
+    --success-light: 146 35% 59%;
+
+    --info: 215 92% 49%;
+    --info-background: 216 100% 95%;
+    --info-foreground: 0 0% 98%;
+
+    --warning: 46 100% 50%;
+    --warning-background: 46 100% 97%;
+    --warning-foreground: 0 0% 98%;
+
+    --error: 0 76% 57%;
+    --error-background: 0 91% 97%;
+    --error-foreground: 0 0% 98%;
+    --error-light: 0 88% 77%;
+
+    --severity-critical: 0 76% 57%;
+    --severity-warning: 24 98% 54%;
+    --severity-normal: 46 100% 50%;
+    --severity-low: 53 95% 85%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --focus: 240 5.9% 10%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* 퍼블 공통 색상 */
+    --p-gradation-f: rgba(201, 30, 29, 0.4) 22.63%;
+    --p-gradation-t: rgba(201, 30, 29, 0) 100%;
+    --p-brown: #1f1616;
+    --p-darkB: #191010;
+    --p-dark: #101010;
+    --p-gray4: #474747;
+    --p-red: #c91e1d;
+    --p-redD: #b21414;
+    --p-redB: #831414;
+    --p-yellow: #cc9310;
+    --p-lightG: #eee;
+    --p-lightE: #e7e7e7;
+    --p-gray9: #999;
+    --p-gray6: #666;
+    --p-grayB: #bbb;
+    --p-grayD: #ddd;
+    --p-grayA: #aaa;
+    --p-grayC: #ccc;
+    --p-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+    --p-bg: #f5f5f5;
+    --p-bgA: #fafafa;
+    --p-pc-nav: #746661;
+    --p-pc-shadow: 0px 20px 40px 0px rgba(38, 33, 33, 0.05);
+    --p-button-border: #61514c;
+    --p-pc-shadow2: 0px 10px 30px 0px rgba(170, 115, 115, 0.1);
+    --p-pc-btn: #a6a49d;
+    --p-pc-shadow3: 5px 5px 15px 0px rgba(0, 0, 0, 0.05);
+    --p-pc-shadow4: 5px 5px 20px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --muted: 240 3.7% 15.9%;
+    --main-gray: 240 3.8% 46.1%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  /* 모든 스크롤바에 전역 스타일 적용 */
+  * {
+    scrollbar-width: 12px; /* Firefox - 얇은 스크롤바 */
+    scrollbar-color: rgba(178, 178, 178, 0.5) transparent; /* 스크롤 thumb와 배경 색상 */
+  }
+
+  *::-webkit-scrollbar {
+    width: 12px; /* 스크롤바의 너비 */
+    height: 12px; /* 스크롤바의 높이 */
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(100, 100, 100, 0.5); /* thumb 배경색 */
+    border-radius: 9999px; /* thumb 모양을 둥글게 */
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent; /* 스크롤바 배경 투명 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply text-xl;
+  }
+  h2,
+  h3 {
+    @apply text-lg;
+  }
+}
+
+@layer utilities {
+  .required::after {
+    @apply content-['*'] ml-1 text-red-600;
+  }
+
+  .focus-within-outline {
+    @apply focus-within:outline focus-within:outline-focus focus-within:outline-offset-2;
+  }
+
+  .focus-border {
+    @apply focus-visible:outline-none focus-visible:border-focus;
+  }
+
+  .focus-outline {
+    @apply focus-visible:outline-focus focus-visible:outline-offset-2;
+  }
+
+  .focus-background {
+    @apply focus-visible:outline-none focus-visible:bg-main-gray/30;
+  }
+
+  .wrap {
+    @apply text-wrap break-words break-all;
+  }
+}
+
+/* rem 기본 폰트 사이즈 초기화 */
+html {
+  font-size: 62.5%;
+}
+
+@media (max-width: 1536px) {
+  html {
+    font-size: 48.5%;
+  }
+}
+@media (max-width: 1280px) {
+  html {
+    font-size: 42%;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 30%;
+  }
+}
+
+/* @mixin tablet {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+} */

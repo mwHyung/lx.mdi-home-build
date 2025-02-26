@@ -1,0 +1,25 @@
+.thumbnail {
+  width: 100%;
+  flex: 1;
+  gap: 0.625rem;
+
+  label {
+    flex: 1;
+    flex-direction: column-reverse;
+
+    .image {
+      width: 100%;
+      min-height: 9rem;
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--p-grayD);
+
+      &.data-[selected="true"] {
+        border-color: var(--p-red);
+        background: #c91e1d0d;
+      }
+    }
+  }
+}
