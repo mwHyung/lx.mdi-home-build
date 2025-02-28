@@ -100,54 +100,26 @@ const HomePage = () => {
   }, []);
 
   // 스크롤
-  useEffect(() => {
-    const handleScroll = (event: WheelEvent) => {
-      if (isScrolling.current) return;
-      isScrolling.current = true;
-
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 1000);
-
-      let newSection = currentSectionRef.current;
-
-      if (event.deltaY > 0 && currentSection < sections.length - 1) {
-        // wheel down
-        newSection++;
-      } else if (event.deltaY < 0 && currentSection > 0 && window.scrollY <= 0) {
-        // wheel up
-        newSection--;
-      }
-
-      setCurrentSection(newSection);
-    };
-
-    window.addEventListener("wheel", handleScroll);
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, [currentSection]);
+  const observerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsScrolled(!entry.isIntersecting); // 보이지 않으면 true
+      },
+      { threshold: 0.23 },
+    );
 
-    containerRef.current?.scrollTo({
-      top: currentSection * window.innerHeight,
-      behavior: "smooth",
-    });
-
-    if (currentSection < sections.length - 1) {
-      document.body.style.overflow = "hidden";
-    } else {
-      setTimeout(() => {
-        document.body.style.overflow = "auto";
-      }, 500);
+    if (observerRef.current) {
+      observer.observe(observerRef.current);
     }
 
     return () => {
-      document.body.style.overflow = "auto";
+      if (observerRef.current) {
+        observer.unobserve(observerRef.current);
+      }
     };
-  }, [currentSection]);
+  }, [setIsScrolled]);
 
   return (
     <div ref={containerRef} className={styles.container}>
@@ -155,6 +127,7 @@ const HomePage = () => {
         <div
           className="swiper_container"
           style={{ background: `url(${Visual01.src}) no-repeat center / cover` }}
+          ref={observerRef}
         >
           {/* 첫 번째 Pagination */}
           <div className="custom_pagination">
@@ -268,11 +241,8 @@ const HomePage = () => {
             </SwiperSlide>
           </Swiper>
         </div>
-      </div>
 
-      {/* New Contents */}
-      <div className={`${styles.section} ${styles.contents} ${styles.resize}`}>
-        <div className={`${styles.search} ${searchOpen ? styles.open : ""}`}>
+        <div className={`${styles.search} ${styles.topbottom} ${searchOpen ? styles.open : ""}`}>
           <div className={styles.search_area}>
             <div className={styles.search_tit} onClick={handleSearchToggle}>
               <span>검색</span>
@@ -358,7 +328,10 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+      </div>
 
+      {/* New Contents */}
+      <div className={`${styles.section} ${styles.contents} ${styles.resize}`}>
         <div className={styles.content_area}>
           <ContentTitle title="New Contents" type="tab" />
 
@@ -415,7 +388,7 @@ const HomePage = () => {
               id="user-list-table"
               columns={contentsColumns}
               rows={selectedUser}
-              selectedRows={selectedUser ? [selectedUser[0].id] : []}
+              selectedRows={selectedUser ? [selectedUser.id] : []}
               containerClassName="main_table"
               onRowSelect={handleSelectRow}
               colgroup={["15%", "60%", "10%", "15%"]}

@@ -45,23 +45,6 @@ export const LayoutProvider = ({ children }: LayoutProviderProps) => {
     setIsScrolled(false);
   };
 
-  useEffect(() => {
-    const handleWheel = (event: WheelEvent) => {
-      if (currentSectionRef.current > 0 && event.deltaY > 0) setIsScrolled(true);
-      else if (currentSectionRef.current < 1 && event.deltaY < 0) setIsScrolled(false);
-    };
-    const handleScroll = () => {
-      if (currentSection < 0) setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("wheel", handleWheel);
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [currentSection, isScrolled, isDetail]);
-
   return (
     <LayoutContext.Provider
       value={{

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLayoutContext } from "@/layout/MainLayoutProvider";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Button, CardContent, Input, Table } from "@/components/ui";
 import Columns from "./components/Columns";
 import { Row } from "@/types/ui";
@@ -17,36 +17,6 @@ import ImageCard02 from "public/images/image_cardCon02.png";
 import ImageCard03 from "public/images/image_cardCon03.png";
 
 const SearchPage = () => {
-  const { currentSection, currentSectionRef, setCurrentSection, setIsDetail } = useLayoutContext();
-
-  useEffect(() => {
-    setIsDetail(true);
-    return () => {
-      setIsDetail(false);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = (event: WheelEvent) => {
-      let newSection = currentSectionRef.current;
-
-      if (event.deltaY > 0 && currentSection < 1) {
-        // wheel down
-        newSection++;
-      } else if (event.deltaY < 0 && currentSection > 0 && window.scrollY < 500) {
-        // wheel up
-        newSection--;
-      }
-
-      setCurrentSection(newSection);
-    };
-
-    window.addEventListener("wheel", handleScroll);
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-    };
-  }, [currentSection, setCurrentSection]);
-
   // 테이블
   const { contentsColumns } = Columns();
   const selectedUser = data;
@@ -54,7 +24,6 @@ const SearchPage = () => {
 
   const updatePageParams = (pageParams: Partial<PageParams>) => {};
 
-  console.log(selectedUser);
   return (
     <SearchContainer>
       <SearchArea />
@@ -78,7 +47,7 @@ const SearchPage = () => {
           id="search-list-table"
           columns={contentsColumns}
           rows={selectedUser}
-          selectedRows={selectedUser ? [selectedUser[0].id] : []}
+          selectedRows={selectedUser ? [selectedUser.id] : []}
           containerClassName="sub_table"
           onRowSelect={handleSelectRow}
           colgroup={["15%", "60%", "10%", "15%"]}
@@ -113,7 +82,7 @@ const SearchPage = () => {
           id="search-list-it-table"
           columns={contentsColumns}
           rows={selectedUser}
-          selectedRows={selectedUser ? [selectedUser[0].id] : []}
+          selectedRows={selectedUser ? [selectedUser.id] : []}
           containerClassName="sub_table"
           onRowSelect={handleSelectRow}
           colgroup={["15%", "60%", "10%", "15%"]}
@@ -125,28 +94,24 @@ const SearchPage = () => {
 
 const data = [
   {
-    id: 1,
     group: "LX그룹",
     title: "News Feed 레포트 신설",
     hits: "2,750",
     date: "2024.12.28",
   },
   {
-    id: 2,
     group: "LX홀딩스",
     title: "LX홀딩스, 두 번째 그룹 통합 ‘ESG 보고서’ 펴내",
     hits: "57",
     date: "2024.12.28",
   },
   {
-    id: 3,
     group: "LX홀딩스",
     title: "LX홀딩스, 2024년 정기 임원 인사 실시",
     hits: "8",
     date: "2024.12.28",
   },
   {
-    id: 4,
     group: "LX그룹",
     title: "LX그룹, ‘2023 LX배 한국여자야구대회’ 21일 개막",
     hits: "24",
