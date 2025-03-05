@@ -40,9 +40,11 @@ const Topbar: FC<Props> = ({ children, src, title }) => {
       style={{ background: `url(${src}) no-repeat center / cover` }}
       ref={observerRef}
     >
-      <h2 className="text-white text-[7rem] font-bold leading-[10rem] absolute top-1/2 left-[20%] translate-x-[-44%] translate-y-[-77%]">
-        {title}
-      </h2>
+      <div className="w-full h-full absolute top-0 left-0 flex items-center">
+        <h2 className="max-w-[1920px] w-full m-[0_auto] pl-[22rem] pb-32 text-white text-[7rem] font-bold leading-[10rem]">
+          {title}
+        </h2>
+      </div>
       <div className="">{children && children}</div>
     </div>
   );
