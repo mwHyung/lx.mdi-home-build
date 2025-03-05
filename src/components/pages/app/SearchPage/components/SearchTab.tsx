@@ -11,7 +11,7 @@ const SearchTab: FC<Props> = ({ tabsList }) => {
   const [isActive, setIsActive] = useState(0);
   return (
     <div className="px-48 py-32 bg-pub-bg">
-      <ul className="flex flex-wrap">
+      <ul className="flex flex-wrap max-w-[1680px] m-[0_auto]">
         {tabsList.map((list, idx) => (
           <li
             key={idx}

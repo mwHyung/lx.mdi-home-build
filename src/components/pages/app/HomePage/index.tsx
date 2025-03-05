@@ -15,11 +15,13 @@ import {
 } from "@/components/ui";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Controller, Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Swiper as SwiperCore } from "swiper/types";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles/Swiper.scss";
 
+import VisualBG from "public/images/bg_visual.png";
 import Visual01 from "public/images/img_visual01.png";
 import Visual02 from "public/images/img_visual02.png";
 
@@ -61,6 +63,9 @@ const HomePage = () => {
   const paginationRef = useRef(null);
   const navNextRef = useRef(null);
   const navPrevRef = useRef(null);
+
+  const [translateValue, setTranslateValue] = useState(0);
+  const [touchValue, setTouchValue] = useState(false);
 
   // 검색
   const [searchOpen, setSearchOpen] = useState(false);
@@ -124,11 +129,20 @@ const HomePage = () => {
   return (
     <div ref={containerRef} className={styles.container}>
       <div className={styles.section}>
-        <div
-          className="swiper_container"
-          style={{ background: `url(${Visual01.src}) no-repeat center / cover` }}
-          ref={observerRef}
-        >
+        <div className="swiper_container" ref={observerRef}>
+          <div className={`absolute top-0 left-0 w-full h-full flex items-center justify-center`}>
+            <div
+              className="w-full h-full flex-1 shrink-0 absolute top-0 left-0"
+              style={{ background: `url(${Visual01.src}) no-repeat right / cover` }}
+            ></div>
+            <div
+              className={`w-full h-full flex-1 shrink-0 absolute top-0 left-0 ${touchValue ? "duration-0" : "duration-800"}`}
+              style={{
+                background: `url(${Visual02.src}) no-repeat right / cover`,
+                transform: `translateX(calc(100% + ${translateValue}px))`,
+              }}
+            ></div>
+          </div>
           {/* 첫 번째 Pagination */}
           <div className="custom_pagination">
             <button className="visual_prev_button" ref={navPrevVisualRef}>{`<`}</button>
@@ -149,10 +163,25 @@ const HomePage = () => {
               prevEl: navPrevVisualRef.current,
             }}
             pagination={{ type: "progressbar" }}
-            onSlideChange={swiper => setCurrentSlide(swiper.activeIndex + 1)}
+            onSlideChange={swiper => {
+              setCurrentSlide(swiper.activeIndex + 1);
+              setTranslateValue(swiper.translate);
+            }}
+            onTouchStart={swiper => setTouchValue(true)}
+            onTouchEnd={swiper => setTouchValue(false)}
+            onSetTranslate={swiper => {
+              setTranslateValue(swiper.translate);
+            }}
             className="first"
           >
             <SwiperSlide>
+              {/* <Image
+                src={Visual01}
+                width={0}
+                height={0}
+                style={{ width: "100%", height: "100%" }}
+                alt="visual image"
+              /> */}
               <h2 className={styles.h2}>
                 <strong>Innovate</strong> the <strong>future</strong>
                 <br />
@@ -160,14 +189,8 @@ const HomePage = () => {
                 <br /> knowledge
               </h2>
             </SwiperSlide>
+            {/* <SwiperSlide style={{ background: `url(${Visual02.src}) no-repeat right / cover` }}> */}
             <SwiperSlide>
-              <Image
-                src={Visual02}
-                width={0}
-                height={0}
-                style={{ width: "100%", height: "100%" }}
-                alt="visual image"
-              />
               <ul className={styles.visual_card}>
                 <li>
                   <div>
@@ -239,6 +262,7 @@ const HomePage = () => {
                 </li>
               </ul>
             </SwiperSlide>
+            <div className={`${styles.bg_line}`}></div>
           </Swiper>
         </div>
 
@@ -312,7 +336,7 @@ const HomePage = () => {
                     </Button>
                   </div>
                 </li>
-                <li>
+                <li className={styles.keyword}>
                   <span>추천키워드</span>
                   <div className={`${styles.input_wrap} gap-16`}>
                     <ul className={styles.hashtag}>
@@ -388,7 +412,7 @@ const HomePage = () => {
               id="user-list-table"
               columns={contentsColumns}
               rows={selectedUser}
-              selectedRows={selectedUser ? [selectedUser.id] : []}
+              // selectedRows={selectedUser ? [selectedUser.id] : []}
               containerClassName="main_table"
               onRowSelect={handleSelectRow}
               colgroup={["15%", "60%", "10%", "15%"]}

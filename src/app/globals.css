@@ -184,7 +184,10 @@
 html {
   font-size: 62.5%;
 }
-
+.duration-800 {
+  animation-duration: 800ms;
+  transition-duration: 800ms;
+}
 @media (max-width: 1536px) {
   html {
     font-size: 48.5%;
@@ -198,6 +201,12 @@ html {
 @media (max-width: 1024px) {
   html {
     font-size: 30%;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 67.5%;
   }
 }
 

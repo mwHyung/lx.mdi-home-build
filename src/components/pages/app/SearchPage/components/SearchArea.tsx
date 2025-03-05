@@ -33,7 +33,10 @@ const SearchArea = () => {
     };
   }, [setIsScrolled]);
   return (
-    <div className="flex flex-col items-center justify-center gap-16 pt-64 pb-24" ref={observerRef}>
+    <div
+      className="flex flex-col items-center justify-center gap-16 max-w-[1920px] m-[0_auto] pt-64 pb-24"
+      ref={observerRef}
+    >
       <div className="flex items-center w-[67.4rem]">
         <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full" />
         <Button variant="red" className="min-w-48 h-[6.2rem]">

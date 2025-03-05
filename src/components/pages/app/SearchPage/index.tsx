@@ -24,6 +24,7 @@ const SearchPage = () => {
 
   const updatePageParams = (pageParams: Partial<PageParams>) => {};
 
+  console.log(selectedUser);
   return (
     <SearchContainer>
       <SearchArea />
@@ -47,7 +48,7 @@ const SearchPage = () => {
           id="search-list-table"
           columns={contentsColumns}
           rows={selectedUser}
-          selectedRows={selectedUser ? [selectedUser.id] : []}
+          // selectedRows={selectedUser ? [selectedUser.id] : []}
           containerClassName="sub_table"
           onRowSelect={handleSelectRow}
           colgroup={["15%", "60%", "10%", "15%"]}
@@ -70,7 +71,7 @@ const SearchPage = () => {
 
       {/* 컨텐츠가 없을 때 */}
       <SearchMain tit="MI Focus" hits="0" className="pt-0">
-        <div className="flex items-center justify-center h-80 border-t border-b border-pub-grayD bg-pub-bgA">
+        <div className="flex items-center justify-center flex-1 w-full h-80 border-t border-b border-pub-grayD bg-pub-bgA">
           <p className="text-black text-[2.8rem] font-light tracking-[-0.028rem]">
             <strong className="font-bold text-pub-red">정유</strong>로 검색된 컨텐츠가 없습니다.
           </p>
@@ -82,7 +83,7 @@ const SearchPage = () => {
           id="search-list-it-table"
           columns={contentsColumns}
           rows={selectedUser}
-          selectedRows={selectedUser ? [selectedUser.id] : []}
+          // selectedRows={selectedUser ? [selectedUser.id] : []}
           containerClassName="sub_table"
           onRowSelect={handleSelectRow}
           colgroup={["15%", "60%", "10%", "15%"]}
@@ -94,24 +95,28 @@ const SearchPage = () => {
 
 const data = [
   {
+    id: 1,
     group: "LX그룹",
     title: "News Feed 레포트 신설",
     hits: "2,750",
     date: "2024.12.28",
   },
   {
+    id: 2,
     group: "LX홀딩스",
     title: "LX홀딩스, 두 번째 그룹 통합 ‘ESG 보고서’ 펴내",
     hits: "57",
     date: "2024.12.28",
   },
   {
+    id: 3,
     group: "LX홀딩스",
     title: "LX홀딩스, 2024년 정기 임원 인사 실시",
     hits: "8",
     date: "2024.12.28",
   },
   {
+    id: 4,
     group: "LX그룹",
     title: "LX그룹, ‘2023 LX배 한국여자야구대회’ 21일 개막",
     hits: "24",

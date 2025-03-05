@@ -79,7 +79,7 @@ const SearchPage = () => {
           id="search-list-table"
           columns={contentsColumns}
           rows={selectedUser}
-          selectedRows={selectedUser ? [selectedUser[0].id] : []}
+          // selectedRows={selectedUser ? [selectedUser.id] : []}
           containerClassName="sub_table"
           onRowSelect={handleSelectRow}
           colgroup={["15%", "60%", "10%", "15%"]}

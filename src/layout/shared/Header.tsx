@@ -16,27 +16,29 @@ const Header = () => {
     <header
       className={`${styles.header} ${activeMenu || searchOpen ? styles.expanded : ""} ${isScrolled ? styles.scrolled : ""} ${isDetail ? styles.detail : ""}`}
     >
-      <Logo
-        activeMenu={activeMenu}
-        searchOpen={searchOpen}
-        isScrolled={isScrolled}
-        detail={isDetail}
-      />
-      <Nav
-        activeMenu={activeMenu}
-        setActiveMenu={setActiveMenu}
-        searchOpen={searchOpen}
-        setSearchOpen={setSearchOpen}
-        isScrolled={isScrolled}
-        detail={isDetail}
-      />
-      <Search
-        activeMenu={activeMenu}
-        searchOpen={searchOpen}
-        setSearchOpen={setSearchOpen}
-        isScrolled={isScrolled}
-        detail={isDetail}
-      />
+      <div className="max-w-[1920px] flex items-start justify-between w-full h-full m-[0_auto] px-48">
+        <Logo
+          activeMenu={activeMenu}
+          searchOpen={searchOpen}
+          isScrolled={isScrolled}
+          detail={isDetail}
+        />
+        <Nav
+          activeMenu={activeMenu}
+          setActiveMenu={setActiveMenu}
+          searchOpen={searchOpen}
+          setSearchOpen={setSearchOpen}
+          isScrolled={isScrolled}
+          detail={isDetail}
+        />
+        <Search
+          activeMenu={activeMenu}
+          searchOpen={searchOpen}
+          setSearchOpen={setSearchOpen}
+          isScrolled={isScrolled}
+          detail={isDetail}
+        />
+      </div>
     </header>
   );
 };

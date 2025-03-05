@@ -14,7 +14,7 @@ const ContentTab = ({ list }: Props) => {
 
   return (
     <div className="bg-black bg-opacity-40 backdrop-blur-[2rem]">
-      <ul className="flex items-center px-48">
+      <ul className="flex items-center px-48 max-w-[1920px] m-[0_auto]">
         {list.map((item, idx) => (
           <li key={idx} onClick={() => handleClick(idx)}>
             <div

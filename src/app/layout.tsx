@@ -9,6 +9,9 @@ import { LayoutProvider } from "@/layout/MainLayoutProvider";
 export const metadata: Metadata = {
   title: "Mi portal",
   description: "Mi portal",
+  icons: {
+    icon: "./favicon.ico",
+  },
 };
 
 const noto_sans_kr = Noto_Sans_KR({

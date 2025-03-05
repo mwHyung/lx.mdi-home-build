@@ -36,7 +36,7 @@ const Topbar: FC<Props> = ({ children, src, title }) => {
 
   return (
     <div
-      className="w-full h-[65rem] flex flex-col justify-end relative"
+      className="w-full h-[50rem] flex flex-col justify-end relative"
       style={{ background: `url(${src}) no-repeat center / cover` }}
       ref={observerRef}
     >
