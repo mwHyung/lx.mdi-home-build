@@ -56,25 +56,25 @@
 
   &::before {
     content: "";
-    width: 17%;
-    height: 200%;
+    width: 25rem;
+    height: 300%;
     background: rgba(201, 30, 29, 0.2);
     backdrop-filter: blur(50px);
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(-50%) rotate(45deg);
+    transform: translate(50%, -57%) rotate(45deg);
   }
   &::after {
     content: "";
-    width: 16%;
-    height: 200%;
+    width: 25rem;
+    height: 300%;
     background: rgba(167, 43, 42, 0.5);
     backdrop-filter: blur(50px);
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(-42%) rotate(45deg);
+    transform: translate(125%, -57%) rotate(45deg);
   }
 }
 
@@ -372,6 +372,33 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (min-width: 2560px) {
+  .bg_line {
+    &::before {
+      content: "";
+      width: 25rem;
+      height: 300%;
+      background: rgba(201, 30, 29, 0.2);
+      backdrop-filter: blur(50px);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(-50%, -57%) rotate(45deg);
+    }
+    &::after {
+      content: "";
+      width: 25rem;
+      height: 300%;
+      background: rgba(167, 43, 42, 0.5);
+      backdrop-filter: blur(50px);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(42%, -57%) rotate(45deg);
     }
   }
 }
