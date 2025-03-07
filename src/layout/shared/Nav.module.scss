@@ -1,5 +1,5 @@
 // $header-height: 9.9rem;
-$dropdown-height: 9rem;
+$dropdown-height: 10rem;
 
 // PC Nav Style
 .nav {
@@ -129,7 +129,7 @@ $dropdown-height: 9rem;
       .sub_tit {
         padding: 1rem 0;
         color: var(--p-pc-nav);
-        font-size: 1.3rem;
+        font-size: 2.2rem;
         font-weight: 400;
         text-align: center;
         position: relative;
@@ -156,7 +156,7 @@ $dropdown-height: 9rem;
         &::before {
           content: "/";
           color: var(--p-grayD);
-          font-size: 1.2rem;
+          font-size: 2.1rem;
           font-weight: 300;
           position: absolute;
           top: 50%;

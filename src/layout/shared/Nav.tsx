@@ -215,7 +215,9 @@ const Nav: FC<Props> = ({
                   {item.submenu.map((subitem, idx) => (
                     <li key={idx} className={styles.submenu_item}>
                       <Link href={subitem.path}>
-                        <div className={styles.sub_tit}>{subitem.label}</div>
+                        <div className={styles.sub_tit} title={subitem.label}>
+                          {subitem.label}
+                        </div>
                       </Link>
                     </li>
                   ))}
