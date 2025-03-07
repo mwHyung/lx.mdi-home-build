@@ -20,7 +20,7 @@ const MIBriefList = () => {
   const updatePageParams = (pageParams: Partial<PageParams>) => {};
 
   // 보기 방식
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const iconList = [
     {
       name: "card",
@@ -88,7 +88,7 @@ const MIBriefList = () => {
       </div>
 
       {!isActive ? (
-        <div className="grid grid-cols-3 gap-24">
+        <div className="grid grid-cols-3 gap-24 [@media(min-width:2560px)]:gap-12">
           {dummyData.map((item, idx) => (
             <CardContent
               key={idx}

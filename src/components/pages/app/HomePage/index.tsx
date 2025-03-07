@@ -132,13 +132,13 @@ const HomePage = () => {
         <div className="swiper_container" ref={observerRef}>
           <div className={`absolute top-0 left-0 w-full h-full flex items-center justify-center`}>
             <div
-              className="w-full h-full flex-1 shrink-0 absolute top-0 left-0"
-              style={{ background: `url(${Visual01.src}) no-repeat right / cover` }}
+              className="w-screen h-full flex-1 shrink-0 absolute top-0 left-0"
+              style={{ background: `url(${Visual01.src}) no-repeat center / cover` }}
             ></div>
             <div
-              className={`w-full h-full flex-1 shrink-0 absolute top-0 left-0 ${touchValue ? "duration-0" : "duration-800"}`}
+              className={`w-screen h-full flex-1 shrink-0 absolute top-0 left-0 ${touchValue ? "duration-0" : "duration-800"}`}
               style={{
-                background: `url(${Visual02.src}) no-repeat right / cover`,
+                background: `url(${Visual02.src}) no-repeat center / cover`,
                 transform: `translateX(calc(100% + ${translateValue}px))`,
               }}
             ></div>
@@ -200,7 +200,13 @@ const HomePage = () => {
                       <br />
                       최신 동향
                     </p>
-                    <Image src={IconVisual01} width={90} height={90} alt="icon visual 01" />
+                    <Image
+                      src={IconVisual01}
+                      width={90}
+                      height={90}
+                      style={{ width: "9rem", height: "9rem" }}
+                      alt="icon visual 01"
+                    />
                   </div>
                 </li>
                 <li>
@@ -215,7 +221,7 @@ const HomePage = () => {
                       src={IconVisual02}
                       width={90}
                       height={90}
-                      style={{ width: "auto", height: "auto" }}
+                      style={{ width: "9rem", height: "9rem" }}
                       alt="icon visual 01"
                     />
                   </div>
@@ -235,7 +241,7 @@ const HomePage = () => {
                       src={IconVisual03}
                       width={90}
                       height={90}
-                      style={{ width: "auto", height: "auto" }}
+                      style={{ width: "9rem", height: "9rem" }}
                       alt="icon visual 01"
                     />
                   </div>
@@ -255,7 +261,7 @@ const HomePage = () => {
                       src={IconVisual04}
                       width={90}
                       height={90}
-                      style={{ width: "auto", height: "auto" }}
+                      style={{ width: "9rem", height: "9rem" }}
                       alt="icon visual 01"
                     />
                   </div>
@@ -336,7 +342,7 @@ const HomePage = () => {
                     </Button>
                   </div>
                 </li>
-                <li className={styles.keyword}>
+                <li>
                   <span>추천키워드</span>
                   <div className={`${styles.input_wrap} gap-16`}>
                     <ul className={styles.hashtag}>
@@ -412,7 +418,7 @@ const HomePage = () => {
               id="user-list-table"
               columns={contentsColumns}
               rows={selectedUser}
-              // selectedRows={selectedUser ? [selectedUser.id] : []}
+              selectedRows={selectedUser ? [selectedUser.id] : []}
               containerClassName="main_table"
               onRowSelect={handleSelectRow}
               colgroup={["15%", "60%", "10%", "15%"]}
