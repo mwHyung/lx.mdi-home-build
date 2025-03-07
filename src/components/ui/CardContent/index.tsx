@@ -29,9 +29,7 @@ const CardContent: FC<Props> = ({ list, className, type = "default", link = "/" 
         <div className={styles.image}>
           <Image
             src={list.src}
-            width={0}
-            height={0}
-            style={{ width: "100%", height: "100%" }}
+            style={{ width: "100%", height: "auto" }}
             alt="card background image"
           />
           {type === "list" && (
