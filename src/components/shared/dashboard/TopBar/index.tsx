@@ -20,7 +20,7 @@ const Topbar: FC<Props> = ({ children, src, title }) => {
       ([entry]) => {
         setIsScrolled(!entry.isIntersecting); // 보이지 않으면 true
       },
-      { threshold: 0.105 },
+      { threshold: 1 },
     );
 
     if (observerRef.current) {
@@ -41,7 +41,7 @@ const Topbar: FC<Props> = ({ children, src, title }) => {
       ref={observerRef}
     >
       <div className="w-full h-full absolute top-0 left-0 flex items-center">
-        <h2 className="max-w-[1920px] w-full m-[0_auto] pl-[22rem] pb-32 text-white text-[4.5rem] font-bold leading-[10rem]">
+        <h2 className="max-w-[1680px] w-full m-[0_auto] pl-[22rem] pb-32 text-white text-[4.5rem] font-bold leading-[10rem]">
           {title}
         </h2>
       </div>

@@ -18,7 +18,7 @@ const selectVariants = cva(
         lg: "h-10 text-sm px-3 py-2",
         xl: "h-12 text-base px-4 py-3",
         "2xl": "text-[2rem] px-[2rem] py-[0.75rem] font-bold",
-        "3xl": "text-[2.2rem] px-[2.8rem] py-[1.35rem] font-bold",
+        "3xl": "text-[1.8rem] px-[2.8rem] py-[1.35rem] font-bold",
       },
     },
     defaultVariants: {
@@ -37,7 +37,7 @@ const selectItemVariants = cva(
         lg: "text-sm py-1.5",
         xl: "text-sm py-1.5",
         "2xl": "text-[2rem] px-[2rem] py-[0.75rem] font-bold",
-        "3xl": "text-[2.2rem] px-[2.8rem] py-[1.35rem] font-bold",
+        "3xl": "text-[1.8rem] px-[2.8rem] py-[1.35rem] font-bold",
       },
     },
     defaultVariants: {
@@ -207,7 +207,7 @@ const CustomSelectValue: FC<CustomSelectValueProps> = ({ placeholder, defaultVal
     return placeholder;
   };
   return (
-    <span className="!block text-ellipsis text-[2.2rem] font-bold pointer-events-none">
+    <span className="!block text-ellipsis text-[1.8rem] font-bold pointer-events-none">
       {renderValue()}
     </span>
   );

@@ -27,7 +27,13 @@ const Columns = () => {
         render: (hits: any) => {
           return (
             <div className="flex items-center gap-4">
-              <Image src={IconViewer} width={28} height={28} alt="icon viewer hits" />
+              <Image
+                src={IconViewer}
+                width={28}
+                height={28}
+                style={{ width: "2.8rem", height: "2.8rem" }}
+                alt="icon viewer hits"
+              />
               <span className="leading-none">{hits}</span>
             </div>
           );

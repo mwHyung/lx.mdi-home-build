@@ -105,7 +105,7 @@ const DatePicker: FC<Props> = ({
             variant={"selectBox"}
             size={size}
             className={cn(
-              "relative min-w-44 justify-start text-left font-normal hover:bg-transparent hover:text-main-gray border-pub-grayC focus:border-pub-red text-[2.2rem]",
+              "relative min-w-44 justify-start text-left font-normal hover:bg-transparent hover:text-main-gray border-pub-grayC focus:border-pub-red text-[1.8rem]",
               {
                 "border-error focus:border-error": isError,
                 "text-muted-foreground": !selectedDate,
@@ -120,7 +120,7 @@ const DatePicker: FC<Props> = ({
                 showTime ? `${dateFormatPattern} ${timeFormatPattern}` : dateFormatPattern,
               )
             ) : (
-              <span className="text-[2.2rem] text-pub-grayA">{placeholder || "Pick a date"}</span>
+              <span className="text-[1.8rem] text-pub-grayA">{placeholder || "Pick a date"}</span>
             )}
             {/* <CalendarIcon className="shrink-0 mr-2 h-4 w-4" /> */}
             <Image
@@ -155,7 +155,7 @@ const DatePicker: FC<Props> = ({
           <>
             <div className="border-l" />
             <div className="flex flex-col h-full justify-between gap-3 p-3">
-              <div className="h-7 text-[2.2rem] flex items-center justify-center gap-8">
+              <div className="h-7 text-[1.8rem] flex items-center justify-center gap-8">
                 <span>{selectedDate?.getHours() ?? 0}시</span>
                 <span>{selectedDate?.getMinutes() ?? 0}분</span>
               </div>

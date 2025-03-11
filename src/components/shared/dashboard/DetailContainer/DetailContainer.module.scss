@@ -1,6 +1,6 @@
 .detail_wrap {
   .detail_box {
-    max-width: 1920px;
+    max-width: 1680px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@
   }
 
   .files {
-    padding: 6rem 12rem;
+    padding: 6rem 24rem;
     background: var(--p-bgA);
 
     table {
@@ -73,7 +73,7 @@
             letter-spacing: -0.018rem;
           }
           td {
-            padding-left: 4rem;
+            padding: 0 4rem;
             background: #fff;
             font-size: 1.8rem;
             font-weight: 500;
@@ -91,7 +91,7 @@
   }
 
   .list_wrap {
-    max-width: 1920px;
+    max-width: 1680px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;

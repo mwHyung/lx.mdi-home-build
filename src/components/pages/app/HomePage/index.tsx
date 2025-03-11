@@ -112,7 +112,7 @@ const HomePage = () => {
       ([entry]) => {
         setIsScrolled(!entry.isIntersecting); // 보이지 않으면 true
       },
-      { threshold: 0.23 },
+      { threshold: 1 },
     );
 
     if (observerRef.current) {
@@ -328,10 +328,10 @@ const HomePage = () => {
                       ]}
                       size="3xl"
                       width="fit"
-                      className="min-w-80"
+                      className="min-w-80 h-24"
                     />
-                    <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full" />
-                    <Button variant="red" className="min-w-48 h-[6.2rem]">
+                    <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full h-24" />
+                    <Button variant="red" className="min-w-48 h-24">
                       <Image
                         src={SearchIcon}
                         width={17}
@@ -418,14 +418,20 @@ const HomePage = () => {
               id="user-list-table"
               columns={contentsColumns}
               rows={selectedUser}
-              // selectedRows={selectedUser ? [selectedUser.id] : []}
+              selectedRows={selectedUser ? [selectedUser.id] : []}
               containerClassName="main_table"
               onRowSelect={handleSelectRow}
               colgroup={["15%", "60%", "10%", "15%"]}
             />
             <div className={styles.table_more}>
               <button>
-                <Image src={IconPlusSm} width={14} height={14} alt="icon plus" />
+                <Image
+                  src={IconPlusSm}
+                  width={14}
+                  height={14}
+                  style={{ width: "1.4rem", height: "1.4rem" }}
+                  alt="icon plus"
+                />
                 <Link href={"/"}>
                   <p>
                     보지 못한 <strong>3개</strong> 최신 콘텐츠가 있습니다.

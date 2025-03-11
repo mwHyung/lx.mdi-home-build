@@ -155,6 +155,7 @@ $dropdown-height: 10rem;
 
         &::before {
           content: "/";
+          margin-top: 2px;
           color: var(--p-grayD);
           font-size: 2.1rem;
           font-weight: 300;

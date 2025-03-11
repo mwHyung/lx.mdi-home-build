@@ -11,11 +11,11 @@ interface Props {
 const SearchMain: FC<Props> = ({ tit, hits, className, children }) => {
   return (
     <div
-      className={`flex flex-col gap-16 px-48 py-40 max-w-[1920px] w-full m-[0_auto] ${className}`}
+      className={`flex flex-col gap-16 px-48 py-40 max-w-[1680px] w-full m-[0_auto] ${className}`}
     >
       <div className="flex items-center justify-between">
         <div className="flex gap-6">
-          <h2 className="text-black text-[4.6rem] font-bold">{tit}</h2>
+          <h2 className="text-black text-[4rem] font-bold">{tit}</h2>
           <span className="text-pub-red text-[1.6rem] font-bold">{hits}</span>
         </div>
         <div>

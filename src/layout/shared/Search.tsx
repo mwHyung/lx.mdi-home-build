@@ -64,8 +64,8 @@ const Search: FC<Props> = ({ activeMenu, searchOpen, setSearchOpen, isScrolled, 
       >
         <div className={styles.search_area}>
           <div className={styles.input_wrap}>
-            <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full" />
-            <Button variant="red" className="min-w-48 h-[6.2rem]">
+            <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full h-24" />
+            <Button variant="red" className="min-w-48 h-24">
               <Image
                 src={SearchIconS}
                 width={17}

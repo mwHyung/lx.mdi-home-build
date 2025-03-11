@@ -4,7 +4,7 @@ import LogoFooter from "public/images/LX.MDILOGO_footer.svg";
 const Footer = () => {
   return (
     <footer>
-      <div className="flex py-24 px-48 items-start gap-[29rem] border-t border-t-pub-lightG">
+      <div className="flex py-24 px-96 items-start gap-[29rem] border-t border-t-pub-lightG">
         <Image
           src={LogoFooter}
           width={193}
