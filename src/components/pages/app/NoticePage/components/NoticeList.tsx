@@ -38,7 +38,6 @@ const NoticeList = () => {
         id="user-list-table"
         columns={contentsColumns}
         rows={selectedUser}
-        // selectedRows={selectedUser ? [selectedUser.id] : []}
         containerClassName="sub_table"
         onRowSelect={handleSelectRow}
         colgroup={["12%", "15%", "61%", "12%"]}

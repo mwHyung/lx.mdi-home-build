@@ -17,10 +17,10 @@ const SearchList = () => {
           ]}
           size="3xl"
           width="fit"
-          className="min-w-80"
+          className="min-w-80 h-24"
         />
-        <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full" />
-        <Button variant="red" className="min-w-48 h-[6.2rem]">
+        <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full h-24" />
+        <Button variant="red" className="min-w-48 h-24">
           <Image
             src={SearchIcon}
             width={17}

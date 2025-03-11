@@ -38,7 +38,6 @@ const NewsFeedList = () => {
         id="user-list-table"
         columns={contentsColumns}
         rows={selectedUser}
-        // selectedRows={selectedUser ? [selectedUser.id] : []}
         containerClassName="sub_table"
         onRowSelect={handleSelectRow}
         colgroup={["15%", "60%", "10%", "15%"]}
