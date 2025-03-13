@@ -1,3 +1,5 @@
+@import "/src/styles/mixin";
+
 .card {
   height: 100%;
   display: flex;
@@ -20,7 +22,7 @@
 
   .date {
     width: 100%;
-    padding: 3rem;
+    padding: rem(30px);
     padding-bottom: 0;
     position: absolute;
     top: 0;
@@ -28,10 +30,10 @@
 
     h4 {
       color: #fff;
-      font-size: 1.8rem;
+      font-size: rem(18px);
       font-weight: 300;
       line-height: 1;
-      letter-spacing: -0.018rem;
+      letter-spacing: rem(-0.18px);
       text-align: right;
     }
   }
@@ -51,10 +53,10 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      gap: 1.2rem;
+      gap: rem(12px);
       max-height: 52%;
       height: 100%;
-      padding: 4rem;
+      padding: rem(40px);
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -72,11 +74,11 @@
     .tag {
       display: flex;
       align-items: center;
-      font-size: 1.8rem;
-      line-height: 2.736rem;
+      font-size: rem(16px);
+      line-height: rem(21px);
 
       span {
-        padding: 0.4rem 1.3rem;
+        padding: rem(4px) rem(13px);
         background: #fff;
 
         &:first-child {
@@ -99,12 +101,12 @@
 
     .tit {
       padding: 0 0;
-      margin-top: 2rem;
+      margin-top: rem(10px);
       color: #fff;
-      font-size: 2.2rem;
+      font-size: rem(20px);
       font-weight: 500;
-      line-height: 3.08rem;
-      letter-spacing: -0.022rem;
+      line-height: rem(30.8px);
+      letter-spacing: rem(-0.22px);
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
@@ -116,19 +118,19 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      column-gap: 1rem;
+      column-gap: rem(10px);
       margin-top: auto;
 
       li {
         display: flex;
         align-items: center;
-        gap: 0.4rem;
+        gap: rem(4px);
 
         span {
           color: #fff;
-          font-size: 1.8rem;
+          font-size: rem(18px);
           font-weight: 400;
-          line-height: 2.736rem;
+          line-height: rem(27.36px);
 
           &::before {
             content: "# ";
@@ -141,15 +143,15 @@
     .hits {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      margin-top: 0.6rem;
+      gap: rem(6px);
+      margin-top: rem(6px);
 
       span {
         color: var(--p-gray9);
-        font-size: 1.8rem;
+        font-size: rem(18px);
         font-weight: 400;
-        line-height: 2.16rem;
-        letter-spacing: -0.018rem;
+        line-height: rem(21.6px);
+        letter-spacing: rem(-0.18px);
       }
     }
   }
@@ -208,32 +210,32 @@
             span {
               &:last-child {
                 border: 1px solid var(--p-grayD);
-                padding: 0.3rem 1.3rem;
+                padding: rem(3px) rem(13px);
               }
             }
           }
 
           .tit {
             color: black;
-            font-size: 2.6rem;
+            font-size: rem(26px);
             font-weight: 500;
-            line-height: 3.68rem;
-            letter-spacing: -0.032rem;
+            line-height: rem(36.8px);
+            letter-spacing: rem(-0.32px);
             transition: none;
           }
 
           .hash {
-            margin-top: 1.6rem;
+            margin-top: rem(16px);
             li {
               span {
                 color: var(--p-gray6);
-                font-size: 2rem;
+                font-size: rem(20px);
                 font-weight: 400;
-                line-height: 3.04rem;
+                line-height: rem(30.4px);
 
                 &::before {
                   color: black;
-                  font-size: 2rem;
+                  font-size: rem(20px);
                   opacity: 0.5;
                 }
               }
@@ -243,13 +245,13 @@
           .hits {
             .date {
               width: auto;
-              margin-left: 1.4rem;
+              margin-left: rem(14px);
               padding: 0;
               position: unset;
 
               h4 {
                 color: var(--p-gray9);
-                font-size: 1.8rem;
+                font-size: rem(18px);
                 font-weight: 300;
               }
             }
@@ -268,10 +270,6 @@
           .back {
             max-height: 47%;
             opacity: 1;
-
-            // .tit {
-            //   display: -webkit-box;
-            // }
           }
         }
       }
@@ -279,18 +277,18 @@
   }
 
   &.list_type {
-    padding: 4rem 5rem 4rem 3rem;
+    padding: rem(40px) rem(50px) rem(40px) rem(30px);
     border-top: 1px solid var(--p-grayD);
     clip-path: none;
 
     a {
       display: flex;
       align-items: center;
-      gap: 5rem;
+      gap: rem(50px);
 
       .image {
-        width: 29rem;
-        height: 20rem;
+        width: rem(290px);
+        height: rem(200px);
         clip-path: polygon(10% 0%, 100% 0, 100% 88%, 90% 100%, 0 100%, 0 12%);
         position: relative;
         flex-shrink: 0;
@@ -298,7 +296,7 @@
         .date {
           display: block;
           width: auto;
-          padding: 2rem 2rem 0 0;
+          padding: rem(20px) rem(20px) 0 0;
         }
       }
 
@@ -312,7 +310,7 @@
 
         .back {
           display: inline-grid;
-          grid-template-columns: fit-content(85%) fit-content(16rem);
+          grid-template-columns: fit-content(85%) fit-content(rem(160px));
           grid-template-rows: repeat(3, auto);
           grid-auto-flow: column;
           justify-content: space-between;
@@ -323,27 +321,27 @@
           .tag {
             span {
               &:last-child {
-                padding: 0.3rem 1.3rem;
+                padding: rem(3px) rem(13px);
                 border: 1px solid var(--p-grayD);
               }
             }
           }
 
           .tit {
-            margin-top: 3rem;
+            margin-top: rem(30px);
             color: black;
-            font-size: 2.6rem;
+            font-size: rem(26px);
             transition: none;
           }
 
           .hash {
-            margin-top: 2rem;
+            margin-top: rem(20px);
 
             li {
               span {
                 color: var(--p-gray6);
-                font-size: 2rem;
-                line-height: 3.04rem;
+                font-size: rem(20px);
+                line-height: rem(30.4px);
 
                 &::before {
                   color: black;
@@ -357,13 +355,13 @@
             margin-top: 0;
             .date {
               width: auto;
-              margin-left: 1.4rem;
+              margin-left: rem(14px);
               padding: 0;
               position: unset;
 
               h4 {
                 color: var(--p-gray9);
-                font-size: 1.8rem;
+                font-size: rem(18px);
                 font-weight: 300;
               }
             }
@@ -382,7 +380,7 @@
           .back {
             gap: 0;
             .tit {
-              font-size: 2.8rem;
+              font-size: rem(28px);
             }
           }
         }

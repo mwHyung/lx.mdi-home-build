@@ -60,7 +60,13 @@ const DetailTitle: FC<Props> = ({ list, emergency = false }) => {
         </div>
 
         <div className={styles.hits}>
-          <Image src={Viewer} width={20} height={20} alt="icon viewer" />
+          <Image
+            src={Viewer}
+            width={20}
+            height={20}
+            style={{ width: "1.25rem", height: "1.25rem" }}
+            alt="icon viewer"
+          />
           <span>547</span>
 
           <div className={styles.date}>

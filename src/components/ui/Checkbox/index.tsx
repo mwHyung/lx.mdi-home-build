@@ -19,7 +19,7 @@ const checkboxVariants = cva(
         info: "border-main-gray/40 text-main-gray data-[state=checked]:bg-info data-[state=checked]:border-info data-[state=checked]:text-info-foreground",
 
         defaultP:
-          "w-[2.8rem] h-[2.8rem] rounded-none border border-pub-grayC text-pub-grayC data-[state=checked]:border-pub-redD data-[state=checked]:text-pub-red",
+          "w-8 h-8 rounded-none border border-pub-grayC text-pub-grayC data-[state=checked]:border-pub-redD data-[state=checked]:text-pub-red",
       },
     },
     defaultVariants: {
@@ -113,7 +113,7 @@ const CheckboxGroup: FC<GroupProps> = ({
   return (
     <div
       className={cn("flex items-center flex-wrap", {
-        "flex-row gap-16": direction === "horizontal",
+        "flex-row gap-10": direction === "horizontal",
         "flex-col gap-2": direction === "vertical",
       })}
       onChange={handleChange}
@@ -121,7 +121,7 @@ const CheckboxGroup: FC<GroupProps> = ({
       {list.map((item, index) => (
         <Label
           key={item.value.toString()}
-          className="flex items-center gap-[1.2rem] text-pub-grayA text-[1.8rem] font-bold"
+          className="flex items-center gap-3 text-pub-grayA text-[1.25rem] font-bold"
         >
           <Checkbox
             id={`checkbox-${item.value}-${index}`}

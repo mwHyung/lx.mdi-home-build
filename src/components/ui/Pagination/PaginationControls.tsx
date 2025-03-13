@@ -59,9 +59,9 @@ const PaginationControls: FC<Props> = ({ isLoading, page, total, perPage, onChan
         disabled={page === 1}
         size="icon-xs"
         onClick={() => handleChangePage(page - 1)}
-        className="hover:bg-none mr-12"
+        className="hover:bg-none mr-8"
       >
-        <ChevronLeft className="w-8 h-8" />
+        <ChevronLeft className="w-5 h-5" />
       </Button>
       {pageRanges.map((range, idx) => (
         <Button
@@ -69,7 +69,7 @@ const PaginationControls: FC<Props> = ({ isLoading, page, total, perPage, onChan
           variant={range === page ? "boldP" : "textP"}
           size="icon-xs"
           onClick={() => handleChangePage(range)}
-          className={`gap-4 justify-between page_button text-[1.8rem] ${idx === pageRanges.length - 1 ? "after:content-none min-w-2" : "after:content-['/'] after:pointer-events-none"}`}
+          className={`gap-4 justify-between page_button text-[1.125rem] ${idx === pageRanges.length - 1 ? "after:content-none min-w-2" : "after:content-['/'] after:pointer-events-none"}`}
         >
           {range < 10 ? `0${range}` : range}
         </Button>
@@ -79,9 +79,9 @@ const PaginationControls: FC<Props> = ({ isLoading, page, total, perPage, onChan
         disabled={page === lastPage || total === 0}
         size="icon-xs"
         onClick={() => handleChangePage(page + 1)}
-        className="hover:bg-none ml-12"
+        className="hover:bg-none ml-8"
       >
-        <ChevronRight className="w-8 h-8" />
+        <ChevronRight className="w-5 h-5" />
       </Button>
       {/* <Button
         variant={"text"}

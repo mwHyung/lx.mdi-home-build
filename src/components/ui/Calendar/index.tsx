@@ -79,40 +79,40 @@ const MonthNav = ({
     <div
       className={cn(className, "absolute top-0 left-0 w-full flex justify-between items-center")}
     >
-      <div className="absolute left-1 top-0 space-x-1">
+      <div className="absolute left-1 top-0 space-x-1 ">
         {mode === "range" && (
           <Button
             variant="outline"
-            className="h-[2.8rem] w-[2.8rem] bg-transparent p-0 opacity-50 hover:opacity-100 "
+            className="h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 "
             onClick={() => handleYearNavClick("prev")}
           >
-            <ChevronsLeft className="h-[1.6rem] w-[1.6rem]" />
+            <ChevronsLeft className="h-4 w-4" />
           </Button>
         )}
         <Button
           variant="outline"
-          className="h-[2.8rem] w-[2.8rem] bg-transparent p-0 opacity-50 hover:opacity-100"
+          className="h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
           onClick={() => handleMonthNavClick("prev")}
         >
-          <ChevronLeft className="h-[1.6rem] w-[1.6rem]" />
+          <ChevronLeft className="h-4 w-4" />
         </Button>
       </div>
       {children}
       <div className="absolute right-1 top-0 space-x-1">
         <Button
           variant="outline"
-          className="h-[2.8rem] w-[2.8rem] bg-transparent p-0 opacity-50 hover:opacity-100"
+          className="h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
           onClick={() => handleMonthNavClick("next")}
         >
-          <ChevronRight className="h-[1.6rem] w-[1.6rem]" />
+          <ChevronRight className="h-4 w-4" />
         </Button>
         {mode === "range" && (
           <Button
             variant="outline"
-            className="h-[2.8rem] w-[2.8rem] bg-transparent p-0 opacity-50 hover:opacity-100"
+            className="h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
             onClick={() => handleYearNavClick("next")}
           >
-            <ChevronsRight className="h-[1.6rem] w-[1.6rem]" />
+            <ChevronsRight className="h-4 w-4" />
           </Button>
         )}
       </div>
@@ -168,12 +168,12 @@ const MonthGrid = ({
   return (
     <div
       ref={optionRef}
-      className="grid grid-cols-3 w-[25.2rem] h-[22.4rem] overflow-auto pointer-events-auto touch-auto"
+      className="grid grid-cols-3 w-[15.75rem] h-56 overflow-auto pointer-events-auto touch-auto"
     >
       {monthList.map(month => (
         <Button
           key={month.getTime()}
-          className={cn("h-[4rem] text-sm text-center content-center cursor-pointer", {
+          className={cn("h-10 text-sm text-center content-center cursor-pointer", {
             "bg-info text-white hover:bg-info hover:text-white": isSameYearMonth(month, currMonth),
           })}
           variant="text"
@@ -245,12 +245,12 @@ function Calendar({
         // ),
         month_grid: "w-full border-collapse space-y-1",
         weekdays: "flex",
-        weekday: "text-main-gray rounded-md w-[3.6rem] text-xs",
+        weekday: "text-main-gray rounded-md w-9 text-xs",
         week: "flex w-full mt-1",
-        day: "group h-[3.6rem] w-[3.6rem] text-center text-sm p-0 relative focus-within:relative focus-within:z-20",
+        day: "group h-9 w-9 text-center text-sm p-0 relative focus-within:relative focus-within:z-20",
         day_button: cn(
           buttonVariants({ variant: "ghost" }),
-          "h-[3.6rem] w-[3.6rem] p-0 group-aria-selected:opacity-100 hover:bg-muted",
+          "h-9 w-9 p-0 group-aria-selected:opacity-100 hover:bg-muted",
         ),
         selected:
           "*:font-normal bg-muted *:bg-info *:text-primary-foreground hover:*:bg-info hover:*:text-primary-foreground focus:*:bg-info focus:*:text-primary-foreground first:rounded-l-md last:rounded-r-md",
@@ -288,7 +288,7 @@ function Calendar({
         ),
         MonthCaption: ({ displayIndex, calendarMonth, className, ...props }) => {
           return (
-            <div className={cn(className, "h-[2.8rem] text-base flex items-center justify-center")}>
+            <div className={cn(className, "h-7 text-base flex items-center justify-center")}>
               <div className="space-x-1">
                 <span>{format(calendarMonth.date, "yyyy MM")}</span>
                 {mode === "single" && (

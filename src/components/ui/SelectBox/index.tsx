@@ -17,8 +17,8 @@ const selectVariants = cva(
         md: "h-9 text-sm px-2 py-1",
         lg: "h-10 text-sm px-3 py-2",
         xl: "h-12 text-base px-4 py-3",
-        "2xl": "text-[2rem] px-[2rem] py-[0.75rem] font-bold",
-        "3xl": "text-[1.8rem] px-[2.8rem] py-[1.35rem] font-bold",
+        "2xl": "text-[1.125rem] px-5 py-[0.469rem] font-bold",
+        "3xl": "text-[1.25rem] px-7 py-[0.844rem] font-bold",
       },
     },
     defaultVariants: {
@@ -36,8 +36,8 @@ const selectItemVariants = cva(
         md: "text-xs py-2",
         lg: "text-sm py-1.5",
         xl: "text-sm py-1.5",
-        "2xl": "text-[2rem] px-[2rem] py-[0.75rem] font-bold",
-        "3xl": "text-[1.8rem] px-[2.8rem] py-[1.35rem] font-bold",
+        "2xl": "text-[1.125rem] px-5 py-[0.469rem] font-bold",
+        "3xl": "text-[1.25rem] px-7 py-[0.844rem] font-bold",
       },
     },
     defaultVariants: {
@@ -63,7 +63,7 @@ const SelectTrigger = forwardRef<
     {children}
     <SelectPrimitive.Icon asChild>
       <ChevronDown
-        className={cn("h-[1.6rem] w-[1.6rem] opacity-50 shrink-0", {
+        className={cn("h-4 w-4 opacity-50 shrink-0", {
           "h-3 w-3": size === "md" || size === "sm",
         })}
       />
@@ -81,7 +81,7 @@ const SelectScrollUpButton = forwardRef<
     className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}
   >
-    <ChevronUp className="h-[1.6rem] w-[1.6rem]" />
+    <ChevronUp className="h-4 w-4" />
   </SelectPrimitive.ScrollUpButton>
 ));
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
@@ -207,9 +207,7 @@ const CustomSelectValue: FC<CustomSelectValueProps> = ({ placeholder, defaultVal
     return placeholder;
   };
   return (
-    <span className="!block text-ellipsis text-[1.8rem] font-bold pointer-events-none">
-      {renderValue()}
-    </span>
+    <span className="!block text-ellipsis font-bold pointer-events-none">{renderValue()}</span>
   );
 };
 

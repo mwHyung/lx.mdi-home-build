@@ -1,3 +1,5 @@
+@import "/src/styles/mixin";
+
 .container {
   max-width: 100%;
   overflow-x: hidden; // 스크롤을 숨기고 내부에서 컨트롤
@@ -12,7 +14,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 3.2rem;
+  font-size: rem(32px);
   scroll-snap-align: start;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -21,15 +23,15 @@
 .contents {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: rem(60px);
   max-width: 1680px;
   margin: 0 auto;
-  padding: 15rem 12rem 10rem;
+  padding: rem(150px) rem(120px) rem(100px);
   overflow: hidden;
 
   &.resize {
-    gap: 3rem;
-    padding: 10rem 12rem 2rem;
+    gap: rem(30px);
+    padding: rem(100px) rem(120px) rem(20px);
   }
 }
 
@@ -38,12 +40,12 @@
   top: 45%;
   left: 50%;
   color: white;
-  font-size: 10rem;
+  font-size: rem(100px);
   font-weight: 300;
   line-height: 95%;
   text-transform: uppercase;
   white-space: nowrap;
-  transform: translate(-66%, -50%);
+  transform: translate(-60%, -50%);
 }
 
 .bg_line {
@@ -56,7 +58,7 @@
 
   &::before {
     content: "";
-    width: 25rem;
+    width: rem(250px);
     height: 300%;
     background: rgba(201, 30, 29, 0.2);
     backdrop-filter: blur(50px);
@@ -67,7 +69,7 @@
   }
   &::after {
     content: "";
-    width: 25rem;
+    width: rem(250px);
     height: 300%;
     background: rgba(167, 43, 42, 0.5);
     backdrop-filter: blur(50px);
@@ -82,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: rem(10px);
   width: max-content;
   position: absolute;
   top: 50%;
@@ -92,9 +94,9 @@
 
   li {
     flex-shrink: 0;
-    padding: 7rem 6rem;
+    padding: rem(70px) rem(60px);
     background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(4rem);
+    backdrop-filter: blur(rem(50px));
     clip-path: polygon(15% 0%, 100% 0, 100% 89%, 85% 100%, 0 100%, 0 11%);
 
     div {
@@ -104,63 +106,63 @@
       flex-direction: column;
 
       h3 {
-        font-size: 4.2rem;
+        font-size: rem(42px);
         font-weight: 500;
         line-height: 120%;
-        min-height: 10rem;
+        min-height: rem(100px);
 
         span {
-          font-size: 3.2rem;
+          font-size: rem(32px);
           font-weight: 300;
         }
       }
 
       p {
-        margin-top: 4rem;
-        font-size: 2.8rem;
+        margin-top: rem(40px);
+        font-size: rem(28px);
         font-weight: 500;
         line-height: 140%;
       }
 
       img {
-        margin-top: 10rem;
+        margin-top: rem(100px);
       }
     }
   }
 }
 
 .search {
-  max-width: 1440px;
-  width: calc(100% - 24rem);
-  box-shadow: 0px 10px 30px 0px rgba(170, 115, 115, 0.1);
-  height: 11.2rem;
+  max-width: 1680px;
+  width: 100%;
+  padding: 0 rem(120px);
   position: absolute;
-  top: calc(100% - 11.2rem);
+  top: calc(100% - rem(112px));
   z-index: 2;
-  // background: url("../../../../../../public/images/bg_search.png") no-repeat top / 100% auto;
-  transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-
-  &.topbottom {
-    background: #fff;
-    background:
-      linear-gradient(135deg, transparent 2rem, #fff 0) top left,
-      linear-gradient(-45deg, transparent 2rem, #fff 0) bottom right;
-    background-size: 100% 51%;
-    background-repeat: no-repeat;
-  }
 
   .search_area {
     display: flex;
     flex-direction: column;
-    padding: 0 6rem;
+    height: rem(112px);
+    padding: 0 rem(60px);
     position: relative;
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 10px 30px 0px rgba(170, 115, 115, 0.1);
+
+    &.topbottom {
+      background: #fff;
+      background:
+        linear-gradient(135deg, transparent rem(20px), #fff 0) top left,
+        linear-gradient(-45deg, transparent rem(20px), #fff 0) bottom right;
+      background-size: 100% 51%;
+      background-repeat: no-repeat;
+    }
 
     .search_tit {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 4rem 0 3.4rem;
+      padding: rem(40px) 0 rem(34px);
       line-height: 1;
       position: relative;
       z-index: 2;
@@ -169,7 +171,7 @@
 
       span {
         color: #000;
-        font-size: 2.6rem;
+        font-size: rem(26px);
         font-weight: 700;
       }
 
@@ -180,26 +182,25 @@
 
     .search_con {
       width: 100%;
-      padding: 5rem 0;
+      padding: rem(50px) 0;
 
       > ul {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
-        // padding: 5rem 0;
+        gap: rem(20px);
 
         > li {
           display: flex;
           align-items: center;
-          gap: 2rem;
+          gap: rem(20px);
           width: 100%;
 
           > span {
             color: var(--p-gray6);
-            font-size: 1.6rem;
+            font-size: rem(18px);
             font-weight: 700;
-            min-width: 10rem;
+            min-width: rem(100px);
           }
 
           .input_wrap {
@@ -210,7 +211,7 @@
 
           .tab_button {
             button {
-              font-size: 1.8rem;
+              font-size: rem(17px);
             }
             .active {
               border-color: var(--p-button-border);
@@ -222,15 +223,15 @@
           .hashtag {
             display: flex;
             flex-wrap: wrap;
-            column-gap: 2rem;
-            row-gap: 1.2rem;
-            padding: 2rem 0;
+            column-gap: rem(20px);
+            row-gap: rem(12px);
+            padding: rem(20px) 0;
 
             li {
               display: flex;
               span {
                 color: var(--p-grayA);
-                font-size: 1.8rem;
+                font-size: rem(20px);
                 font-weight: 400;
                 line-height: 1;
                 cursor: default;
@@ -251,8 +252,8 @@
   }
 
   &.open {
-    height: 45.9rem;
     .search_area {
+      height: rem(459px);
       .search_tit {
         border-bottom-color: var(--p-grayD);
 
@@ -267,7 +268,7 @@
 .content_area {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  gap: rem(60px);
   width: 100%;
 
   .content_title {
@@ -276,7 +277,7 @@
 
     h2 {
       color: #000;
-      font-size: 4.6rem;
+      font-size: rem(46px);
       font-weight: 700;
       line-height: 1;
     }
@@ -284,16 +285,16 @@
     ul {
       display: flex;
       align-items: flex-end;
-      gap: 6rem;
-      margin-left: 14.2rem;
+      gap: rem(60px);
+      margin-left: rem(142px);
       border-bottom: 1px solid var(--p-grayD);
       line-height: 1;
 
       li {
         button {
-          padding-bottom: 2rem;
+          padding-bottom: rem(20px);
           color: var(--p-gray9);
-          font-size: 2rem;
+          font-size: rem(20px);
           font-weight: 500;
           line-height: 1;
           position: relative;
@@ -319,23 +320,23 @@
     }
 
     .more {
-      margin-left: 4rem;
+      margin-left: rem(40px);
 
       span {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
+        gap: rem(10px);
         color: #000;
-        font-size: 1.8rem;
+        font-size: rem(18px);
         font-weight: 400;
-        letter-spacing: -0.018rem;
+        letter-spacing: rem(-0.18px);
         line-height: 1;
 
         &::after {
           content: "";
-          width: 0.9rem;
-          height: 0.9rem;
+          width: rem(9px);
+          height: rem(9px);
           border-right: 1px solid #000;
           border-bottom: 1px solid #000;
           transform: rotate(-45deg);
@@ -353,20 +354,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 3rem 2rem;
+      padding: rem(20px);
       border-bottom: 1px solid var(--p-grayD);
       background: var(--p-bg);
 
       button {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: rem(20px);
 
         p {
           color: #000;
-          font-size: 1.8rem;
+          font-size: rem(18px);
           font-weight: 400;
-          letter-spacing: -0.024rem;
+          letter-spacing: rem(-0.24px);
 
           strong {
             color: var(--p-red);
@@ -382,7 +383,7 @@
   .bg_line {
     &::before {
       content: "";
-      width: 25rem;
+      width: rem(250px);
       height: 300%;
       background: rgba(201, 30, 29, 0.2);
       backdrop-filter: blur(50px);
@@ -393,7 +394,7 @@
     }
     &::after {
       content: "";
-      width: 25rem;
+      width: rem(250px);
       height: 300%;
       background: rgba(167, 43, 42, 0.5);
       backdrop-filter: blur(50px);

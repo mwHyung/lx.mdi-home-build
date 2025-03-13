@@ -1,15 +1,17 @@
+@import "/src/styles/mixin";
+
 .text {
   color: black;
-  font-size: 2rem;
+  font-size: rem(20px);
   font-weight: 500;
-  line-height: 3.6rem;
-  letter-spacing: -0.04rem;
+  line-height: rem(36px);
+  letter-spacing: rem(-0.4px);
 }
 .text_light {
   color: black;
-  font-size: 2rem;
+  font-size: rem(20px);
   font-weight: 300;
-  line-height: 3.6rem;
-  letter-spacing: -0.04rem;
+  line-height: rem(36px);
+  letter-spacing: rem(-0.4px);
   white-space: pre-line;
 }

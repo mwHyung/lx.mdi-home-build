@@ -16,7 +16,7 @@ const NoticeList = () => {
   const updatePageParams = (pageParams: Partial<PageParams>) => {};
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-[1.875rem]">
       {/* <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <span className="text-pub-gray9 text-[2.5rem] font-light leading-[-0.025rem]">Total</span>

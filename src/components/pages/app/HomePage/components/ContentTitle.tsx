@@ -5,9 +5,10 @@ import Link from "next/link";
 interface Props {
   title: string;
   type: "tab" | "more";
+  link?: string;
 }
 
-const ContentTitle: FC<Props> = ({ title, type }) => {
+const ContentTitle: FC<Props> = ({ title, type, link = "/news-feed" }) => {
   const [selected, setSelected] = useState(0);
   const handleSelected = (idx: number) => {
     setSelected(idx);
@@ -29,7 +30,7 @@ const ContentTitle: FC<Props> = ({ title, type }) => {
       )}
       {type === "more" && (
         <div className={styles.more}>
-          <Link href={"/"}>
+          <Link href={`${link}`}>
             <span>더보기</span>
           </Link>
         </div>

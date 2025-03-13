@@ -20,16 +20,31 @@ interface Props {
   className: string;
   type?: "default" | "card" | "list";
   link?: string;
+  pdf?: boolean;
+  onClick?: () => void;
 }
 
-const CardContent: FC<Props> = ({ list, className, type = "default", link = "/" }) => {
+const CardContent: FC<Props> = ({
+  list,
+  className,
+  type = "default",
+  link = "/",
+  pdf = false,
+  onClick,
+}) => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!pdf) return;
+    event.preventDefault();
+    console.log("링크 클릭, 화면 이동X");
+  };
+
   return (
-    <div className={`${styles.card} ${styles[className]}`}>
-      <Link href={`${link}`}>
+    <div className={`${styles.card} ${styles[className]}`} onClick={onClick}>
+      <Link href={`${link}`} onClick={handleClick}>
         <div className={styles.image}>
           <Image
             src={list.src}
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "100%" }}
             alt="card background image"
           />
           {type === "list" && (

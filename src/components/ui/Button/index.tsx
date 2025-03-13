@@ -31,13 +31,13 @@ export const buttonVariants = cva(
         fullC: "flex-1 bg-main-black rounded-none text-white font-bold",
         gray: "bg-pub-gray4 rounded-none text-main-white",
         brown:
-          "border border-pub-grayC bg-white text-[1.9rem] text-pub-nav font-bold min-w-[12rem] rounded-none hover:border-pub-b-button hover:bg-pub-nav hover:text-white",
+          "border border-pub-grayC bg-white text-[1.188rem] text-pub-nav font-bold min-w-[7.5rem] rounded-none hover:border-pub-b-button hover:bg-pub-nav hover:text-white",
         red: "bg-pub-red border border-pub-redB rounded-none",
       },
       size: {
         xs: "h-7 px-3 text-2xs",
         sm: "h-7 px-3 text-xs",
-        md: "h-[6rem] px-[2rem]",
+        md: "h-[3.75rem] px-5",
         lg: "h-9 px-6 text-sm",
         icon: "h-8 min-w-8 w-fit",
         "icon-sm": "h-6 min-w-6 w-fit",

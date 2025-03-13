@@ -1,7 +1,9 @@
+@import "/src/styles/mixin";
+
 .thumbnail {
   width: 100%;
   flex: 1;
-  gap: 0.625rem;
+  gap: rem(6.25px);
 
   label {
     flex: 1;
@@ -9,7 +11,7 @@
 
     .image {
       width: 100%;
-      min-height: 9rem;
+      min-height: rem(90px);
       display: flex;
       flex: 1;
       align-items: center;

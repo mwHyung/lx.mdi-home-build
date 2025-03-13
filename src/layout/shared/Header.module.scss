@@ -1,6 +1,8 @@
-$header-height: 10rem;
-$header-scroll-height: 8rem;
-$expanded-height: 11.94rem;
+@import "/src/styles/mixin";
+
+$header-height: rem(100px);
+$header-scroll-height: rem(80px);
+$expanded-height: rem(119.4px);
 
 .header {
   position: fixed;
@@ -11,10 +13,7 @@ $expanded-height: 11.94rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  // padding: 0 12rem;
-  // border-bottom: 1px solid #ffffff20;
   // box-shadow: var(--p-pc-shadow);
-  // background-color: antiquewhite;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 100;
 
@@ -25,7 +24,6 @@ $expanded-height: 11.94rem;
 
 .detail {
   height: $header-height;
-  // padding: 0 12rem;
   background: #fff;
   box-shadow: none;
   border-bottom: 1px solid var(--p-grayD);
@@ -33,7 +31,6 @@ $expanded-height: 11.94rem;
 }
 .scrolled {
   height: $header-scroll-height;
-  // padding: 0 4rem;
   background: #fff;
   box-shadow: var(--p-pc-shadow);
   border-bottom: 0;
@@ -42,7 +39,6 @@ $expanded-height: 11.94rem;
 
 .expanded {
   height: $header-height;
-  // padding: 0 4rem;
   background: #fff;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

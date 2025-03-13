@@ -55,7 +55,7 @@ const SearchPage = () => {
       </SearchMain>
 
       <SearchMain tit="MI Brief" hits="325" className="pt-0">
-        <div className="grid grid-cols-3 gap-24">
+        <div className="grid grid-cols-3 gap-[3.75rem]">
           {dummyData.map((item, idx) => (
             <CardContent
               key={idx}
@@ -70,8 +70,8 @@ const SearchPage = () => {
 
       {/* 컨텐츠가 없을 때 */}
       <SearchMain tit="MI Focus" hits="0" className="pt-0">
-        <div className="flex items-center justify-center flex-1 w-full h-80 border-t border-b border-pub-grayD bg-pub-bgA">
-          <p className="text-black text-[2.8rem] font-light tracking-[-0.028rem]">
+        <div className="flex items-center justify-center flex-1 w-full h-[12.5rem] border-t border-b border-pub-grayD bg-pub-bgA">
+          <p className="text-black text-[1.75rem] font-light tracking-[-0.018rem]">
             <strong className="font-bold text-pub-red">정유</strong>로 검색된 컨텐츠가 없습니다.
           </p>
         </div>
@@ -82,7 +82,6 @@ const SearchPage = () => {
           id="search-list-it-table"
           columns={contentsColumns}
           rows={selectedUser}
-          //
           containerClassName="sub_table"
           onRowSelect={handleSelectRow}
           colgroup={["15%", "60%", "10%", "15%"]}

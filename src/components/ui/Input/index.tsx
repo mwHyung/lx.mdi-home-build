@@ -17,13 +17,13 @@ import { Validator } from "@/types/ui";
 import { cn } from "@/utils/styles";
 
 const inputVariants = cva(
-  "flex w-full border border-pub-grayD bg-background ring-offset-background font-medium placeholder:text-[1.8rem] placeholder:text-pub-grayA placeholder:font-normal file:border-0 file:bg-transparent file:text-sm file:font-medium focus-border disabled:cursor-not-allowed disabled:opacity-50 focus:border-pub-red",
+  "flex w-full border border-pub-grayD bg-background ring-offset-background font-medium placeholder:text-[1.25rem] placeholder:text-pub-grayA placeholder:font-normal file:border-0 file:bg-transparent file:text-sm file:font-medium focus-border disabled:cursor-not-allowed disabled:opacity-50 focus:border-pub-red",
   {
     variants: {
       size: {
         sm: "h-8 text-sm px-2 py-1",
         md: "h-9 text-sm px-2 py-1",
-        lg: "text-[1.8rem] px-[2.8rem] py-[1.35rem]",
+        lg: "text-[1.25rem] px-[1.75rem] py-[0.844rem]",
       },
     },
     defaultVariants: {

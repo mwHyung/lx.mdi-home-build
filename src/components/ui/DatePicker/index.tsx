@@ -105,7 +105,7 @@ const DatePicker: FC<Props> = ({
             variant={"selectBox"}
             size={size}
             className={cn(
-              "relative min-w-44 justify-start text-left font-normal hover:bg-transparent hover:text-main-gray border-pub-grayC focus:border-pub-red text-[1.8rem]",
+              "relative min-w-44 justify-start text-left font-normal hover:bg-transparent hover:text-main-gray border-pub-grayC focus:border-pub-red text-[1.25rem]",
               {
                 "border-error focus:border-error": isError,
                 "text-muted-foreground": !selectedDate,
@@ -120,14 +120,14 @@ const DatePicker: FC<Props> = ({
                 showTime ? `${dateFormatPattern} ${timeFormatPattern}` : dateFormatPattern,
               )
             ) : (
-              <span className="text-[1.8rem] text-pub-grayA">{placeholder || "Pick a date"}</span>
+              <span className="text-[1.25rem] text-pub-grayA">{placeholder || "Pick a date"}</span>
             )}
             {/* <CalendarIcon className="shrink-0 mr-2 h-4 w-4" /> */}
             <Image
               src={CalendarImg}
-              width={18}
-              height={18}
-              style={{ width: "1.8rem", height: "1.8rem" }}
+              width={24}
+              height={24}
+              style={{ width: "1.5rem", height: "1.5rem" }}
               alt="calendar icon"
             />
           </Button>
@@ -155,12 +155,12 @@ const DatePicker: FC<Props> = ({
           <>
             <div className="border-l" />
             <div className="flex flex-col h-full justify-between gap-3 p-3">
-              <div className="h-7 text-[1.8rem] flex items-center justify-center gap-8">
+              <div className="h-7 text-[1.25rem] flex items-center justify-center gap-5">
                 <span>{selectedDate?.getHours() ?? 0}시</span>
                 <span>{selectedDate?.getMinutes() ?? 0}분</span>
               </div>
               <TimeSelector
-                className="h-56"
+                className="h-36"
                 time={selectedDate}
                 minuteStep={minuteStep}
                 onTimeSelect={handleTimeSelect}

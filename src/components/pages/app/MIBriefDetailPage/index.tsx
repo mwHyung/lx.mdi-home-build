@@ -57,13 +57,11 @@ const MIBriefDetailPage = () => {
       <div>
         <Image
           src={Image01}
-          width={0}
-          height={0}
-          style={{ width: "99.8rem", height: "59.1rem" }}
+          style={{ width: "62.375rem", height: "36.938rem" }}
           alt="image content"
         />
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-[0.625rem]">
         <h4 className={styles.h4}>CES* 2025에서 소개된 그룹 사업 관련 신기술 동향</h4>
         <p className={styles.ex_s}>
           * Consumer Electronics Show : 미국 소비자기술협회 (CTA)가 주최하는 세계 최대 규모의 소비자
@@ -79,18 +77,16 @@ const MIBriefDetailPage = () => {
         Software Defined Vehicle ) 관련 신기술을 집중적으로 선보였음.
       </p>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-[0.625rem]">
         <p className={styles.text}>
           지능형 운전석 디스플레이에는 Micro LED, 홀로그램, 플레시블(폴더블/롤러블) 등의 기술이 적용
         </p>
-        <ul className="flex gap-16">
+        <ul className="flex gap-10">
           {imageList.map((list, idx) => (
-            <li key={idx} className="flex flex-col gap-4">
+            <li key={idx} className="flex flex-col gap-[0.625rem]">
               <Image
                 src={list.src}
-                width={0}
-                height={0}
-                style={{ width: "47.9rem", height: "29.7rem" }}
+                style={{ width: "29.938rem", height: "18.563rem" }}
                 alt="image detail"
               />
               <p className={styles.ex}>{list.text}</p>
@@ -102,9 +98,7 @@ const MIBriefDetailPage = () => {
       <div>
         <Image
           src={Image05}
-          width={0}
-          height={0}
-          // style={{ width: "99.8rem", height: "55.6rem" }}
+          style={{ width: "62.375rem", height: "34.75rem" }}
           alt="image detail"
         />
       </div>

@@ -34,23 +34,23 @@ const SearchArea = () => {
   }, [setIsScrolled]);
   return (
     <div
-      className="flex flex-col items-center justify-center gap-16 max-w-[1680px] m-[0_auto] pt-64 pb-24"
+      className="flex flex-col items-center justify-center gap-10 max-w-[1680px] m-[0_auto] pt-40 pb-[3.75rem]"
       ref={observerRef}
     >
-      <div className="flex items-center w-[67.4rem]">
-        <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full h-24" />
-        <Button variant="red" className="min-w-48 h-24">
+      <div className="flex items-center w-[42.125rem]">
+        <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full h-[3.75rem]" />
+        <Button variant="red" className="min-w-[7.5rem] h-[3.75rem]">
           <Image
             src={SearchIconS}
             width={17}
             height={17}
-            style={{ width: "1.7rem", height: "1.7rem" }}
+            style={{ width: "1.063rem", height: "1.063rem" }}
             alt="icon search"
           />
         </Button>
       </div>
-      <div className="flex items-center gap-16">
-        <span className="text-pub-gray6 text-[2rem] font-bold">검색 필터</span>
+      <div className="flex items-center gap-10">
+        <span className="text-pub-gray6 text-[1.25rem] font-bold">검색 필터</span>
         <CheckboxGroup
           list={[
             { value: 1, label: "전체" },

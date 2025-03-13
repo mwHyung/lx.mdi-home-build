@@ -17,7 +17,7 @@ const ExternalDataDetailPage = () => {
         }}
       />
 
-      <div className="mt-8">
+      <div className="mt-5">
         <ol className={styles.ordered_list}>
           <li>
             <span>상조서비스업의 부상과 개요</span>

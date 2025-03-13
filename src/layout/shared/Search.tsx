@@ -31,7 +31,7 @@ const Search: FC<Props> = ({ activeMenu, searchOpen, setSearchOpen, isScrolled, 
             src={SearchIconB}
             width={52}
             height={60}
-            style={{ width: "100%", height: "6rem" }}
+            style={{ width: "100%", height: "3.75rem" }}
             alt="search icon"
           />
         ) : (
@@ -42,7 +42,7 @@ const Search: FC<Props> = ({ activeMenu, searchOpen, setSearchOpen, isScrolled, 
             src={SearchIcon}
             width={52}
             height={60}
-            style={{ width: "100%", height: "6rem" }}
+            style={{ width: "100%", height: "3.75rem" }}
             alt="search icon"
           />
         ) : (
@@ -53,7 +53,7 @@ const Search: FC<Props> = ({ activeMenu, searchOpen, setSearchOpen, isScrolled, 
             src={SearchIconOpen}
             width={52}
             height={60}
-            style={{ width: "100%", height: "6rem" }}
+            style={{ width: "100%", height: "3.75rem" }}
             alt="search icon"
           />
         )}
@@ -64,13 +64,13 @@ const Search: FC<Props> = ({ activeMenu, searchOpen, setSearchOpen, isScrolled, 
       >
         <div className={styles.search_area}>
           <div className={styles.input_wrap}>
-            <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full h-24" />
-            <Button variant="red" className="min-w-48 h-24">
+            <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full h-[3.75rem]" />
+            <Button variant="red" className="min-w-[7.5rem] h-[3.75rem]">
               <Image
                 src={SearchIconS}
                 width={17}
                 height={17}
-                style={{ width: "1.7rem", height: "1.7rem" }}
+                style={{ width: "1.063rem", height: "1.063rem" }}
                 alt="icon search"
               />
             </Button>

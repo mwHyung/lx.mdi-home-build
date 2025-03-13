@@ -31,7 +31,7 @@ const Columns = () => {
                 src={IconViewer}
                 width={28}
                 height={28}
-                style={{ width: "2.8rem", height: "2.8rem" }}
+                style={{ width: "1.75rem", height: "1.75rem" }}
                 alt="icon viewer hits"
               />
               <span className="leading-none">{hits}</span>

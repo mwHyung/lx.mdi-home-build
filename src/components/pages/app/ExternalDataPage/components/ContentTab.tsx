@@ -13,12 +13,12 @@ const ContentTab = ({ list }: Props) => {
   };
 
   return (
-    <div className="bg-black bg-opacity-40 backdrop-blur-[2rem]">
-      <ul className="flex items-center px-48 max-w-[1680px] m-[0_auto]">
+    <div className="bg-black bg-opacity-40 backdrop-blur-[1.25rem]">
+      <ul className="flex items-center px-[7.5rem] max-w-[1680px] m-[0_auto]">
         {list.map((item, idx) => (
           <li key={idx} onClick={() => handleClick(idx)}>
             <div
-              className={`text-white text-[2.2rem] font-medium px-[4.3rem] py-[2.35rem] cursor-pointer transition-all hover:bg-pub-red ${active === idx ? "bg-pub-red" : ""}`}
+              className={`text-white text-[1.375rem] font-medium px-[2.688rem] py-[1.469rem] cursor-pointer transition-all hover:bg-pub-red ${active === idx ? "bg-pub-red" : ""}`}
             >
               {item}
             </div>

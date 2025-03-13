@@ -1,3 +1,5 @@
+@import "/src/styles/mixin";
+
 // 메인 페이지 테이블 스타일
 .main_table {
   > div {
@@ -25,13 +27,13 @@
         td {
           display: table-cell;
           width: auto !important;
-          padding: 3rem 2rem;
+          padding: rem(20px);
           border: 0;
 
           > * {
-            font-size: 2rem;
+            font-size: rem(20px);
             font-weight: 300;
-            letter-spacing: -0.028rem;
+            letter-spacing: rem(-0.28px);
           }
         }
 
@@ -61,12 +63,12 @@
         display: table-row;
         th {
           display: table-cell;
-          padding: 3rem 2rem;
+          padding: rem(30px) rem(20px);
           border: 0;
           color: var(--p-gray6);
-          font-size: 2rem;
+          font-size: rem(20px);
           font-weight: 500;
-          letter-spacing: -0.026rem;
+          letter-spacing: rem(-0.26px);
         }
       }
     }
@@ -79,13 +81,13 @@
         td {
           display: table-cell;
           width: auto !important;
-          padding: 3rem 2rem;
+          padding: rem(30px) rem(20px);
           border: 0;
 
           > * {
-            font-size: 2rem;
+            font-size: rem(20px);
             font-weight: 300;
-            letter-spacing: -0.028rem;
+            letter-spacing: rem(-0.28px);
           }
         }
 

@@ -1,5 +1,6 @@
-// $header-height: 9.9rem;
-$dropdown-height: 10rem;
+@import "/src/styles/mixin";
+
+$dropdown-height: rem(100px);
 
 // PC Nav Style
 .nav {
@@ -7,7 +8,7 @@ $dropdown-height: 10rem;
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-right: 13rem;
+  margin-right: rem(130px);
 
   // &.scrolling {
   // }
@@ -19,7 +20,7 @@ $dropdown-height: 10rem;
 .menu {
   display: flex;
   align-items: center;
-  gap: 12rem;
+  gap: rem(120px);
   height: 100%;
   border-bottom: 1px solid transparent;
 
@@ -36,7 +37,7 @@ $dropdown-height: 10rem;
       justify-content: center;
       height: 100%;
       font-weight: 700;
-      font-size: 2.2rem;
+      font-size: rem(22px);
       line-height: normal;
       cursor: pointer;
       transition:
@@ -120,16 +121,16 @@ $dropdown-height: 10rem;
   ul {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: rem(40px);
 
     .submenu_item {
-      padding: 2rem 0 3rem;
+      padding: rem(20px) 0 rem(30px);
       flex-shrink: 0;
 
       .sub_tit {
-        padding: 1rem 0;
+        padding: rem(10px) 0;
         color: var(--p-pc-nav);
-        font-size: 2.2rem;
+        font-size: rem(22px);
         font-weight: 400;
         text-align: center;
         position: relative;
@@ -157,11 +158,11 @@ $dropdown-height: 10rem;
           content: "/";
           margin-top: 2px;
           color: var(--p-grayD);
-          font-size: 2.1rem;
+          font-size: rem(21px);
           font-weight: 300;
           position: absolute;
           top: 50%;
-          right: -2rem;
+          right: rem(-20px);
           transform: translateY(-50%);
           pointer-events: none;
         }

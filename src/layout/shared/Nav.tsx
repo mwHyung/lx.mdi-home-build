@@ -138,6 +138,7 @@ const Nav: FC<Props> = ({
     },
     {
       label: "시장동향",
+      path: "/market-trends",
       submenu: [
         {
           label: "MI Brief",
@@ -145,7 +146,7 @@ const Nav: FC<Props> = ({
         },
         {
           label: "MI Focus",
-          path: "/market-trends",
+          path: "/mi-focus",
         },
         {
           label: "Special Report",
@@ -159,6 +160,7 @@ const Nav: FC<Props> = ({
     },
     {
       label: "외부자료",
+      path: "/external-data",
       submenu: [
         {
           label: "기업 / 연구소",
@@ -172,6 +174,7 @@ const Nav: FC<Props> = ({
     },
     {
       label: "공지사항",
+      path: "/notice",
       submenu: [
         {
           label: "공지사항",
@@ -229,9 +232,7 @@ const Nav: FC<Props> = ({
       </ul>
 
       {/* {dummyData.find(item => item.label === activeMenu)?.submenu.length > 0 && ( */}
-      <div
-        className={`${styles.dropdown_background} ${activeMenu && activeMenu !== "News Feed" ? styles.show : ""}`}
-      ></div>
+      <div className={`${styles.dropdown_background} ${activeMenu ? styles.show : ""}`}></div>
       {/* )} */}
     </nav>
   );

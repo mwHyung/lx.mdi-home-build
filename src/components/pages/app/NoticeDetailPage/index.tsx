@@ -21,7 +21,7 @@ const NoticeDetailPage = () => {
           src={Image06}
           width={0}
           height={0}
-          style={{ width: "99.8rem", height: "59.1rem" }}
+          style={{ width: "62.375rem", height: "36.938rem" }}
           alt="image content"
         />
       </div>

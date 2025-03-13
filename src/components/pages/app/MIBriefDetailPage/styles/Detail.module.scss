@@ -1,27 +1,29 @@
+@import "/src/styles/mixin";
+
 .h4 {
   color: black;
-  font-size: 2.8rem;
+  font-size: rem(28px);
   font-weight: 500;
-  line-height: 3.92rem;
-  letter-spacing: -0.056rem;
+  line-height: rem(39.2px);
+  letter-spacing: rem(-0.56px);
 }
 .ex {
   color: #a72b2a;
-  font-size: 1.8rem;
-  line-height: 2.88rem;
-  letter-spacing: -0.018rem;
+  font-size: rem(18px);
+  line-height: rem(28.8px);
+  letter-spacing: rem(-0.18px);
   white-space: pre-line;
 }
 .ex_s {
   color: #a72b2a;
-  font-size: 1.4rem;
-  line-height: 1.96rem;
-  letter-spacing: -0.014rem;
+  font-size: rem(14px);
+  line-height: rem(19.6px);
+  letter-spacing: rem(-0.14px);
 }
 .text {
   color: black;
-  font-size: 2rem;
+  font-size: rem(20px);
   font-weight: 500;
-  line-height: 3.6rem;
-  letter-spacing: -0.04rem;
+  line-height: rem(36px);
+  letter-spacing: rem(-0.4px);
 }

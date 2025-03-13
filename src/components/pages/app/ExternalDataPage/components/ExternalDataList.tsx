@@ -19,12 +19,12 @@ const ExternalDataList = () => {
   const tabList = ["Market", "IT"];
 
   return (
-    <div className="flex flex-col gap-12">
-      <div className="flex items-center mb-20">
+    <div className="flex flex-col gap-[1.875rem]">
+      <div className="flex items-center mb-[3.125rem]">
         {tabList.map((list, idx) => (
           <button
             key={idx}
-            className={`flex-1 text-[2.2rem] font-medium p-8 ${isActive === idx ? "bg-white border-l border-t border-r border-pub-red font-bold text-pub-red" : "bg-[#f5f5f5] border-b border-b-pub-grayD text-pub-gray9"}`}
+            className={`flex-1 text-[1.375rem] font-medium p-5 leading-normal transition-[background] ${isActive === idx ? "bg-white border-l border-t border-r border-pub-red font-bold text-pub-red" : "bg-[#f5f5f5] border-b border-b-pub-grayD text-pub-gray9"}`}
             onClick={() => setIsActive(idx)}
           >
             {list}
@@ -33,9 +33,11 @@ const ExternalDataList = () => {
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <span className="text-pub-gray9 text-[2.5rem] font-light leading-[-0.025rem]">Total</span>
-          <span className="text-pub-red text-[2.4rem] font-medium leading-[-0.024rem]">3,762</span>
+        <div className="flex items-center gap-[0.625rem]">
+          <span className="text-pub-gray9 text-[1.563rem] font-light leading-[-0.016rem]">
+            Total
+          </span>
+          <span className="text-pub-red text-[1.5rem] font-medium leading-[-0.015rem]">3,762</span>
         </div>
         <SelectBox
           placeholder="최근 발행순"
@@ -46,7 +48,7 @@ const ExternalDataList = () => {
           ]}
           size="2xl"
           width="fit"
-          className="min-w-80 px-8 h-[4.5rem]"
+          className="min-w-[12.5rem] px-5 h-[2.813rem]"
         />
       </div>
 

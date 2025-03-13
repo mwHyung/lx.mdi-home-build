@@ -1,5 +1,7 @@
-$header-height: 10rem;
-$header-scroll-height: 8rem;
+@import "/src/styles/mixin";
+
+$header-height: rem(100px);
+$header-scroll-height: rem(80px);
 
 .search_content {
   width: 100%;
@@ -19,16 +21,16 @@ $header-scroll-height: 8rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: rem(20px);
   }
 
   p {
     color: #888;
-    font-size: 1.8rem;
+    font-size: rem(18px);
   }
 
   &.active {
-    max-height: 22rem;
+    max-height: rem(220px);
   }
 
   &.scrolled {
@@ -38,5 +40,5 @@ $header-scroll-height: 8rem;
 .input_wrap {
   display: flex;
   align-items: center;
-  width: 72.4rem;
+  width: rem(724px);
 }

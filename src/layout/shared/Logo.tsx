@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import LogoIcon from "public/images/LX.MDILOGO.svg";
-import LogoIconHover from "public/images/LX.MDILOGO_hover.svg";
+import LogoIconHover from "public/images/LX.MDiLOGO_hover.svg";
 import { FC } from "react";
 
 interface Props {
@@ -24,7 +24,7 @@ const Logo: FC<Props> = ({ activeMenu, searchOpen, isScrolled, detail }) => {
             height={30}
             alt="logo image"
             priority
-            style={{ width: "100%", height: "3rem" }}
+            style={{ width: "100%", height: "1.875rem" }}
           />
         </Link>
       ) : (
@@ -35,7 +35,7 @@ const Logo: FC<Props> = ({ activeMenu, searchOpen, isScrolled, detail }) => {
             height={30}
             alt="logo image"
             priority
-            style={{ width: "100%", height: "3rem" }}
+            style={{ width: "100%", height: "1.875rem" }}
           />
         </Link>
       )}

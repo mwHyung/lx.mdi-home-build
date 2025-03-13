@@ -1,12 +1,14 @@
+@import "/src/styles/mixin";
+
 .ordered_list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: rem(20px);
   color: black;
-  font-size: 2rem;
+  font-size: rem(20px);
   font-weight: 500;
-  line-height: 3.6rem;
-  letter-spacing: -0.04rem;
+  line-height: rem(36px);
+  letter-spacing: rem(-0.4px);
   list-style: decimal;
   list-style-position: inside;
 }

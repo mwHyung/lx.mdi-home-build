@@ -1,0 +1,23 @@
+// 기본 폰트 크기 (16px = 1rem 기준)
+$base-font-size: 16px;
+
+// px을 rem으로 변환하는 함수 (calc() 없이 처리)
+@function rem($px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+
+// 자동으로 px을 rem으로 변환하는 Mixin
+@mixin rem($property, $values...) {
+  $rem-values: ();
+
+  @each $value in $values {
+    @if type-of($value) == "number" and unit($value) == "px" {
+      $rem-values: append($rem-values, rem($value));
+    } @else {
+      $rem-values: append($rem-values, $value);
+    }
+  }
+
+  #{$property}: $values; // px 값 적용
+  #{$property}: $rem-values; // rem 값 적용
+}
