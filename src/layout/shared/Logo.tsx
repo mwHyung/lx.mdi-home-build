@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import LogoIcon from "public/images/LX.MDILOGO.svg";
-import LogoIconHover from "public/images/LX.MDiLOGO_hover.svg";
+import LogoIconHover from "public/images/LX.MDILOGO_hover.svg";
 import { FC } from "react";
 
 interface Props {

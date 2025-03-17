@@ -17,7 +17,7 @@ const Columns = () => {
         label: "제목",
         dataAlign: "left",
         render: (title: any) => {
-          return <Link href={"/news-feed-detail"}>{title}</Link>;
+          return <Link href={title.link}>{title.name}</Link>;
         },
       },
       {

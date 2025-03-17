@@ -23,15 +23,16 @@
   .date {
     width: 100%;
     padding: rem(30px);
-    padding-bottom: 0;
+    padding-bottom: 1rem;
     position: absolute;
     top: 0;
     right: 0;
+    background: linear-gradient(180deg, rgb(0 0 0 / 60%), transparent);
 
     h4 {
       color: #fff;
       font-size: rem(18px);
-      font-weight: 300;
+      font-weight: 500;
       line-height: 1;
       letter-spacing: rem(-0.18px);
       text-align: right;
@@ -248,7 +249,6 @@
               margin-left: rem(14px);
               padding: 0;
               position: unset;
-
               h4 {
                 color: var(--p-gray9);
                 font-size: rem(18px);
@@ -295,8 +295,9 @@
 
         .date {
           display: block;
-          width: auto;
-          padding: rem(20px) rem(20px) 0 0;
+          width: 100%;
+          padding: rem(20px) rem(20px) rem(10px) 0;
+          background: linear-gradient(180deg, rgb(0 0 0 / 60%), transparent);
         }
       }
 
@@ -358,6 +359,7 @@
               margin-left: rem(14px);
               padding: 0;
               position: unset;
+              background: none;
 
               h4 {
                 color: var(--p-gray9);

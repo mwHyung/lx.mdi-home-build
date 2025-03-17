@@ -6,6 +6,9 @@ import Image from "next/image";
 import Viewer from "public/images/icon_viewers.svg";
 import { useLayoutContext } from "@/layout/MainLayoutProvider";
 
+import IconAIOn from "public/images/icon_AI_on.svg";
+import IconAIOff from "public/images/icon_AI_off.svg";
+
 interface Props {
   list: {
     breadcrumb: string[];
@@ -14,9 +17,10 @@ interface Props {
     date: string;
   };
   emergency?: boolean;
+  ai?: boolean;
 }
 
-const DetailTitle: FC<Props> = ({ list, emergency = false }) => {
+const DetailTitle: FC<Props> = ({ list, emergency = false, ai = false }) => {
   const { setIsDetail, setIsScrolled } = useLayoutContext();
   // 스크롤
   const observerRef = useRef<HTMLDivElement>(null);
@@ -71,6 +75,28 @@ const DetailTitle: FC<Props> = ({ list, emergency = false }) => {
 
           <div className={styles.date}>
             <span>{list.date}</span>
+          </div>
+
+          <div className={styles.ai}>
+            {ai ? (
+              // 음성 AI 버튼 ON
+              <button>
+                <Image
+                  src={IconAIOn}
+                  style={{ width: "4.375rem", height: "4.375rem" }}
+                  alt="icon AI Voice"
+                />
+              </button>
+            ) : (
+              // 음성 AI 버튼 OFF
+              <button>
+                <Image
+                  src={IconAIOff}
+                  style={{ width: "4.375rem", height: "4.375rem" }}
+                  alt="icon AI Voice"
+                />
+              </button>
+            )}
           </div>
         </div>
       </div>

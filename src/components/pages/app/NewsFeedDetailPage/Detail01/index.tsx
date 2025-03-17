@@ -11,11 +11,12 @@ const NewsFeedDetailPage = () => {
     >
       <DetailTitle
         list={{
-          breadcrumb: ["외부자료", "기업/연구소"],
-          group: "KPMG",
-          tit: "무덤에서 요람으로. 대전환을 앞둔 상조서비스업",
+          breadcrumb: ["News Feed"],
+          group: "어보브반도체",
+          tit: "고성능 모터 제어용 MCU, A34M456 출시",
           date: "2025.01.15",
         }}
+        ai={true}
       />
 
       <div className="mt-8">

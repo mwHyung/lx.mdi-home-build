@@ -19,6 +19,7 @@ const noto_sans_kr = Noto_Sans_KR({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: "normal", // normal or italic
   display: "swap",
+  adjustFontFallback: false,
 });
 
 export default function RootLayout({

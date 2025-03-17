@@ -1,0 +1,36 @@
+@import "/src/styles/mixin";
+
+.unordered_list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20px);
+  color: black;
+  font-size: rem(20px);
+  font-weight: 500;
+  line-height: rem(36px);
+  letter-spacing: rem(-0.4px);
+
+  li {
+    padding-left: rem(30px);
+    position: relative;
+
+    &::before {
+      content: "";
+      width: rem(6px);
+      height: rem(6px);
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      top: rem(16px);
+      left: rem(10px);
+    }
+  }
+}
+
+.text {
+  color: black;
+  font-size: rem(16px);
+  font-weight: 400;
+  line-height: rem(25.2px);
+  letter-spacing: rem(-0.28px);
+}

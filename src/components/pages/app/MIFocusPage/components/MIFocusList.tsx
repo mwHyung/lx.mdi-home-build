@@ -25,9 +25,21 @@ import ImageCard09 from "public/images/image_cardCon09.jpg";
 const MIBriefList = () => {
   const updatePageParams = (pageParams: Partial<PageParams>) => {};
 
+  const pdfList = [
+    "24_03.pdf",
+    "24_04.pdf",
+    "24_06.pdf",
+    "24_07.pdf",
+    "24_09.pdf",
+    "24_10.pdf",
+    "24_11.pdf",
+    "24_12.pdf",
+    "25_02.pdf",
+  ];
+
   // 보기 방식
   const [isActive, setIsActive] = useState(true);
-  const [pdfActive, setPdfActive] = useState(false);
+  const [pdfActive, setPdfActive] = useState<number | null>(null);
   const iconList = [
     {
       name: "card",
@@ -108,7 +120,7 @@ const MIBriefList = () => {
                 className="card_type"
                 type="card"
                 pdf={true}
-                onClick={() => setPdfActive(true)}
+                onClick={() => setPdfActive(idx)}
                 // link="market-trends-detail"
               />
             ))}
@@ -122,7 +134,7 @@ const MIBriefList = () => {
                 className="list_type"
                 type="list"
                 pdf={true}
-                onClick={() => setPdfActive(true)}
+                onClick={() => setPdfActive(idx)}
                 // link="market-trends-detail"
               />
             ))}
@@ -136,12 +148,12 @@ const MIBriefList = () => {
 
       {/* <PDFViewer pdfUrl={'url'} usePresigned={false} fileName={'fileName'} onClose={} /> */}
 
-      {pdfActive && (
+      {pdfActive !== null && (
         <PDFViewer
-          pdfUrl={"/pdf/News_Feed_1.pdf"}
+          pdfUrl={`/pdf/Focus/${pdfList[pdfActive]}`}
           usePresigned={false}
           fileName={"fileName"}
-          onClose={() => setPdfActive(false)}
+          onClose={() => setPdfActive(null)}
         />
       )}
     </>
@@ -150,85 +162,85 @@ const MIBriefList = () => {
 
 const dummyData = [
   {
-    src: ImageCard01,
-    date: "24년 8월 2주차",
-    tag: { type: "external", label: "기관/연구소" },
-    tit: "IMF, ‘24년 하반기 세계 경제 전망",
-    hash: ["세계경제", "IMF"],
-    hits: "2,875",
-    dateS: "2024.12.09",
-  },
-  {
-    src: ImageCard02,
-    date: "24년 8월 1주차",
-    tag: { type: "market", label: "MI Brief" },
-    tit: "기획재정부, 시니어 레지던스 활성화 방안 발표 ( 24.7.23 )",
-    hash: ["시니어", "레지던스"],
-    hits: "547",
-    dateS: "2024.12.09",
-  },
-  {
-    src: ImageCard03,
-    date: "24년 7월 4주차",
-    tag: { type: "market", label: "Special Report" },
-    tit: "국내 부동산 시장 동향 ( 주택 매매 거래량은 증가, 공급물량은 아직 공급전에 있으므로 추후 시장상황을 확인해보아야 함)",
-    hash: ["주택매매", "부동산시장"],
-    hits: "32",
-    dateS: "2024.12.09",
-  },
-  {
-    src: ImageCard04,
-    date: "24년 8월 1주차",
-    tag: { type: "market", label: "IT Trend" },
-    tit: "미국 보안업체 크라우드 스트라이크 IT 대란 요약",
-    hash: ["클라우드", "IBM"],
-    hits: "10,857",
-    dateS: "2024.12.09",
-  },
-  {
-    src: ImageCard05,
-    date: "24년 8월 2주차",
-    tag: { type: "external", label: "기관/연구소" },
-    tit: "IMF, ‘24년 하반기 세계 경제 전망",
-    hash: ["세계경제", "IMF"],
-    hits: "2,875",
-    dateS: "2024.12.09",
-  },
-  {
-    src: ImageCard06,
-    date: "24년 8월 1주차",
-    tag: { type: "market", label: "MI Brief" },
-    tit: "기획재정부, 시니어 레지던스 활성화 방안 발표 ( 24.7.23 )",
-    hash: ["시니어", "레지던스"],
-    hits: "547",
-    dateS: "2024.12.09",
-  },
-  {
-    src: ImageCard07,
-    date: "24년 7월 4주차",
-    tag: { type: "market", label: "Special Report" },
-    tit: "국내 부동산 시장 동향 ( 주택 매매 거래량은 증가, 공급물량은 아직 공급전에 있으므로 추후 시장상황을 확인해보아야 함)",
-    hash: ["주택매매", "부동산시장"],
-    hits: "32",
-    dateS: "2024.12.09",
-  },
-  {
     src: ImageCard08,
-    date: "24년 8월 1주차",
-    tag: { type: "market", label: "IT Trend" },
-    tit: "미국 보안업체 크라우드 스트라이크 IT 대란 요약",
+    date: "24년 3월",
+    tag: { type: "market", label: "MI Focus" },
+    tit: "가뭄에 시달리는 파나마 운하",
     hash: ["클라우드", "IBM"],
     hits: "10,857",
-    dateS: "2024.12.09",
+    dateS: "2024.03.26",
   },
   {
     src: ImageCard09,
-    date: "24년 8월 1주차",
-    tag: { type: "market", label: "IT Trend" },
-    tit: "미국 보안업체 크라우드 스트라이크 IT 대란 요약",
+    date: "24년 4월",
+    tag: { type: "market", label: "MI Focus" },
+    tit: "구리의 특성 및 중장기 수급전망",
     hash: ["클라우드", "IBM"],
     hits: "10,857",
-    dateS: "2024.12.09",
+    dateS: "2024.04.15",
+  },
+  {
+    src: ImageCard01,
+    date: "24년 6월",
+    tag: { type: "market", label: "MI Focus" },
+    tit: "SMR 산업동향",
+    hash: ["청정에너지", "원자력", "SMR"],
+    hits: "2,875",
+    dateS: "2024.06.04",
+  },
+  {
+    src: ImageCard02,
+    date: "24년 7월",
+    tag: { type: "market", label: "MI Focus" },
+    tit: "우라늄 공급망 동향",
+    hash: ["시니어", "레지던스"],
+    hits: "547",
+    dateS: "2024.07.22",
+  },
+  {
+    src: ImageCard03,
+    date: "24년 9월",
+    tag: { type: "market", label: "MI Focus" },
+    tit: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 1)",
+    hash: ["주택매매", "부동산시장"],
+    hits: "32",
+    dateS: "2024.09.09",
+  },
+  {
+    src: ImageCard04,
+    date: "24년 10월",
+    tag: { type: "market", label: "MI Focus" },
+    tit: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 2)",
+    hash: ["클라우드", "IBM"],
+    hits: "10,857",
+    dateS: "2024.10.07",
+  },
+  {
+    src: ImageCard05,
+    date: "24년 11월",
+    tag: { type: "market", label: "MI Focus" },
+    tit: "국내 데이터센터 산업 및 내·외장재 소개",
+    hash: ["세계경제", "IMF"],
+    hits: "2,875",
+    dateS: "2024.11.25",
+  },
+  {
+    src: ImageCard06,
+    date: "24년 12월",
+    tag: { type: "market", label: "MI Focus" },
+    tit: "미래 에너지 자원의 게임체인저로 주목받는 천연수소",
+    hash: ["시니어", "레지던스"],
+    hits: "547",
+    dateS: "2024.12.16",
+  },
+  {
+    src: ImageCard07,
+    date: "25년 2월",
+    tag: { type: "market", label: "MI Focus" },
+    tit: "자원의 보고(寶庫) 달",
+    hash: ["주택매매", "부동산시장"],
+    hits: "32",
+    dateS: "2025.02.04",
   },
 ];
 
