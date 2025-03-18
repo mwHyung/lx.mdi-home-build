@@ -11,7 +11,7 @@ interface Props {
 const SearchMain: FC<Props> = ({ tit, hits, className, children }) => {
   return (
     <div
-      className={`flex flex-col gap-10 px-[7.5rem] py-[6.25rem] max-w-[1680px] w-full m-[0_auto] ${className}`}
+      className={`flex flex-col gap-10 px-[3.75rem] py-[6.25rem] max-w-[105rem] w-full m-[0_auto] ${className}`}
     >
       <div className="flex items-center justify-between">
         <div className="flex gap-[0.938rem]">

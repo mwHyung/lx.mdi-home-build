@@ -57,7 +57,7 @@
       gap: rem(12px);
       max-height: 52%;
       height: 100%;
-      padding: rem(40px);
+      padding: rem(32px);
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -144,13 +144,14 @@
     .hits {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: rem(6px);
       margin-top: rem(6px);
 
       span {
         color: var(--p-gray9);
-        font-size: rem(18px);
-        font-weight: 400;
+        font-size: rem(16px);
+        font-weight: 300;
         line-height: rem(21.6px);
         letter-spacing: rem(-0.18px);
       }
@@ -191,19 +192,30 @@
     clip-path: polygon(10% 0%, 100% 0, 100% 92%, 90% 100%, 0 100%, 0 8%);
 
     a {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
       .image {
         width: 100%;
         height: auto;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
       }
+
+      .date {
+        padding: rem(15px) rem(15px) rem(46px) 0;
+      }
+
       .explain {
+        flex: 1;
         position: unset;
         transform: none;
         width: auto;
         height: auto;
 
         .back {
-          max-height: 47%;
+          justify-content: flex-start;
+          max-height: none;
           background: none;
           transition: none;
 
@@ -226,7 +238,7 @@
           }
 
           .hash {
-            margin-top: rem(16px);
+            margin-top: auto;
             li {
               span {
                 color: var(--p-gray6);
@@ -244,6 +256,19 @@
           }
 
           .hits {
+            justify-content: flex-end;
+            span {
+              font-size: rem(16px);
+              font-weight: 300;
+              line-height: 1;
+            }
+
+            .hits_card {
+              display: flex;
+              align-items: center;
+              gap: rem(8px);
+            }
+
             .date {
               width: auto;
               margin-left: rem(14px);
@@ -268,7 +293,7 @@
 
         .explain {
           .back {
-            max-height: 47%;
+            max-height: none;
             opacity: 1;
           }
         }
@@ -296,7 +321,7 @@
         .date {
           display: block;
           width: 100%;
-          padding: rem(20px) rem(20px) rem(10px) 0;
+          padding: rem(12px) rem(12px) rem(16px) 0;
           background: linear-gradient(180deg, rgb(0 0 0 / 60%), transparent);
         }
       }
@@ -311,7 +336,7 @@
 
         .back {
           display: inline-grid;
-          grid-template-columns: fit-content(85%) fit-content(rem(160px));
+          grid-template-columns: fit-content(70%) fit-content(30%);
           grid-template-rows: repeat(3, auto);
           grid-auto-flow: column;
           justify-content: space-between;
@@ -354,9 +379,31 @@
 
           .hits {
             margin-top: 0;
+            gap: rem(15px);
+
+            span {
+              font-size: rem(18px);
+              font-weight: 300;
+              line-height: 1;
+            }
+
+            .hits_list {
+              display: flex;
+              align-items: center;
+              gap: rem(8px);
+
+              &::after {
+                content: "";
+                width: 1px;
+                height: rem(18px);
+                background: var(--p-grayD);
+                margin-top: 1px;
+                margin-left: rem(7px);
+              }
+            }
+
             .date {
               width: auto;
-              margin-left: rem(14px);
               padding: 0;
               position: unset;
               background: none;

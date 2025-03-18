@@ -88,8 +88,8 @@ const CardContent: FC<Props> = ({
                   </ul>
 
                   <div className={styles.hits}>
-                    <Image src={Viewer} width={20} height={20} alt="icon viewer" />
-                    <span>{list.hits}</span>
+                    {/* <Image src={Viewer} width={20} height={20} alt="icon viewer" /> */}
+                    <span>조회수 {list.hits}</span>
                   </div>
                 </div>
               </>
@@ -121,8 +121,12 @@ const CardContent: FC<Props> = ({
                 </ul>
 
                 <div className={styles.hits}>
-                  <Image src={Viewer} width={20} height={20} alt="icon viewer" />
-                  <span>{list.hits}</span>
+                  {/* <Image src={Viewer} width={20} height={20} alt="icon viewer" /> */}
+                  <span
+                    className={`${type === "card" ? styles.hits_card : ""} ${type === "list" ? styles.hits_list : ""}`}
+                  >
+                    조회수 <span>{list.hits}</span>
+                  </span>
 
                   {type === "card" ||
                     (type === "list" && (

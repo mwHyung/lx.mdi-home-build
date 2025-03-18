@@ -18,11 +18,9 @@ const NewsFeedList = () => {
   return (
     <div className="flex flex-col gap-[1.875rem]">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-[0.625rem]">
-          <span className="text-pub-gray9 text-[1.563rem] font-light leading-[-0.016rem]">
-            Total
-          </span>
-          <span className="text-pub-red text-[1.5rem] font-medium leading-[-0.015rem]">3,762</span>
+        <div className="flex items-center gap-[0.625rem] text-[1.125rem]">
+          <span className="text-pub-gray9 font-light tracking-[-0.016rem]">Total</span>
+          <span className="text-pub-gray9 font-medium tracking-[-0.016rem]">3,762</span>
         </div>
         <SelectBox
           placeholder="최근 발행순"

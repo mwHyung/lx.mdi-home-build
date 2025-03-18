@@ -34,7 +34,7 @@ const SearchArea = () => {
   }, [setIsScrolled]);
   return (
     <div
-      className="flex flex-col items-center justify-center gap-10 max-w-[1680px] m-[0_auto] pt-40 pb-[3.75rem]"
+      className="flex flex-col items-center justify-center gap-10 max-w-[105rem] m-[0_auto] pt-40 pb-[3.75rem]"
       ref={observerRef}
     >
       <div className="flex items-center w-[42.125rem]">

@@ -33,10 +33,14 @@ import IconPlus from "public/images/icon_plus.svg";
 import IconPlusSm from "public/images/icon_plus_sm.svg";
 import SearchIcon from "public/images/icon_search.svg";
 
-import ImageCard01 from "public/images/image_card01.png";
-import ImageCard02 from "public/images/image_card02.png";
-import ImageCard03 from "public/images/image_card03.png";
-import ImageCard04 from "public/images/image_card04.png";
+import ImageCard01 from "public/images/image_mainCon01.jpg";
+import ImageCard02 from "public/images/image_mainCon02.jpg";
+import ImageCard03 from "public/images/image_mainCon03.jpg";
+import ImageCard04 from "public/images/image_mainCon04.jpg";
+import ImageCard05 from "public/images/image_mainCon05.jpg";
+import ImageCard06 from "public/images/image_mainCon06.jpg";
+import ImageCard07 from "public/images/image_mainCon07.jpg";
+import ImageCard08 from "public/images/image_mainCon08.jpg";
 
 // import CardContent from "./components/CardContent";
 import ContentTitle from "./components/ContentTitle";
@@ -525,13 +529,13 @@ const dummyData = [
   {
     src: ImageCard04,
     date: "24년 8월 1주차",
-    tag: { type: "market", label: "IT Trend" },
+    tag: { type: "market", label: "MI Focus_Benchmarking" },
     tit: "미국 보안업체 크라우드 스트라이크 IT 대란 요약",
     hash: ["클라우드", "IBM"],
     hits: "10,857",
   },
   {
-    src: ImageCard01,
+    src: ImageCard05,
     date: "24년 8월 2주차",
     tag: { type: "external", label: "기관/연구소" },
     tit: "IMF, ‘24년 하반기 세계 경제 전망",
@@ -539,7 +543,7 @@ const dummyData = [
     hits: "2,875",
   },
   {
-    src: ImageCard02,
+    src: ImageCard06,
     date: "24년 8월 1주차",
     tag: { type: "market", label: "MI Brief" },
     tit: "기획재정부, 시니어 레지던스 활성화 방안 발표 ( 24.7.23 )",
@@ -547,7 +551,7 @@ const dummyData = [
     hits: "547",
   },
   {
-    src: ImageCard03,
+    src: ImageCard07,
     date: "24년 7월 4주차",
     tag: { type: "market", label: "Special Report" },
     tit: "국내 부동산 시장 동향 ( 주택 매매 거래량은 증가, 공급물량은 아직 공급전에 있으므로 추후 시장상황을 확인해보아야 함)",
@@ -555,7 +559,7 @@ const dummyData = [
     hits: "32",
   },
   {
-    src: ImageCard04,
+    src: ImageCard08,
     date: "24년 8월 1주차",
     tag: { type: "market", label: "IT Trend" },
     tit: "미국 보안업체 크라우드 스트라이크 IT 대란 요약",

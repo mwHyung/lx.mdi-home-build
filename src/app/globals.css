@@ -187,12 +187,22 @@
 
 /* rem 기본 폰트 사이즈 초기화 */
 
-@media (max-width: 1536px) {
+@media (min-width: 1921px) {
+  html {
+    font-size: unset;
+  }
+}
+@media (max-width: 1920px) {
+  html {
+    font-size: 0.8333vw;
+  }
+}
+/* @media (max-width: 1536px) {
   html {
     font-size: 14px;
   }
-}
-@media (max-width: 1280px) {
+} */
+/* @media (max-width: 1280px) {
   html {
     font-size: 12px;
   }
@@ -201,4 +211,4 @@
   html {
     font-size: 10px;
   }
-}
+} */

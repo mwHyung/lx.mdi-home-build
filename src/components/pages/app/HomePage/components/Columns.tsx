@@ -27,14 +27,14 @@ const Columns = () => {
         render: (hits: any) => {
           return (
             <div className="flex items-center gap-4">
-              <Image
+              {/* <Image
                 src={IconViewer}
                 width={28}
                 height={28}
                 style={{ width: "1.75rem", height: "1.75rem" }}
                 alt="icon viewer hits"
-              />
-              <span className="leading-none">{hits}</span>
+              /> */}
+              {/* <span className="leading-none text-pub-gray9 text-xs">조회수 {hits}</span> */}
             </div>
           );
         },

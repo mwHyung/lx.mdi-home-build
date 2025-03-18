@@ -31,7 +31,9 @@ const MenuIcon = () => {
 
       {/* Side Nav */}
       <Sheet title={<Logo />} open={open} side="left" className="px-2 py-4" onClose={handleClose}>
-        <div className="flex-1">{/* <Nav onClick={handleClose} /> */}</div>
+        <div className="flex-1">
+          <Nav onClick={handleClose} />
+        </div>
       </Sheet>
     </>
   );

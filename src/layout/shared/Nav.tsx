@@ -175,12 +175,7 @@ const Nav: FC<Props> = ({
     {
       label: "공지사항",
       path: "/notice",
-      submenu: [
-        {
-          label: "공지사항",
-          path: "/notice",
-        },
-      ],
+      submenu: [],
     },
   ];
 

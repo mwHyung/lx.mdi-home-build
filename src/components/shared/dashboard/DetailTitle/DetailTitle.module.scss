@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: rem(10px);
-  padding-bottom: rem(40px);
+  padding-bottom: rem(30px);
   border-bottom: 2px solid #000;
 
   .breadcrumb {
@@ -18,7 +18,7 @@
         align-items: center;
         gap: rem(20px);
         color: #444;
-        font-size: rem(14px);
+        font-size: rem(20px);
         line-height: rem(19.6px);
         letter-spacing: rem(-0.14px);
       }
@@ -27,8 +27,8 @@
         span {
           &::before {
             content: "";
-            width: rem(6px);
-            height: rem(6px);
+            width: rem(8px);
+            height: rem(8px);
             border-top: 1px solid var(--p-grayB);
             border-right: 1px solid var(--p-grayB);
             transform: rotate(45deg);
@@ -51,6 +51,10 @@
       letter-spacing: rem(-0.32px);
     }
 
+    .group {
+      white-space: nowrap;
+    }
+
     .line {
       display: inline-block;
       width: rem(1px);
@@ -66,13 +70,24 @@
   .hits {
     display: flex;
     align-items: center;
+    width: 100%;
     gap: rem(6px);
 
-    span {
+    > span {
+      display: flex;
+      align-items: center;
       color: #444;
       font-size: rem(20px);
       line-height: rem(28px);
       letter-spacing: rem(-0.2px);
+
+      &::before {
+        content: "";
+        width: 1px;
+        height: rem(20px);
+        background: var(--p-grayD);
+        margin: 1px rem(20px) 0 rem(16px);
+      }
     }
 
     .date {
@@ -93,15 +108,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: rem(14px);
-
-      &::before {
-        content: "";
-        width: 1px;
-        height: rem(20px);
-        margin-right: rem(15px);
-        background: var(--p-grayD);
-      }
+      margin-left: auto;
     }
   }
 }

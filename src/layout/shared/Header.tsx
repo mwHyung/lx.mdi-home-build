@@ -16,7 +16,7 @@ const Header = () => {
     <header
       className={`${styles.header} ${activeMenu || searchOpen ? styles.expanded : ""} ${isScrolled ? styles.scrolled : ""} ${isDetail ? styles.detail : ""}`}
     >
-      <div className="max-w-[1680px] flex items-start justify-between w-full h-full m-[0_auto] px-[7.5rem]">
+      <div className="max-w-[105rem] flex items-start justify-between w-full h-full m-[0_auto] px-[3.75rem]">
         <Logo
           activeMenu={activeMenu}
           searchOpen={searchOpen}

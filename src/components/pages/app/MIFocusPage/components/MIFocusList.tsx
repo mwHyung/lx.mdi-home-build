@@ -164,7 +164,7 @@ const dummyData = [
   {
     src: ImageCard08,
     date: "24년 3월",
-    tag: { type: "market", label: "MI Focus" },
+    tag: { type: "market", label: "MI Focus_Industry" },
     tit: "가뭄에 시달리는 파나마 운하",
     hash: ["클라우드", "IBM"],
     hits: "10,857",
@@ -173,7 +173,7 @@ const dummyData = [
   {
     src: ImageCard09,
     date: "24년 4월",
-    tag: { type: "market", label: "MI Focus" },
+    tag: { type: "market", label: "MI Focus_Benchmarking" },
     tit: "구리의 특성 및 중장기 수급전망",
     hash: ["클라우드", "IBM"],
     hits: "10,857",

@@ -56,26 +56,26 @@ const DetailTitle: FC<Props> = ({ list, emergency = false, ai = false }) => {
           </li>
         ))}
       </ul>
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-start justify-between gap-7">
         <div className={styles.tit}>
-          <p className={emergency ? styles.emergency : ""}>{list.group}</p>
+          <p className={`${styles.group} ${emergency ? styles.emergency : ""}`}>{list.group}</p>
           <span className={styles.line}></span>
           <p>{list.tit}</p>
         </div>
 
         <div className={styles.hits}>
-          <Image
+          {/* <Image
             src={Viewer}
             width={20}
             height={20}
             style={{ width: "1.25rem", height: "1.25rem" }}
             alt="icon viewer"
-          />
-          <span>547</span>
-
+          /> */}
           <div className={styles.date}>
             <span>{list.date}</span>
           </div>
+
+          <span>조회수 547</span>
 
           <div className={styles.ai}>
             {ai ? (

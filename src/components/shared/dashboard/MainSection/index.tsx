@@ -5,7 +5,7 @@ interface Props {
 }
 
 const MainSection = ({ children }: Props) => {
-  return <div className="px-[7.5rem] pb-40 max-w-[1680px] m-[0_auto]">{children}</div>;
+  return <div className="px-[3.75rem] pb-40 max-w-[105rem] m-[0_auto]">{children}</div>;
 };
 
 export default MainSection;
