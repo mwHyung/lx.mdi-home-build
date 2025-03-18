@@ -1,6 +1,6 @@
 import { MenuTree } from "@/types/model-extension";
 import createCombinedStore from "../createStore";
-import { Role, System, Code } from "@/types/model";
+import { Role, System, Code } from "@/types/admin";
 
 interface Props {
   roles: Role[];

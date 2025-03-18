@@ -86,8 +86,8 @@ const usePublic = () => {
 
   useEffect(() => {
     const systemItems = systems.map(system => ({
-      label: system.systemName,
-      value: system.systemId,
+      label: system.programName,
+      value: system.id,
     }));
     setSystemItems(systemItems);
   }, [systems.length]);

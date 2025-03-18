@@ -35,8 +35,8 @@ export const FilesService = {
       baseUrl: targetPath,
       method: "POST",
       body: formData,
-      useAuth: false,
-      useBaseHeader: false,
+      // useAuth: false,
+      // useBaseHeader: false,
     });
   },
   /**
@@ -68,7 +68,7 @@ export const FilesService = {
   },
   getFileFromS3: async (filepath: string) => {
     const baseUrl = process.env.NEXT_PUBLIC_S3_BUCKET_URL ?? "";
-    
+
     return await fetcher({
       baseUrl,
       url: filepath,
