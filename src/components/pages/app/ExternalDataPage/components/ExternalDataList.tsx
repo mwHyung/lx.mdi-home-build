@@ -154,7 +154,7 @@ const dummyData = [
   {
     src: ImageCard01,
     date: "24년 3월",
-    tag: { type: "external", label: "기업 / 연구소" },
+    tag: { type: "external", label: "기관 ·  연구소" },
     tit: "가뭄에 시달리는 파나마 운하",
     category: "Market",
     hash: ["클라우드", "IBM"],
@@ -164,7 +164,7 @@ const dummyData = [
   {
     src: ImageCard02,
     date: "24년 4월",
-    tag: { type: "external", label: "기업 / 연구소" },
+    tag: { type: "external", label: "기관 ·  연구소" },
     tit: "구리의 특성 및 중장기 수급전망",
     category: "IT",
     hash: ["클라우드", "IBM"],
@@ -174,7 +174,7 @@ const dummyData = [
   {
     src: ImageCard03,
     date: "24년 6월",
-    tag: { type: "external", label: "기업 / 연구소" },
+    tag: { type: "external", label: "기관 ·  연구소" },
     tit: "SMR 산업동향",
     category: "Market",
     hash: ["청정에너지", "원자력", "SMR"],
@@ -184,7 +184,7 @@ const dummyData = [
   {
     src: ImageCard01,
     date: "24년 7월",
-    tag: { type: "external", label: "기업 / 연구소" },
+    tag: { type: "external", label: "기관 ·  연구소" },
     tit: "우라늄 공급망 동향",
     category: "Market",
     hash: ["시니어", "레지던스"],
@@ -194,7 +194,7 @@ const dummyData = [
   {
     src: ImageCard02,
     date: "24년 9월",
-    tag: { type: "external", label: "기업 / 연구소" },
+    tag: { type: "external", label: "기관 ·  연구소" },
     tit: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 1)",
     category: "IT",
     hash: ["주택매매", "부동산시장"],
@@ -204,7 +204,7 @@ const dummyData = [
   {
     src: ImageCard03,
     date: "24년 10월",
-    tag: { type: "external", label: "기업 / 연구소" },
+    tag: { type: "external", label: "기관 ·  연구소" },
     tit: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 2)",
     category: "IT",
     hash: ["클라우드", "IBM"],
@@ -214,7 +214,7 @@ const dummyData = [
   {
     src: ImageCard02,
     date: "24년 11월",
-    tag: { type: "external", label: "기업 / 연구소" },
+    tag: { type: "external", label: "기관 ·  연구소" },
     tit: "국내 데이터센터 산업 및 내·외장재 소개",
     category: "Market",
     hash: ["세계경제", "IMF"],
@@ -224,7 +224,7 @@ const dummyData = [
   {
     src: ImageCard03,
     date: "24년 12월",
-    tag: { type: "external", label: "기업 / 연구소" },
+    tag: { type: "external", label: "기관 ·  연구소" },
     tit: "미래 에너지 자원의 게임체인저로 주목받는 천연수소",
     category: "IT",
     hash: ["시니어", "레지던스"],
@@ -234,7 +234,7 @@ const dummyData = [
   {
     src: ImageCard01,
     date: "25년 2월",
-    tag: { type: "external", label: "기업 / 연구소" },
+    tag: { type: "external", label: "기관 ·  연구소" },
     tit: "자원의 보고(寶庫) 달",
     category: "Market",
     hash: ["주택매매", "부동산시장"],

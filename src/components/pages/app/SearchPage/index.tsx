@@ -49,10 +49,10 @@ const SearchPage = () => {
             { name: "MI Focus", hits: "0" },
             { name: "Special Report", hits: "64" },
             { name: "IT Trend", hits: "1,758" },
-            { name: "기관/연구소 (Market)", hits: "2,875" },
-            { name: "기관/연구소 (IT)", hits: "30" },
-            { name: "강연/세미나 (Market)", hits: "7" },
-            { name: "강연/세미나 (IT)", hits: "2" },
+            { name: "기관 · 연구소 (Market)", hits: "2,875" },
+            { name: "기관 · 연구소 (IT)", hits: "30" },
+            { name: "강연 · 세미나 (Market)", hits: "7" },
+            { name: "강연 · 세미나 (IT)", hits: "2" },
           ]}
         />
 
@@ -92,7 +92,7 @@ const SearchPage = () => {
           </div>
         </SearchMain>
 
-        <SearchMain tit="강연/세미나 (IT)" hits="2" className="pt-0">
+        <SearchMain tit="강연 · 세미나 (IT)" hits="2" className="pt-0">
           <Table
             id="search-list-it-table"
             columns={contentsColumns}

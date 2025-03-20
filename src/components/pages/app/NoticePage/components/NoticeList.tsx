@@ -17,23 +17,6 @@ const NoticeList = () => {
 
   return (
     <div className="flex flex-col gap-[1.875rem]">
-      {/* <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <span className="text-pub-gray9 text-[2.5rem] font-light leading-[-0.025rem]">Total</span>
-          <span className="text-pub-red text-[2.4rem] font-medium leading-[-0.024rem]">3,762</span>
-        </div>
-        <SelectBox
-          placeholder="최근 발행순"
-          list={[
-            { value: 1, label: "최근 발행순" },
-            { value: 2, label: "최근 발행순" },
-            { value: 3, label: "최근 발행순" },
-          ]}
-          size="2xl"
-          width="fit"
-          className="min-w-80 px-8 h-[4.5rem]"
-        />
-      </div> */}
       <Table
         id="user-list-table"
         columns={contentsColumns}
@@ -57,7 +40,7 @@ const data = [
     date: "2024.12.28",
   },
   {
-    title: "LX홀딩스, 두 번째 그룹 통합 ‘ESG 보고서’ 펴내",
+    title: "신규 LX Intelligence 포탈 개설",
     hits: "57",
     date: "2024.12.28",
   },

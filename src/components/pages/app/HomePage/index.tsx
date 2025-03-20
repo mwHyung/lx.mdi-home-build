@@ -531,7 +531,7 @@ const dummyData = [
   {
     src: ImageText01,
     date: "24년 8월 2주차",
-    tag: { type: "external", label: "기관/연구소" },
+    tag: { type: "external", label: "기관 · 연구소" },
     tit: "IMF, ‘24년 하반기 세계 경제 전망",
     category: "Market",
     hash: ["미준 금리인하 결정", "한국은행", "세계경제", "IMF"],
@@ -540,7 +540,7 @@ const dummyData = [
   {
     src: ImageCard05,
     date: "24년 8월 2주차",
-    tag: { type: "external", label: "기관/연구소" },
+    tag: { type: "external", label: "기관 · 연구소" },
     tit: "IMF, ‘24년 하반기 세계 경제 전망",
     category: "Market",
     hash: ["세계경제", "IMF"],

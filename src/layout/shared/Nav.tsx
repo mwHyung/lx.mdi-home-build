@@ -163,11 +163,11 @@ const Nav: FC<Props> = ({
       path: "/external-data",
       submenu: [
         {
-          label: "기업 / 연구소",
+          label: "기관 · 연구소",
           path: "/external-data",
         },
         {
-          label: "강연 / 세미나",
+          label: "강연 · 세미나",
           path: "/external-data",
         },
       ],

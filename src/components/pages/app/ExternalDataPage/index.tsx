@@ -11,7 +11,7 @@ const ExternalDataPage = () => {
   return (
     <PageContainer>
       <TopBar src={Banner.src} title="외부자료">
-        <ContentTab list={["기업 / 연구소", "강연 / 세미나"]} />
+        <ContentTab list={["기관 · 연구소", "강연 · 세미나"]} />
       </TopBar>
       <MainSection>
         <SearchList />
