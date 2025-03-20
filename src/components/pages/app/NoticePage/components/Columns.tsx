@@ -10,7 +10,7 @@ const Columns = () => {
       {
         id: "date",
         label: "발행일",
-        dataAlign: "left",
+        dataAlign: "center",
       },
       {
         id: "emergency",

@@ -12,13 +12,15 @@ interface Props {
       type: string;
       label: string;
     };
+    category?: string;
     tit?: string;
     hash?: string[];
     hits?: string;
     dateS?: string;
   };
   className: string;
-  type?: "default" | "card" | "list";
+  type?: "default" | "card" | "list" | "external";
+  main?: boolean;
   link?: string;
   pdf?: boolean;
   onClick?: () => void;
@@ -28,6 +30,7 @@ const CardContent: FC<Props> = ({
   list,
   className,
   type = "default",
+  main,
   link = "/",
   pdf = false,
   onClick,
@@ -42,16 +45,18 @@ const CardContent: FC<Props> = ({
     <div className={`${styles.card} ${styles[className]}`} onClick={onClick}>
       <Link href={`${link}`} onClick={handleClick}>
         <div className={styles.image}>
-          <Image
-            src={list.src}
-            style={{ width: "100%", height: "100%" }}
-            alt="card background image"
-          />
-          {type === "list" && (
+          <div className={styles.box}>
+            <Image
+              src={list.src}
+              style={{ width: "100%", height: "100%" }}
+              alt="card background image"
+            />
+          </div>
+          {/* {type === "list" && (
             <div className={styles.date}>
               <h4>{list.date}</h4>
             </div>
-          )}
+          )} */}
         </div>
         <div className={styles.date}>
           <h4>{list.date}</h4>
@@ -76,7 +81,10 @@ const CardContent: FC<Props> = ({
                     )}
                   </div>
 
-                  <p className={styles.tit}>{list.tit}</p>
+                  <div className={styles.tit_wrap}>
+                    <strong className="block text-[1.125rem] leading-none mb-2">{`${list.category ? list.category + " | " : ""}`}</strong>
+                    <p className={styles.tit}>{list.tit}</p>
+                  </div>
                 </div>
                 <div className={styles.bottom}>
                   <ul className={styles.hash}>
@@ -95,7 +103,7 @@ const CardContent: FC<Props> = ({
               </>
             ) : (
               <>
-                <div className={styles.tag}>
+                {/* <div className={styles.tag}>
                   {list.tag?.type === "market" && (
                     <>
                       <span className={styles.market}>시장동향</span>
@@ -108,9 +116,20 @@ const CardContent: FC<Props> = ({
                       <span>{list.tag?.label}</span>
                     </>
                   )}
+                </div> */}
+
+                <div className={styles.date}>
+                  <h4>{list.date}</h4>
                 </div>
 
-                <p className={styles.tit}>{list.tit}</p>
+                <div className={styles.tit_wrap}>
+                  {type === "list" ? (
+                    list.category && <strong>{`${list.category ? list.category : ""}`}</strong>
+                  ) : (
+                    <strong className="block text-[1.375rem] leading-none mb-2">{`${list.category ? list.category : ""}`}</strong>
+                  )}
+                  <p className={styles.tit}>{list.tit}</p>
+                </div>
 
                 <ul className={styles.hash}>
                   {list.hash?.map((item, idx) => (

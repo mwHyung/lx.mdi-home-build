@@ -61,13 +61,9 @@ const MIBriefList = () => {
     <>
       <div className="flex flex-col gap-[1.875rem]">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-[0.625rem]">
-            <span className="text-pub-gray9 text-[1.563rem] font-light leading-[-0.016rem]">
-              Total
-            </span>
-            <span className="text-pub-red text-[1.5rem] font-medium leading-[-0.015rem]">
-              3,762
-            </span>
+          <div className="flex items-center gap-[0.625rem] text-[1.125rem]">
+            <span className="text-pub-gray9 font-light tracking-[-0.016rem]">Total</span>
+            <span className="text-pub-gray9 font-medium tracking-[-0.016rem]">3,762</span>
           </div>
           <div className="flex items-center gap-5">
             <SelectBox
@@ -164,8 +160,9 @@ const dummyData = [
   {
     src: ImageCard08,
     date: "24년 3월",
-    tag: { type: "market", label: "MI Focus_Industry" },
+    tag: { type: "market", label: "MI Focus" },
     tit: "가뭄에 시달리는 파나마 운하",
+    category: "Industry",
     hash: ["클라우드", "IBM"],
     hits: "10,857",
     dateS: "2024.03.26",
@@ -173,8 +170,9 @@ const dummyData = [
   {
     src: ImageCard09,
     date: "24년 4월",
-    tag: { type: "market", label: "MI Focus_Benchmarking" },
+    tag: { type: "market", label: "MI Focus" },
     tit: "구리의 특성 및 중장기 수급전망",
+    category: "Benchmarking",
     hash: ["클라우드", "IBM"],
     hits: "10,857",
     dateS: "2024.04.15",
@@ -184,6 +182,7 @@ const dummyData = [
     date: "24년 6월",
     tag: { type: "market", label: "MI Focus" },
     tit: "SMR 산업동향",
+    category: "Industry",
     hash: ["청정에너지", "원자력", "SMR"],
     hits: "2,875",
     dateS: "2024.06.04",
@@ -193,6 +192,7 @@ const dummyData = [
     date: "24년 7월",
     tag: { type: "market", label: "MI Focus" },
     tit: "우라늄 공급망 동향",
+    category: "Benchmarking",
     hash: ["시니어", "레지던스"],
     hits: "547",
     dateS: "2024.07.22",
@@ -201,7 +201,8 @@ const dummyData = [
     src: ImageCard03,
     date: "24년 9월",
     tag: { type: "market", label: "MI Focus" },
-    tit: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 1)",
+    tit: "초고령화 시대의 거주변화 및 관련\n사업 소개 (Part 1)",
+    category: "Industry",
     hash: ["주택매매", "부동산시장"],
     hits: "32",
     dateS: "2024.09.09",
@@ -210,7 +211,8 @@ const dummyData = [
     src: ImageCard04,
     date: "24년 10월",
     tag: { type: "market", label: "MI Focus" },
-    tit: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 2)",
+    tit: "초고령화 시대의 거주변화 및 관련\n사업 소개 (Part 2)",
+    category: "Benchmarking",
     hash: ["클라우드", "IBM"],
     hits: "10,857",
     dateS: "2024.10.07",
@@ -219,7 +221,8 @@ const dummyData = [
     src: ImageCard05,
     date: "24년 11월",
     tag: { type: "market", label: "MI Focus" },
-    tit: "국내 데이터센터 산업 및 내·외장재 소개",
+    tit: "국내 데이터센터 산업 및 내·외장재\n소개",
+    category: "Industry",
     hash: ["세계경제", "IMF"],
     hits: "2,875",
     dateS: "2024.11.25",
@@ -228,7 +231,8 @@ const dummyData = [
     src: ImageCard06,
     date: "24년 12월",
     tag: { type: "market", label: "MI Focus" },
-    tit: "미래 에너지 자원의 게임체인저로 주목받는 천연수소",
+    tit: "미래 에너지 자원의 게임체인저로\n주목받는 천연수소",
+    category: "Benchmarking",
     hash: ["시니어", "레지던스"],
     hits: "547",
     dateS: "2024.12.16",
@@ -238,6 +242,7 @@ const dummyData = [
     date: "25년 2월",
     tag: { type: "market", label: "MI Focus" },
     tit: "자원의 보고(寶庫) 달",
+    category: "Industry",
     hash: ["주택매매", "부동산시장"],
     hits: "32",
     dateS: "2025.02.04",

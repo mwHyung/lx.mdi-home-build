@@ -7,27 +7,39 @@
   flex-direction: column;
   position: relative;
   clip-path: polygon(10% 0%, 100% 0, 100% 92%, 90% 100%, 0 100%, 0 8%);
+  background: var(--p-grayD);
+  width: auto;
+  height: rem(500px);
 
   a {
+    position: absolute;
+    top: rem(1px);
+    left: rem(1px);
+    width: calc(100% - rem(2px));
+    height: calc(100% - rem(2px));
+    clip-path: polygon(10% 0%, 100% 0, 100% 92%, 90% 100%, 0 100%, 0 8%);
+    background: #fff;
+
     .image {
       width: 100%;
       height: 100%;
       overflow: hidden;
-      > img {
-        vertical-align: top;
-        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      .box {
+        > img {
+          vertical-align: top;
+          transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
       }
     }
   }
 
   .date {
     width: 100%;
-    padding: rem(30px);
-    padding-bottom: 1rem;
+    padding: rem(16px) rem(16px) rem(30px) 0;
     position: absolute;
     top: 0;
     right: 0;
-    background: linear-gradient(180deg, rgb(0 0 0 / 60%), transparent);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
 
     h4 {
       color: #fff;
@@ -100,19 +112,27 @@
       }
     }
 
-    .tit {
-      padding: 0 0;
-      margin-top: rem(10px);
-      color: #fff;
-      font-size: rem(20px);
-      font-weight: 500;
-      line-height: rem(30.8px);
-      letter-spacing: rem(-0.22px);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
+    .tit_wrap {
+      strong {
+        min-height: rem(18px);
+        margin-top: rem(12px);
+        color: white;
+      }
+
+      .tit {
+        padding: 0 0;
+        margin-top: rem(10px);
+        color: #fff;
+        font-size: rem(20px);
+        font-weight: 500;
+        line-height: rem(30.8px);
+        letter-spacing: rem(-0.22px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
     }
 
     .hash {
@@ -161,8 +181,10 @@
   &:hover {
     a {
       .image {
-        > img {
-          transform: scale(1.2);
+        .box {
+          > img {
+            transform: scale(1.2);
+          }
         }
       }
 
@@ -176,7 +198,7 @@
             transform: translateY(45%);
 
             .tit {
-              display: inline-block;
+              display: block;
               overflow: visible;
               text-overflow: unset;
             }
@@ -188,22 +210,52 @@
 
   &.card_type {
     overflow: hidden;
-    background: url("../../../../public/images/bg_cardBox.png") no-repeat center / 100% 100%;
+    background: var(--p-grayD);
     clip-path: polygon(10% 0%, 100% 0, 100% 92%, 90% 100%, 0 100%, 0 8%);
+    position: relative;
+    height: rem(683px);
 
     a {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      width: calc(100% - rem(4px));
+      height: calc(100% - rem(4px));
+      position: absolute;
+      top: rem(2px);
+      left: rem(2px);
+      background: #fff;
+      clip-path: polygon(10% 0%, 100% 0, 100% 92%, 90% 100%, 0 100%, 0 8%);
 
       .image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        height: auto;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+        height: rem(362px);
+        border-bottom: rem(2px) solid var(--p-grayD);
+        background: #fff;
+
+        .box {
+          width: 100%;
+          height: 100%;
+          position: relative;
+
+          &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
       }
 
       .date {
-        padding: rem(15px) rem(15px) rem(46px) 0;
+        display: none;
+        // padding: rem(15px) rem(15px) rem(46px) 0;
+        // background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
       }
 
       .explain {
@@ -219,6 +271,20 @@
           background: none;
           transition: none;
 
+          .date {
+            display: block;
+            position: unset;
+            width: auto;
+            background: none;
+            padding: 0;
+
+            h4 {
+              color: #000;
+              font-size: rem(22px);
+              text-align: left;
+            }
+          }
+
           .tag {
             span {
               &:last-child {
@@ -228,13 +294,23 @@
             }
           }
 
-          .tit {
-            color: black;
-            font-size: rem(26px);
-            font-weight: 500;
-            line-height: rem(36.8px);
-            letter-spacing: rem(-0.32px);
-            transition: none;
+          .tit_wrap {
+            strong {
+              min-height: rem(22px);
+              margin-top: 0;
+              color: black;
+            }
+
+            .tit {
+              margin-top: rem(5px);
+              color: black;
+              font-size: rem(26px);
+              font-weight: 500;
+              line-height: rem(36.8px);
+              letter-spacing: rem(-0.32px);
+              transition: none;
+              white-space: pre-line;
+            }
           }
 
           .hash {
@@ -256,7 +332,9 @@
           }
 
           .hits {
+            padding-right: rem(10px);
             justify-content: flex-end;
+
             span {
               font-size: rem(16px);
               font-weight: 300;
@@ -302,27 +380,51 @@
   }
 
   &.list_type {
+    height: auto;
     padding: rem(40px) rem(50px) rem(40px) rem(30px);
     border-top: 1px solid var(--p-grayD);
     clip-path: none;
+    background: none;
 
     a {
       display: flex;
       align-items: center;
       gap: rem(50px);
+      position: unset;
+      width: auto;
+      height: auto;
+      clip-path: none;
 
       .image {
         width: rem(290px);
         height: rem(200px);
+        background: var(--p-grayD);
         clip-path: polygon(10% 0%, 100% 0, 100% 88%, 90% 100%, 0 100%, 0 12%);
         position: relative;
         flex-shrink: 0;
 
+        .box {
+          position: absolute;
+          top: rem(1px);
+          left: rem(1px);
+          width: calc(100% - rem(2px)) !important;
+          height: calc(100% - rem(2px)) !important;
+          background: #fff;
+          clip-path: polygon(10% 0%, 100% 0, 100% 88%, 90% 100%, 0 100%, 0 12%);
+
+          &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+
         .date {
-          display: block;
-          width: 100%;
-          padding: rem(12px) rem(12px) rem(16px) 0;
-          background: linear-gradient(180deg, rgb(0 0 0 / 60%), transparent);
+          display: none;
         }
       }
 
@@ -344,6 +446,19 @@
           background: unset;
           transition: none;
 
+          .date {
+            position: unset;
+            width: auto;
+            background: none;
+            padding: 0;
+
+            h4 {
+              color: #000;
+              font-size: rem(22px);
+              text-align: left;
+            }
+          }
+
           .tag {
             span {
               &:last-child {
@@ -353,11 +468,38 @@
             }
           }
 
-          .tit {
-            margin-top: rem(30px);
-            color: black;
+          .tit_wrap {
+            display: flex;
+            gap: rem(10px);
+            margin-top: 1rem;
             font-size: rem(26px);
-            transition: none;
+
+            strong {
+              display: flex;
+              min-height: unset;
+              height: fit-content;
+              margin: 0;
+              gap: rem(10px);
+              flex-shrink: 0;
+              line-height: rem(35px);
+              color: black;
+
+              &::after {
+                content: "";
+                width: rem(3px);
+                height: rem(30px);
+                background: #000;
+                margin-top: rem(4px);
+              }
+            }
+
+            .tit {
+              margin: 0;
+              color: black;
+              font-size: rem(26px);
+              line-height: rem(35px);
+              transition: none;
+            }
           }
 
           .hash {

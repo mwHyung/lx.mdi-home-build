@@ -51,7 +51,6 @@ const NoticeList = () => {
 
 const data = [
   {
-    id: 1,
     title: "News Feed 레포트 신설",
     emergency: true,
     hits: "2,750",
@@ -60,49 +59,6 @@ const data = [
   {
     title: "LX홀딩스, 두 번째 그룹 통합 ‘ESG 보고서’ 펴내",
     hits: "57",
-    date: "2024.12.28",
-  },
-  {
-    title: "LX홀딩스, 2024년 정기 임원 인사 실시",
-    hits: "8",
-    date: "2024.12.28",
-  },
-  {
-    title: "LX그룹, ‘2023 LX배 한국여자야구대회’ 21일 개막",
-    hits: "24",
-    date: "2024.12.28",
-  },
-  {
-    title: "LX그룹, ‘2023 LX배 한국여자야구대회’ 21일 개막",
-    emergency: true,
-    hits: "24",
-    date: "2024.12.28",
-  },
-  {
-    title: "LX그룹, ‘2023 LX배 한국여자야구대회’ 21일 개막",
-    emergency: true,
-    hits: "24",
-    date: "2024.12.28",
-  },
-  {
-    title: "LX그룹, ‘2023 LX배 한국여자야구대회’ 21일 개막",
-    hits: "24",
-    date: "2024.12.28",
-  },
-  {
-    title: "LX그룹, ‘2023 LX배 한국여자야구대회’ 21일 개막",
-    hits: "24",
-    date: "2024.12.28",
-  },
-  {
-    title: "LX그룹, ‘2023 LX배 한국여자야구대회’ 21일 개막",
-    hits: "24",
-    date: "2024.12.28",
-  },
-  {
-    title: "LX그룹, ‘2023 LX배 한국여자야구대회’ 21일 개막",
-    emergency: true,
-    hits: "24",
     date: "2024.12.28",
   },
 ];

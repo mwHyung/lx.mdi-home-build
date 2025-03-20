@@ -13,13 +13,13 @@ const NewsFeedDetailPage = () => {
         "지속 가능성",
       ]}
       link="https://www.saint-gobain.com/sites/saint-gobain.com/files/media/document/20250116_plasterboard_VA.pdf"
-      listLink="news-feed"
+      listLink="/news-feed"
     >
       <DetailTitle
         list={{
           breadcrumb: ["News Feed"],
           group: "Saint-Gobain",
-          tit: "Saint-Gobain, 재활용 소재로 만든 첫 번째 석고보드 출시",
+          tit: "재활용 소재로 만든 첫 번째 석고보드 출시",
           date: "2025.01.15",
         }}
         ai={true}

@@ -129,7 +129,7 @@ const data = [
   {
     group: "Saint-Gobain",
     title: {
-      name: "Saint-Gobain, 재활용 소재로 만든 첫 번째 석고보드 출시",
+      name: "재활용 소재로 만든 첫 번째 석고보드 출시",
       link: "/news-feed-detail/02",
     },
     hits: "1,587",
@@ -138,7 +138,7 @@ const data = [
   {
     group: "ITOCHU",
     title: {
-      name: "ITOCHU, 홋카이도 치토세시 물류 시설 개발 발표",
+      name: "홋카이도 치토세시 물류 시설 개발 발표",
       link: "/news-feed-detail/03",
     },
     hits: "587",
@@ -147,7 +147,7 @@ const data = [
   {
     group: "ITOCHU",
     title: {
-      name: "ITOCHU, Kawasaki Motors와 전략적 사업 제휴 체결",
+      name: "Kawasaki Motors와 전략적 사업 제휴 체결",
       link: "/news-feed-detail/04",
     },
     hits: "4,521",

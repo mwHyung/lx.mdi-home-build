@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 interface Props {
@@ -7,11 +8,15 @@ interface Props {
 }
 
 const ContentTab = ({ list }: Props) => {
+  const router = useRouter();
+
   const [active, setActive] = useState(0);
   const handleClick = (index: number) => {
+    router.push(linkList[index]);
     setActive(index);
   };
 
+  const linkList = ["/market-trends", "/mi-focus", "/market-trends", "/market-trends"];
   return (
     <div className="bg-black bg-opacity-40 backdrop-blur-[1.25rem]">
       <ul className="flex items-center px-[3.75rem] max-w-[105rem] m-[0_auto]">

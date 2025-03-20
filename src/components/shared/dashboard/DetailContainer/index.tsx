@@ -85,7 +85,7 @@ const DetailContainer: FC<Props> = ({ tagList, link, files, listLink = "/", chil
           </li>
         </ul>
 
-        <Link href={`/${listLink}`} className={styles.list_link}>
+        <Link href={`${listLink}`} className={styles.list_link}>
           <button type="button">목록</button>
         </Link>
       </div>

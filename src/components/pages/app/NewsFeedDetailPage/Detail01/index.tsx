@@ -7,7 +7,7 @@ const NewsFeedDetailPage = () => {
     <DetailContainer
       tagList={["Cortex-M4F", "모터제어", "고속연산", "가전제품", "H/W호환성"]}
       link="http://www.abov.co.kr/bbs/board.php?tbl=pr2&mode=VIEW&num=107&type=&category=&findType=&findWord=&sort1=&sort2=&it_id=&shop_flag=&mobile_flag=&page=1 &language=kr"
-      listLink="news-feed"
+      listLink="/news-feed"
     >
       <DetailTitle
         list={{
@@ -32,15 +32,17 @@ const NewsFeedDetailPage = () => {
           <li>
             <span>
               A34M456은 기존 A34M41x 시리즈의 후속 제품으로, Core Clock Speed가 120MHz에서 140MHz로
-              향상되어 연산 속도와 성능이 강화되었습니다. 특히 에어컨, 세탁기, 냉장고 등
+              향상되어 연산 속도와 성능이 강화되었습니다. 특히 에어컨, 세탁기, 냉장고 등<br />
               가전제품에서 모터 제어 MCU로 최적화된 기능을 제공합니다.
             </span>
           </li>
           <li>
             <span>
               이 제품은 기존 제품과 동일한 H/W 호환성을 제공하여 개발 시간과 비용을 절감할 수
-              있습니다. 또한, LQFP 패키지로 두 가지 핀 옵션(LQFP-100, LQFP-64)을 지원하며, 2.7~5.5V
-              전압과 -40 ~ 105℃ 온도 범위에서 동작합니다.
+              있습니다.
+              <br />
+              또한, LQFP 패키지로 두 가지 핀 옵션(LQFP-100, LQFP-64)을 지원하며, 2.7~5.5V 전압과 -40
+              ~ 105℃ 온도 범위에서 동작합니다.
             </span>
           </li>
           <li>

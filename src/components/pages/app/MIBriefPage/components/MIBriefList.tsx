@@ -62,13 +62,9 @@ const MIBriefList = () => {
     <>
       <div className="flex flex-col gap-[1.875rem]">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-[0.625rem]">
-            <span className="text-pub-gray9 text-[1.563rem] font-light leading-[-0.016rem]">
-              Total
-            </span>
-            <span className="text-pub-red text-[1.5rem] font-medium leading-[-0.015rem]">
-              3,762
-            </span>
+          <div className="flex items-center gap-[0.625rem] text-[1.125rem]">
+            <span className="text-pub-gray9 font-light tracking-[-0.016rem]">Total</span>
+            <span className="text-pub-gray9 font-medium tracking-[-0.016rem]">3,762</span>
           </div>
           <div className="flex items-center gap-5">
             <SelectBox
@@ -173,7 +169,7 @@ const dummyData = [
     src: ImageCard07,
     date: "25년 2월 2주차",
     tag: { type: "market", label: "MI Brief" },
-    tit: "최근 스미토모상사가 투자*한 미국 철도 침목(枕木) 제조기업 Evertrak** 소개",
+    tit: "최근 스미토모상사가 투자*한 미국\n철도 침목(枕木) 제조기업 Evertrak** 소개",
     hash: ["세계경제", "스미토모상사"],
     hits: "32",
     dateS: "2025.02.14",
@@ -182,7 +178,7 @@ const dummyData = [
     src: ImageCard08,
     date: "25년 2월 3주차",
     tag: { type: "market", label: "MI Brief" },
-    tit: "AI 로봇 개발에 속도를 내고 있는 애플과 메타",
+    tit: "AI 로봇 개발에 속도를 내고 있는\n애플과 메타",
     hash: ["세계경제", "AI 로봇"],
     hits: "10,857",
     dateS: "2025.02.21",
@@ -191,7 +187,7 @@ const dummyData = [
     src: ImageCard09,
     date: "25년 2월 3주차",
     tag: { type: "market", label: "MI Brief" },
-    tit: "글로벌 조선업체들이 SMR* 기술 개발에 투자하는 이유",
+    tit: "글로벌 조선업체들이 SMR* 기술\n개발에 투자하는 이유",
     hash: ["세계경제", "조선"],
     hits: "10,857",
     dateS: "2025.02.21",
@@ -209,7 +205,7 @@ const dummyData = [
     src: ImageCard02,
     date: "25년 2월 3주차",
     tag: { type: "market", label: "MI Brief" },
-    tit: "중국 석탄 발전소 건설, 10년 만에 최고치 기록",
+    tit: "중국 석탄 발전소 건설, 10년 만에\n최고치 기록",
     hash: ["중국", "석탄"],
     hits: "547",
     dateS: "2025.02.21",
@@ -236,7 +232,7 @@ const dummyData = [
     src: ImageCard05,
     date: "25년 2월 4주차",
     tag: { type: "market", label: "MI Brief" },
-    tit: "시진핑 주석, 중국 대표 기업들과 좌담회 실시",
+    tit: "시진핑 주석, 중국 대표 기업들과\n좌담회 실시",
     hash: ["세계경제", "중국"],
     hits: "2,875",
     dateS: "2025.02.28",

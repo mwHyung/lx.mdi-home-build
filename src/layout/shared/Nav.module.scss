@@ -45,6 +45,14 @@ $dropdown-height: rem(100px);
         border-bottom-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
+      > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
       &:after {
         content: "";
         width: 100%;

@@ -77,7 +77,7 @@ const DetailTitle: FC<Props> = ({ list, emergency = false, ai = false }) => {
 
           <span>조회수 547</span>
 
-          <div className={styles.ai}>
+          {/* <div className={styles.ai}>
             {ai ? (
               // 음성 AI 버튼 ON
               <button>
@@ -97,7 +97,7 @@ const DetailTitle: FC<Props> = ({ list, emergency = false, ai = false }) => {
                 />
               </button>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
