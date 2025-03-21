@@ -132,7 +132,7 @@ const ExternalDataList = () => {
               rows={selectedUser}
               containerClassName="sub_table hashtag"
               onRowSelect={handleSelectRow}
-              colgroup={["10%", "15%", "50%", "10%", "15%"]}
+              colgroup={["8%", "10%", "10%", "48%", "10%", "15%"]}
             />
             {/* {dummyData.map((item, idx) => (
               <CardContent
@@ -260,6 +260,7 @@ const dummyList = [
   {
     week: "24년 3월",
     category: "Market",
+    name: "KIEP",
     tit: { name: "가뭄에 시달리는 파나마 운하", hash: ["클라우드", "IBM"] },
     hits: "10,857",
     date: "2024.03.26",
@@ -267,6 +268,7 @@ const dummyList = [
   {
     week: "24년 4월",
     tit: { name: "구리의 특성 및 중장기 수급전망", hash: ["클라우드", "IBM"] },
+    name: "kotra",
     category: "IT",
     hits: "10,857",
     date: "2024.04.15",
@@ -274,6 +276,7 @@ const dummyList = [
   {
     week: "24년 6월",
     tit: { name: "SMR 산업동향", hash: ["청정에너지", "원자력", "SMR"] },
+    name: "KPMG",
     category: "Market",
     hits: "2,875",
     date: "2024.06.04",

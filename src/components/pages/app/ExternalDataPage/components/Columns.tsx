@@ -16,6 +16,11 @@ const Columns = () => {
         },
       },
       {
+        id: "name",
+        label: "기관명",
+        dataAlign: "center",
+      },
+      {
         id: "week",
         label: "일자",
         dataAlign: "center",

@@ -23,7 +23,7 @@ const NoticeList = () => {
         rows={selectedUser}
         containerClassName="sub_table"
         onRowSelect={handleSelectRow}
-        colgroup={["12%", "15%", "61%", "12%"]}
+        colgroup={["10%", "66%", "12%", "12%"]}
       />
       <div className="flex items-center justify-center p-4 mt-[4rem]">
         <PaginationControls onChange={updatePageParams} total={100} page={1} perPage={10} />

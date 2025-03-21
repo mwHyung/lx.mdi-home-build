@@ -11,7 +11,7 @@ const MIBriefPage = () => {
   return (
     <PageContainer>
       <TopBar src={Banner.src} title="MDI 리포트">
-        <ContentTab list={["MI Brief", "MI Focus", "Special Report", "IT Trend"]} />
+        <ContentTab list={["MI Brief", "MI Focus", "IT Trend", "Special Report"]} />
       </TopBar>
       <MainSection>
         <SearchList />

@@ -8,11 +8,6 @@ const Columns = () => {
   const contentsColumns: Column[] = useMemo(
     () => [
       {
-        id: "date",
-        label: "발행일",
-        dataAlign: "center",
-      },
-      {
         id: "emergency",
         label: "",
         dataAlign: "center",
@@ -48,6 +43,11 @@ const Columns = () => {
             </div>
           );
         },
+      },
+      {
+        id: "date",
+        label: "발행일",
+        dataAlign: "center",
       },
     ],
     [],
