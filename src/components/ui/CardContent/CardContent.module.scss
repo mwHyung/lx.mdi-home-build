@@ -334,6 +334,7 @@
           .hits {
             padding-right: rem(10px);
             justify-content: flex-end;
+            gap: rem(20px);
 
             span {
               font-size: rem(16px);
@@ -354,7 +355,7 @@
               position: unset;
               h4 {
                 color: var(--p-gray9);
-                font-size: rem(18px);
+                font-size: rem(16px);
                 font-weight: 300;
               }
             }

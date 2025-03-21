@@ -22,6 +22,7 @@ import ImageCard07 from "public/images/image_cardCon07.jpeg";
 import ImageCard08 from "public/images/image_cardCon08.jpg";
 import ImageCard09 from "public/images/image_cardCon09.jpg";
 import PDFViewer from "@/components/ui/PDFViewer";
+import Columns from "./Columns";
 
 const MIBriefList = () => {
   const updatePageParams = (pageParams: Partial<PageParams>) => {};
@@ -58,6 +59,11 @@ const MIBriefList = () => {
     "25_02_4-3.pdf",
   ];
 
+  // 테이블
+  const { contentsColumns } = Columns();
+  const selectedUser = dummyList;
+  const handleSelectRow = (id: Row["id"]) => {};
+
   return (
     <>
       <div className="flex flex-col gap-[1.875rem]">
@@ -67,17 +73,31 @@ const MIBriefList = () => {
             <span className="text-pub-gray9 font-medium tracking-[-0.016rem]">3,762</span>
           </div>
           <div className="flex items-center gap-5">
-            <SelectBox
-              placeholder="최근 발행순"
-              list={[
-                { value: 1, label: "최근 발행순" },
-                { value: 2, label: "최근 발행순" },
-                { value: 3, label: "최근 발행순" },
-              ]}
-              size="2xl"
-              width="fit"
-              className="min-w-[12.5rem] px-5 h-[2.813rem]"
-            />
+            <div className="flex items-center">
+              <SelectBox
+                placeholder="10"
+                list={[
+                  { value: 1, label: "10" },
+                  { value: 2, label: "30" },
+                  { value: 3, label: "50" },
+                  { value: 4, label: "100" },
+                ]}
+                size="2xl"
+                width="fit"
+                className="min-w-[6.25rem] px-5 h-[2.813rem]"
+              />
+              <SelectBox
+                placeholder="최근 발행순"
+                list={[
+                  { value: 1, label: "최근 발행순" },
+                  { value: 2, label: "최근 발행순" },
+                  { value: 3, label: "최근 발행순" },
+                ]}
+                size="2xl"
+                width="fit"
+                className="min-w-[12.5rem] px-5 h-[2.813rem]"
+              />
+            </div>
             <div className="flex items-center gap-2">
               {iconList.map((icon, idx) => (
                 <button
@@ -124,7 +144,15 @@ const MIBriefList = () => {
           </div>
         ) : (
           <div className="flex flex-col">
-            {dummyData.map((item, idx) => (
+            <Table
+              id="user-list-table"
+              columns={contentsColumns}
+              rows={selectedUser}
+              containerClassName="sub_table hashtag"
+              onRowSelect={handleSelectRow}
+              colgroup={["12%", "60%", "10%", "15%"]}
+            />
+            {/* {dummyData.map((item, idx) => (
               <CardContent
                 key={idx}
                 list={item}
@@ -134,7 +162,7 @@ const MIBriefList = () => {
                 onClick={() => setPdfActive(idx)}
                 // link="market-trends-detail"
               />
-            ))}
+            ))} */}
           </div>
         )}
 
@@ -236,6 +264,77 @@ const dummyData = [
     hash: ["세계경제", "중국"],
     hits: "2,875",
     dateS: "2025.02.28",
+  },
+];
+const dummyList = [
+  {
+    week: "25년 2월 2주차",
+    tit: {
+      name: "마루베니상사, 3개년 중기(’25~’27년) 전략 발표",
+      hash: ["세계경제", "마루베니상사"],
+    },
+    date: "2025.02.14",
+    hits: "547",
+  },
+  {
+    week: "25년 2월 2주차",
+    tit: {
+      name: "최근 스미토모상사가 투자*한 미국\n철도 침목(枕木) 제조기업 Evertrak** 소개",
+      hash: ["세계경제", "스미토모상사"],
+    },
+    date: "2025.02.14",
+    hits: "32",
+  },
+  {
+    week: "25년 2월 3주차",
+    tit: { name: "AI 로봇 개발에 속도를 내고 있는\n애플과 메타", hash: ["세계경제", "AI 로봇"] },
+    date: "2025.02.21",
+    hits: "10,857",
+  },
+  {
+    week: "25년 2월 3주차",
+    tit: {
+      name: "글로벌 조선업체들이 SMR* 기술\n개발에 투자하는 이유",
+      hash: ["세계경제", "조선"],
+    },
+    date: "2025.02.21",
+    hits: "10,857",
+  },
+  {
+    week: "25년 2월 3주차",
+    tit: { name: "나트륨 배터리 개발 동향", hash: ["글로벌 전기차", "나트륨 배터리"] },
+    date: "2025.02.21",
+    hits: "2,875",
+  },
+  {
+    week: "25년 2월 3주차",
+    tit: { name: "중국 석탄 발전소 건설, 10년 만에\n최고치 기록", hash: ["중국", "석탄"] },
+    date: "2025.02.21",
+    hits: "547",
+  },
+  {
+    week: "25년 2월 4주차",
+    tit: {
+      name: "글로벌 소다회* 수급 전망에 대한 중국 전문가** 의견",
+      hash: ["중국", "글로벌 소다회"],
+    },
+    date: "2025.02.28",
+    hits: "32",
+  },
+  {
+    week: "25년 2월 4주차",
+    tit: {
+      name: "미국-우크라이나 광물협정 주요 내용 및 재건 사업 전망",
+      hash: ["세계경제", "광물"],
+    },
+    date: "2025.02.28",
+    hits: "10,857",
+  },
+  {
+    week: "25년 2월 4주차",
+    tit: { name: "시진핑 주석, 중국 대표 기업들과\n좌담회 실시", hash: ["세계경제", "중국"] },
+    date: "2025.02.28",
+    hits: "2,875",
   },
 ];
 

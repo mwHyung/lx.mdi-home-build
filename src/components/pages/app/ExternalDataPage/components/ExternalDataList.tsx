@@ -2,10 +2,12 @@
 
 import { CardContent, Pagination, SelectBox, Table } from "@/components/ui";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Row } from "@/types/ui";
 import Image from "next/image";
 import { PageParams } from "@/types/shared";
 import PaginationControls from "@/components/ui/Pagination/PaginationControls";
-// import PDFViewer from "@/components/ui/PDFViewer";
+import Columns from "./Columns";
 
 import CardIconAct from "public/images/icon_card_active.svg";
 import CardIconDis from "public/images/icon_card_disable.svg";
@@ -15,28 +17,10 @@ import ListIconDis from "public/images/icon_list_disable.svg";
 import ImageCard01 from "public/images/KIEP_m.png";
 import ImageCard02 from "public/images/kotra.jpg";
 import ImageCard03 from "public/images/KPMG.png";
-// import ImageCard04 from "public/images/image_cardCon04.jpg";
-// import ImageCard05 from "public/images/image_cardCon05.jpeg";
-// import ImageCard06 from "public/images/image_cardCon06.jpeg";
-// import ImageCard07 from "public/images/image_cardCon07.jpeg";
-// import ImageCard08 from "public/images/image_cardCon08.jpg";
-// import ImageCard09 from "public/images/image_cardCon09.jpg";
 
 const ExternalDataList = () => {
+  const router = useRouter();
   const updatePageParams = (pageParams: Partial<PageParams>) => {};
-
-  // const [pdfActive, setPdfActive] = useState<number | null>(null);
-  // const pdfList = [
-  //   "24_03.pdf",
-  //   "24_04.pdf",
-  //   "24_06.pdf",
-  //   "24_07.pdf",
-  //   "24_09.pdf",
-  //   "24_10.pdf",
-  //   "24_11.pdf",
-  //   "24_12.pdf",
-  //   "25_02.pdf",
-  // ];
 
   // 보기 방식
   const [isActive, setIsActive] = useState(true);
@@ -57,6 +41,13 @@ const ExternalDataList = () => {
     else if (idx === 1) setIsActive(true);
   };
 
+  // 테이블
+  const { contentsColumns } = Columns();
+  const selectedUser = dummyList;
+  const handleSelectRow = (id: Row["id"]) => {
+    router.push("/external-data-detail");
+  };
+
   return (
     <>
       <div className="flex flex-col gap-[1.875rem]">
@@ -66,17 +57,31 @@ const ExternalDataList = () => {
             <span className="text-pub-gray9 font-medium tracking-[-0.016rem]">3,762</span>
           </div>
           <div className="flex items-center gap-5">
-            <SelectBox
-              placeholder="최근 발행순"
-              list={[
-                { value: 1, label: "최근 발행순" },
-                { value: 2, label: "최근 발행순" },
-                { value: 3, label: "최근 발행순" },
-              ]}
-              size="2xl"
-              width="fit"
-              className="min-w-[12.5rem] px-5 h-[2.813rem]"
-            />
+            <div className="flex items-center">
+              <SelectBox
+                placeholder="10"
+                list={[
+                  { value: 1, label: "10" },
+                  { value: 2, label: "30" },
+                  { value: 3, label: "50" },
+                  { value: 4, label: "100" },
+                ]}
+                size="2xl"
+                width="fit"
+                className="min-w-[6.25rem] px-5 h-[2.813rem]"
+              />
+              <SelectBox
+                placeholder="최근 발행순"
+                list={[
+                  { value: 1, label: "최근 발행순" },
+                  { value: 2, label: "최근 발행순" },
+                  { value: 3, label: "최근 발행순" },
+                ]}
+                size="2xl"
+                width="fit"
+                className="min-w-[12.5rem] px-5 h-[2.813rem]"
+              />
+            </div>
             <div className="flex items-center gap-2">
               {iconList.map((icon, idx) => (
                 <button
@@ -121,7 +126,15 @@ const ExternalDataList = () => {
           </div>
         ) : (
           <div className="flex flex-col">
-            {dummyData.map((item, idx) => (
+            <Table
+              id="user-list-table"
+              columns={contentsColumns}
+              rows={selectedUser}
+              containerClassName="sub_table hashtag"
+              onRowSelect={handleSelectRow}
+              colgroup={["10%", "15%", "50%", "10%", "15%"]}
+            />
+            {/* {dummyData.map((item, idx) => (
               <CardContent
                 key={idx}
                 list={item}
@@ -129,7 +142,7 @@ const ExternalDataList = () => {
                 type="list"
                 link="/external-data-detail"
               />
-            ))}
+            ))} */}
           </div>
         )}
 
@@ -240,6 +253,78 @@ const dummyData = [
     hash: ["주택매매", "부동산시장"],
     hits: "32",
     dateS: "2025.02.04",
+  },
+];
+
+const dummyList = [
+  {
+    week: "24년 3월",
+    category: "Market",
+    tit: { name: "가뭄에 시달리는 파나마 운하", hash: ["클라우드", "IBM"] },
+    hits: "10,857",
+    date: "2024.03.26",
+  },
+  {
+    week: "24년 4월",
+    tit: { name: "구리의 특성 및 중장기 수급전망", hash: ["클라우드", "IBM"] },
+    category: "IT",
+    hits: "10,857",
+    date: "2024.04.15",
+  },
+  {
+    week: "24년 6월",
+    tit: { name: "SMR 산업동향", hash: ["청정에너지", "원자력", "SMR"] },
+    category: "Market",
+    hits: "2,875",
+    date: "2024.06.04",
+  },
+  {
+    week: "24년 7월",
+    tit: { name: "우라늄 공급망 동향", hash: ["시니어", "레지던스"] },
+    category: "Market",
+    hits: "547",
+    date: "2024.07.22",
+  },
+  {
+    week: "24년 9월",
+    tit: {
+      name: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 1)",
+      hash: ["주택매매", "부동산시장"],
+    },
+    category: "IT",
+    hits: "32",
+    date: "2024.09.09",
+  },
+  {
+    week: "24년 10월",
+    tit: { name: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 2)", hash: ["클라우드", "IBM"] },
+    category: "IT",
+    hits: "10,857",
+    date: "2024.10.07",
+  },
+  {
+    week: "24년 11월",
+    tit: { name: "국내 데이터센터 산업 및 내·외장재 소개", hash: ["세계경제", "IMF"] },
+    category: "Market",
+    hits: "2,875",
+    date: "2024.11.25",
+  },
+  {
+    week: "24년 12월",
+    tit: {
+      name: "미래 에너지 자원의 게임체인저로 주목받는 천연수소",
+      hash: ["시니어", "레지던스"],
+    },
+    category: "IT",
+    hits: "547",
+    date: "2024.12.16",
+  },
+  {
+    week: "25년 2월",
+    tit: { name: "자원의 보고(寶庫) 달", hash: ["주택매매", "부동산시장"] },
+    category: "Market",
+    hits: "32",
+    date: "2025.02.04",
   },
 ];
 

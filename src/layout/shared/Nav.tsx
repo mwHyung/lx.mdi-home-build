@@ -137,7 +137,7 @@ const Nav: FC<Props> = ({
       submenu: [],
     },
     {
-      label: "시장동향",
+      label: "MDI 리포트",
       path: "/market-trends",
       submenu: [
         {
@@ -149,17 +149,17 @@ const Nav: FC<Props> = ({
           path: "/mi-focus",
         },
         {
-          label: "Special Report",
+          label: "IT Trend",
           path: "/market-trends",
         },
         {
-          label: "IT Trend",
+          label: "Special Report",
           path: "/market-trends",
         },
       ],
     },
     {
-      label: "외부자료",
+      label: "외부 리포트",
       path: "/external-data",
       submenu: [
         {

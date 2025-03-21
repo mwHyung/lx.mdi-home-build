@@ -13,20 +13,12 @@ const Columns = () => {
         dataAlign: "center",
       },
       {
-        id: "category",
-        label: "구분",
-        dataAlign: "center",
-        render: (category: any) => {
-          return <span>{category}</span>;
-        },
-      },
-      {
         id: "tit",
         label: "제목",
         dataAlign: "left",
         render: (tit: any) => {
           return (
-            <div>
+            <div className="pl-10">
               {tit.name}
               <ul className="flex flex-wrap items-center gap-[0.625rem]">
                 {tit.hash.map((item: string, idx: number) => (

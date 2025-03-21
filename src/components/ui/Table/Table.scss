@@ -97,4 +97,16 @@
       }
     }
   }
+
+  &.hashtag {
+    table {
+      tbody {
+        tr {
+          td {
+            padding: rem(20px);
+          }
+        }
+      }
+    }
+  }
 }

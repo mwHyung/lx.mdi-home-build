@@ -141,18 +141,18 @@ const CardContent: FC<Props> = ({
 
                 <div className={styles.hits}>
                   {/* <Image src={Viewer} width={20} height={20} alt="icon viewer" /> */}
+
+                  {(type === "card" || type === "list") && (
+                    <div className={styles.date}>
+                      <h4>{list.dateS}</h4>
+                    </div>
+                  )}
+
                   <span
                     className={`${type === "card" ? styles.hits_card : ""} ${type === "list" ? styles.hits_list : ""}`}
                   >
                     조회수 <span>{list.hits}</span>
                   </span>
-
-                  {type === "card" ||
-                    (type === "list" && (
-                      <div className={styles.date}>
-                        <h4>{list.dateS}</h4>
-                      </div>
-                    ))}
                 </div>
               </>
             )}
