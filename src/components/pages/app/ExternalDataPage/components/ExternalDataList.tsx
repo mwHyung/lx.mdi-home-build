@@ -285,6 +285,7 @@ const dummyList = [
     week: "24년 7월",
     tit: { name: "우라늄 공급망 동향", hash: ["시니어", "레지던스"] },
     category: "Market",
+    name: "KPMG",
     hits: "547",
     date: "2024.07.22",
   },
@@ -294,6 +295,7 @@ const dummyList = [
       name: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 1)",
       hash: ["주택매매", "부동산시장"],
     },
+    name: "KPMG",
     category: "IT",
     hits: "32",
     date: "2024.09.09",
@@ -301,6 +303,7 @@ const dummyList = [
   {
     week: "24년 10월",
     tit: { name: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 2)", hash: ["클라우드", "IBM"] },
+    name: "KPMG",
     category: "IT",
     hits: "10,857",
     date: "2024.10.07",
@@ -308,6 +311,7 @@ const dummyList = [
   {
     week: "24년 11월",
     tit: { name: "국내 데이터센터 산업 및 내·외장재 소개", hash: ["세계경제", "IMF"] },
+    name: "KPMG",
     category: "Market",
     hits: "2,875",
     date: "2024.11.25",
@@ -318,6 +322,7 @@ const dummyList = [
       name: "미래 에너지 자원의 게임체인저로 주목받는 천연수소",
       hash: ["시니어", "레지던스"],
     },
+    name: "KPMG",
     category: "IT",
     hits: "547",
     date: "2024.12.16",
@@ -325,6 +330,7 @@ const dummyList = [
   {
     week: "25년 2월",
     tit: { name: "자원의 보고(寶庫) 달", hash: ["주택매매", "부동산시장"] },
+    name: "KPMG",
     category: "Market",
     hits: "32",
     date: "2025.02.04",

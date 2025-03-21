@@ -18,8 +18,9 @@ import PDFViewer from "@/components/ui/PDFViewer";
 
 const SearchPage = () => {
   // 테이블
-  const { contentsColumns } = Columns();
+  const { contentsColumns, externalColumns } = Columns();
   const selectedUser = data;
+  const externalUser = externalData;
   const handleSelectRow = (id: Row["id"]) => {};
 
   // pdf
@@ -95,11 +96,11 @@ const SearchPage = () => {
         <SearchMain tit="강연 · 세미나 (IT)" hits="2" className="pt-0">
           <Table
             id="search-list-it-table"
-            columns={contentsColumns}
-            rows={selectedUser}
+            columns={externalColumns}
+            rows={externalUser}
             containerClassName="sub_table"
             onRowSelect={handleSelectRow}
-            colgroup={["15%", "60%", "10%", "15%"]}
+            colgroup={["8%", "10%", "10%", "48%", "10%", "15%"]}
           />
         </SearchMain>
       </SearchContainer>
@@ -152,6 +153,40 @@ const data = [
     },
     hits: "4,521",
     date: "2024.11.08",
+  },
+];
+const externalData = [
+  {
+    week: "24년 3월",
+    category: "Market",
+    name: "KIEP",
+    tit: { name: "가뭄에 시달리는 파나마 운하", hash: ["클라우드", "IBM"] },
+    hits: "10,857",
+    date: "2024.03.26",
+  },
+  {
+    week: "24년 4월",
+    tit: { name: "구리의 특성 및 중장기 수급전망", hash: ["클라우드", "IBM"] },
+    name: "kotra",
+    category: "IT",
+    hits: "10,857",
+    date: "2024.04.15",
+  },
+  {
+    week: "24년 6월",
+    tit: { name: "SMR 산업동향", hash: ["청정에너지", "원자력", "SMR"] },
+    name: "KPMG",
+    category: "Market",
+    hits: "2,875",
+    date: "2024.06.04",
+  },
+  {
+    week: "24년 7월",
+    tit: { name: "우라늄 공급망 동향", hash: ["시니어", "레지던스"] },
+    name: "KPMG",
+    category: "Market",
+    hits: "547",
+    date: "2024.07.22",
   },
 ];
 
