@@ -8,17 +8,17 @@ const Columns = () => {
   const contentsColumns: Column[] = useMemo(
     () => [
       {
-        id: "week",
-        label: "일자",
-        dataAlign: "center",
-      },
-      {
         id: "category",
         label: "구분",
         dataAlign: "center",
         render: (category: any) => {
           return <span>{category}</span>;
         },
+      },
+      {
+        id: "week",
+        label: "일자",
+        dataAlign: "center",
       },
       {
         id: "tit",

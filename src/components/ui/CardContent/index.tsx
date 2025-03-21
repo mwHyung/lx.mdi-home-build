@@ -82,7 +82,9 @@ const CardContent: FC<Props> = ({
                   </div>
 
                   <div className={styles.tit_wrap}>
-                    <strong className="block text-[1.125rem] leading-none mb-2">{`${list.category ? list.category + " | " : ""}`}</strong>
+                    {list.category && (
+                      <strong className="block text-[1.125rem] leading-none mb-2">{`${list.category ? list.category + " | " : ""}`}</strong>
+                    )}
                     <p className={styles.tit}>{list.tit}</p>
                   </div>
                 </div>
@@ -96,40 +98,24 @@ const CardContent: FC<Props> = ({
                   </ul>
 
                   <div className={styles.hits}>
-                    {/* <Image src={Viewer} width={20} height={20} alt="icon viewer" /> */}
                     <span>조회수 {list.hits}</span>
                   </div>
                 </div>
               </>
             ) : (
               <>
-                {/* <div className={styles.tag}>
-                  {list.tag?.type === "market" && (
-                    <>
-                      <span className={styles.market}>시장동향</span>
-                      <span>{list.tag?.label}</span>
-                    </>
-                  )}
-                  {list.tag?.type === "external" && (
-                    <>
-                      <span className={styles.external}>외부자료</span>
-                      <span>{list.tag?.label}</span>
-                    </>
-                  )}
-                </div> */}
-
                 <div className={styles.date}>
+                  {list.category && (
+                    <strong>{`${list.category ? list.category + " |" : ""}`}</strong>
+                  )}
+                  {/* {type === "list" ? (
+                  ) : (
+                    <strong className="block text-[1.375rem] leading-none mb-2">{`${list.category ? list.category : ""}`}</strong>
+                  )} */}
                   <h4>{list.date}</h4>
                 </div>
 
-                <div className={styles.tit_wrap}>
-                  {type === "list" ? (
-                    list.category && <strong>{`${list.category ? list.category : ""}`}</strong>
-                  ) : (
-                    <strong className="block text-[1.375rem] leading-none mb-2">{`${list.category ? list.category : ""}`}</strong>
-                  )}
-                  <p className={styles.tit}>{list.tit}</p>
-                </div>
+                <p className={styles.tit}>{list.tit}</p>
 
                 <ul className={styles.hash}>
                   {list.hash?.map((item, idx) => (

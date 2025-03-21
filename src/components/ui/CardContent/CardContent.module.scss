@@ -213,7 +213,7 @@
     background: var(--p-grayD);
     clip-path: polygon(10% 0%, 100% 0, 100% 92%, 90% 100%, 0 100%, 0 8%);
     position: relative;
-    height: rem(683px);
+    height: rem(664px);
 
     a {
       display: flex;
@@ -272,11 +272,19 @@
           transition: none;
 
           .date {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: rem(8px);
             position: unset;
             width: auto;
             background: none;
             padding: 0;
+            font-size: rem(22px);
+
+            strong {
+              margin-top: 0;
+              color: black;
+            }
 
             h4 {
               color: #000;
@@ -294,23 +302,20 @@
             }
           }
 
-          .tit_wrap {
-            strong {
-              min-height: rem(22px);
-              margin-top: 0;
-              color: black;
-            }
-
-            .tit {
-              margin-top: rem(5px);
-              color: black;
-              font-size: rem(26px);
-              font-weight: 500;
-              line-height: rem(36.8px);
-              letter-spacing: rem(-0.32px);
-              transition: none;
-              white-space: pre-line;
-            }
+          .tit {
+            margin-top: rem(5px);
+            color: black;
+            font-size: rem(26px);
+            font-weight: 500;
+            line-height: rem(36.8px);
+            letter-spacing: rem(-0.32px);
+            transition: none;
+            white-space: pre-line;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
           }
 
           .hash {
@@ -448,10 +453,19 @@
           transition: none;
 
           .date {
+            display: flex;
+            align-items: center;
+            gap: rem(8px);
             position: unset;
             width: auto;
             background: none;
             padding: 0;
+            font-size: rem(22px);
+
+            strong {
+              margin: 0;
+              color: black;
+            }
 
             h4 {
               color: #000;
@@ -469,38 +483,16 @@
             }
           }
 
-          .tit_wrap {
-            display: flex;
-            gap: rem(10px);
-            margin-top: 1rem;
+          .tit {
+            color: black;
             font-size: rem(26px);
-
-            strong {
-              display: flex;
-              min-height: unset;
-              height: fit-content;
-              margin: 0;
-              gap: rem(10px);
-              flex-shrink: 0;
-              line-height: rem(35px);
-              color: black;
-
-              &::after {
-                content: "";
-                width: rem(3px);
-                height: rem(30px);
-                background: #000;
-                margin-top: rem(4px);
-              }
-            }
-
-            .tit {
-              margin: 0;
-              color: black;
-              font-size: rem(26px);
-              line-height: rem(35px);
-              transition: none;
-            }
+            line-height: rem(35px);
+            transition: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
           }
 
           .hash {
@@ -535,13 +527,13 @@
               align-items: center;
               gap: rem(8px);
 
-              &::after {
+              &::before {
                 content: "";
                 width: 1px;
                 height: rem(18px);
                 background: var(--p-grayD);
                 margin-top: 1px;
-                margin-left: rem(7px);
+                margin-right: rem(7px);
               }
             }
 
