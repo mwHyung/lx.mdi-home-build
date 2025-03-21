@@ -5,6 +5,7 @@ import { GlobalProvider } from "@/layout";
 import { GlobalLayout } from "@/layout";
 import "@/app/globals.css";
 import { LayoutProvider } from "@/layout/MainLayoutProvider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Mi portal",
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={noto_sans_kr.className}>
+        <SpeedInsights />
         <GlobalProvider>
           <LayoutProvider>
             <GlobalLayout>{children}</GlobalLayout>
