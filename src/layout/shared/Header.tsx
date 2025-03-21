@@ -20,6 +20,7 @@ const Header = () => {
         <Logo
           activeMenu={activeMenu}
           searchOpen={searchOpen}
+          setSearchOpen={setSearchOpen}
           isScrolled={isScrolled}
           detail={isDetail}
         />

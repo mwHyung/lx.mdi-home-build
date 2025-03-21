@@ -9,13 +9,14 @@ import { FC } from "react";
 interface Props {
   activeMenu?: string | null;
   searchOpen?: boolean;
+  setSearchOpen: (search: boolean) => void;
   isScrolled?: boolean | null;
   detail?: boolean | null;
 }
 
-const Logo: FC<Props> = ({ activeMenu, searchOpen, isScrolled, detail }) => {
+const Logo: FC<Props> = ({ activeMenu, searchOpen, setSearchOpen, isScrolled, detail }) => {
   return (
-    <div className="shrink-0 flex items-center logo h-full">
+    <div className="shrink-0 flex items-center logo h-full" onClick={() => setSearchOpen(false)}>
       {activeMenu || searchOpen || isScrolled || detail ? (
         <Link href={"/home"}>
           <Image
