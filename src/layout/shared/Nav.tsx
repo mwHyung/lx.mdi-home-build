@@ -36,7 +36,7 @@ const mockProgramMenus = [
   {
     menuId: "1001",
     menuCode: "1001",
-    menuName: "시장동향",
+    menuName: "MDI 리포트",
     systemId: "S000",
     depth: 1,
     // path: "/news-feed",
@@ -97,7 +97,7 @@ const mockProgramMenus = [
   {
     menuId: "1001",
     menuCode: "1001",
-    menuName: "외부자료",
+    menuName: "외부 리포트",
     systemId: "S000",
     depth: 1,
     // path: "/news-feed",

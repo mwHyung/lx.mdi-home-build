@@ -48,7 +48,7 @@ const MIBriefDetailPage = () => {
     >
       <DetailTitle
         list={{
-          breadcrumb: ["시장동향", "MI Focus"],
+          breadcrumb: ["MDI 리포트", "MI Focus"],
           group: "LX그룹",
           tit: "CES* 2025에서 소개된 그룹 사업 관련 신기술 동향",
           date: "2024.12.09",

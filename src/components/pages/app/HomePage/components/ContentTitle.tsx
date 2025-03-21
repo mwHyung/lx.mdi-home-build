@@ -14,7 +14,7 @@ const ContentTitle: FC<Props> = ({ title, type, link = "/news-feed" }) => {
     setSelected(idx);
   };
 
-  const tabList = ["전체", "시장동향", "외부자료"];
+  const tabList = ["전체", "MDI 리포트", "외부 리포트"];
 
   return (
     <div className={styles.content_title}>

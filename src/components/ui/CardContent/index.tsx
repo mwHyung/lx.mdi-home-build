@@ -69,13 +69,13 @@ const CardContent: FC<Props> = ({
                   <div className={styles.tag}>
                     {list.tag?.type === "market" && (
                       <>
-                        <span className={styles.market}>시장동향</span>
+                        <span className={styles.market}>MDI 리포트</span>
                         <span>{list.tag?.label}</span>
                       </>
                     )}
                     {list.tag?.type === "external" && (
                       <>
-                        <span className={styles.external}>외부자료</span>
+                        <span className={styles.external}>외부 리포트</span>
                         <span>{list.tag?.label}</span>
                       </>
                     )}
