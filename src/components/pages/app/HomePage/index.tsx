@@ -50,10 +50,13 @@ import Link from "next/link";
 import Columns from "./components/Columns";
 import { Row } from "@/types/ui";
 import PDFViewer from "@/components/ui/PDFViewer";
+import { useRouter } from "next/navigation";
 
 const sections = ["Visual", "New Contents", "News Feed"];
 
 const HomePage = () => {
+  const router = useRouter();
+
   const containerRef = useRef<HTMLDivElement>(null);
   const {
     currentSection,
@@ -76,6 +79,16 @@ const HomePage = () => {
   const paginationRef = useRef(null);
   const navNextRef = useRef(null);
   const navPrevRef = useRef(null);
+
+  const linkList = [
+    { label: "News Feed", href: "/news-feed" },
+    { label: "MI Brief", href: "/market-trends" },
+    { label: "MI Focus / IT trend", href: "/mi-focus" },
+    { label: "Special Report", href: "/market-trends" },
+  ];
+  const handleClick = (index: number) => {
+    router.push(linkList[index].href);
+  };
 
   const [translateValue, setTranslateValue] = useState(0);
   const [touchValue, setTouchValue] = useState(false);
@@ -222,7 +235,7 @@ const HomePage = () => {
               {/* <SwiperSlide style={{ background: `url(${Visual02.src}) no-repeat right / cover` }}> */}
               <SwiperSlide>
                 <ul className={styles.visual_card}>
-                  <li>
+                  <li onClick={() => handleClick(0)}>
                     <div>
                       <h3>News Feed</h3>
                       <p>
@@ -239,7 +252,7 @@ const HomePage = () => {
                       />
                     </div>
                   </li>
-                  <li>
+                  <li onClick={() => handleClick(1)}>
                     <div>
                       <h3>MI Brief</h3>
                       <p>
@@ -255,7 +268,7 @@ const HomePage = () => {
                       />
                     </div>
                   </li>
-                  <li>
+                  <li onClick={() => handleClick(2)}>
                     <div>
                       <h3>
                         MI Focus <span>/</span>
@@ -275,7 +288,7 @@ const HomePage = () => {
                       />
                     </div>
                   </li>
-                  <li>
+                  <li onClick={() => handleClick(3)}>
                     <div>
                       <h3>
                         Special

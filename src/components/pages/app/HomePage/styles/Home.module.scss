@@ -98,6 +98,7 @@
     background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(rem(50px));
     clip-path: polygon(15% 0%, 100% 0, 100% 89%, 85% 100%, 0 100%, 0 11%);
+    cursor: pointer;
 
     div {
       color: #fff;
