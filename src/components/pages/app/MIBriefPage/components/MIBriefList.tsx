@@ -62,7 +62,9 @@ const MIBriefList = () => {
   // 테이블
   const { contentsColumns } = Columns();
   const selectedUser = dummyList;
-  const handleSelectRow = (id: Row["id"]) => {};
+  const handleSelectRow = (id: Row["id"]) => {
+    setPdfActive(id);
+  };
 
   return (
     <>
@@ -152,17 +154,6 @@ const MIBriefList = () => {
               onRowSelect={handleSelectRow}
               colgroup={["12%", "60%", "10%", "15%"]}
             />
-            {/* {dummyData.map((item, idx) => (
-              <CardContent
-                key={idx}
-                list={item}
-                className="list_type"
-                type="list"
-                pdf={true}
-                onClick={() => setPdfActive(idx)}
-                // link="market-trends-detail"
-              />
-            ))} */}
           </div>
         )}
 
@@ -268,6 +259,7 @@ const dummyData = [
 ];
 const dummyList = [
   {
+    id: 0,
     week: "25년 2월 2주차",
     tit: {
       name: "마루베니상사, 3개년 중기(’25~’27년) 전략 발표",
