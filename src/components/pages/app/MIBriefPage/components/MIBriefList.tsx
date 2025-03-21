@@ -63,7 +63,7 @@ const MIBriefList = () => {
   const { contentsColumns } = Columns();
   const selectedUser = dummyList;
   const handleSelectRow = (id: Row["id"]) => {
-    setPdfActive(id);
+    setPdfActive(Number(id));
   };
 
   return (
