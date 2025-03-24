@@ -21,7 +21,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles/Swiper.scss";
 
-import VisualBG from "public/images/bg_visual.png";
 import Visual01 from "public/images/img_visual01.png";
 import Visual02 from "public/images/img_visual02.png";
 
@@ -33,7 +32,6 @@ import IconPlus from "public/images/icon_plus.svg";
 import IconPlusSm from "public/images/icon_plus_sm.svg";
 import SearchIcon from "public/images/icon_search.svg";
 
-import ImageCard01 from "public/images/image_mainCon01.jpg";
 import ImageCard02 from "public/images/image_mainCon02.jpg";
 import ImageCard03 from "public/images/image_mainCon03.jpg";
 import ImageCard04 from "public/images/image_mainCon04.jpg";
@@ -44,15 +42,12 @@ import ImageCard08 from "public/images/image_mainCon08.jpg";
 
 import ImageText01 from "public/images/KIEP.png";
 
-// import CardContent from "./components/CardContent";
 import ContentTitle from "./components/ContentTitle";
 import Link from "next/link";
 import Columns from "./components/Columns";
 import { Row } from "@/types/ui";
 import PDFViewer from "@/components/ui/PDFViewer";
 import { useRouter } from "next/navigation";
-
-const sections = ["Visual", "New Contents", "News Feed"];
 
 const HomePage = () => {
   const router = useRouter();
@@ -144,33 +139,11 @@ const HomePage = () => {
     }, 300);
   }, []);
 
-  // 스크롤
-  const observerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsScrolled(!entry.isIntersecting); // 보이지 않으면 true
-      },
-      { threshold: 1 },
-    );
-
-    if (observerRef.current) {
-      observer.observe(observerRef.current);
-    }
-
-    return () => {
-      if (observerRef.current) {
-        observer.unobserve(observerRef.current);
-      }
-    };
-  }, [setIsScrolled]);
-
   return (
     <>
       <div ref={containerRef} className={styles.container}>
         <div className={styles.section}>
-          <div className="swiper_container" ref={observerRef}>
+          <div className="swiper_container">
             <div className={`absolute top-0 left-0 w-full h-full flex items-center justify-center`}>
               <div
                 className="w-screen h-full flex-1 shrink-0 absolute top-0 left-0"

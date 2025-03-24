@@ -1,42 +1,11 @@
-"use client";
-
-import { Button, Checkbox, CheckboxGroup, Input, RadioGroup } from "@/components/ui";
+import { Button, CheckboxGroup, Input } from "@/components/ui";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import SearchIconS from "public/images/icon_search.svg";
-import { useLayoutContext } from "@/layout/MainLayoutProvider";
 
 const SearchArea = () => {
-  const { setIsDetail, setIsScrolled } = useLayoutContext();
-
-  // 스크롤
-  const observerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setIsDetail(true);
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsScrolled(!entry.isIntersecting); // 보이지 않으면 true
-      },
-      { threshold: 0.999 },
-    );
-
-    if (observerRef.current) {
-      observer.observe(observerRef.current);
-    }
-
-    return () => {
-      setIsDetail(false);
-      if (observerRef.current) {
-        observer.unobserve(observerRef.current);
-      }
-    };
-  }, [setIsScrolled]);
   return (
-    <div
-      className="flex flex-col items-center justify-center gap-10 max-w-[105rem] m-[0_auto] pt-40 pb-[3.75rem]"
-      ref={observerRef}
-    >
+    <div className="flex flex-col items-center justify-center gap-10 max-w-[105rem] m-[0_auto] pt-40 pb-[3.75rem]">
       <div className="flex items-center w-[42.125rem]">
         <Input placeholder="검색어를 입력해주세요." size="lg" className="w-full h-[3.75rem]" />
         <Button variant="red" className="min-w-[7.5rem] h-[3.75rem]">

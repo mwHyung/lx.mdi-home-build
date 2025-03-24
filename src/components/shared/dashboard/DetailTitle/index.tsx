@@ -21,34 +21,15 @@ interface Props {
 }
 
 const DetailTitle: FC<Props> = ({ list, emergency = false, ai = false }) => {
-  const { setIsDetail, setIsScrolled } = useLayoutContext();
-  // 스크롤
-  const observerRef = useRef<HTMLDivElement>(null);
+  const { isDetail, setIsDetail } = useLayoutContext();
 
   useEffect(() => {
     setIsDetail(true);
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsScrolled(!entry.isIntersecting); // 보이지 않으면 true
-      },
-      { threshold: 0.999 },
-    );
-
-    if (observerRef.current) {
-      observer.observe(observerRef.current);
-    }
-
-    return () => {
-      setIsDetail(false);
-      if (observerRef.current) {
-        observer.unobserve(observerRef.current);
-      }
-    };
-  }, [setIsScrolled]);
+    return () => setIsDetail(false);
+  }, []);
 
   return (
-    <div className={styles.title_area} ref={observerRef}>
+    <div className={styles.title_area}>
       <ul className={styles.breadcrumb}>
         {list.breadcrumb.map((item, idx) => (
           <li key={idx}>

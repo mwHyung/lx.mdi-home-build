@@ -10,7 +10,20 @@ const Header = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState<boolean>(false);
 
-  const { isScrolled, isDetail } = useLayoutContext();
+  const { isScrolled, setIsScrolled, isDetail } = useLayoutContext();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header

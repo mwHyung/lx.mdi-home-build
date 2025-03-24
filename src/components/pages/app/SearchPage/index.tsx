@@ -17,6 +17,8 @@ import ImageCard08 from "public/images/image_cardCon08.jpg";
 import PDFViewer from "@/components/ui/PDFViewer";
 
 const SearchPage = () => {
+  const { isDetail, setIsDetail } = useLayoutContext();
+
   // 테이블
   const { contentsColumns, externalColumns } = Columns();
   const selectedUser = data;
@@ -37,7 +39,11 @@ const SearchPage = () => {
     "25_02_4-3.pdf",
   ];
 
-  console.log(selectedUser);
+  useEffect(() => {
+    setIsDetail(true);
+    return () => setIsDetail(false);
+  }, []);
+
   return (
     <>
       <SearchContainer>
