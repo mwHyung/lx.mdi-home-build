@@ -6,12 +6,17 @@ import Columns from "./Columns";
 import { Row } from "@/types/ui";
 import { PageParams } from "@/types/shared";
 import PaginationControls from "@/components/ui/Pagination/PaginationControls";
+import { useRouter } from "next/navigation";
 
 const NoticeList = () => {
+  const router = useRouter();
+
   // 테이블
   const { contentsColumns } = Columns();
   const selectedUser = data;
-  const handleSelectRow = (id: Row["id"]) => {};
+  const handleSelectRow = (id: Row["id"]) => {
+    router.push("/notice-detail");
+  };
 
   const updatePageParams = (pageParams: Partial<PageParams>) => {};
 

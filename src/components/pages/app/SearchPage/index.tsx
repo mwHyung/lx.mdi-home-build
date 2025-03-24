@@ -15,15 +15,19 @@ import ImageCard06 from "public/images/image_cardCon06.jpeg";
 import ImageCard07 from "public/images/image_cardCon07.jpeg";
 import ImageCard08 from "public/images/image_cardCon08.jpg";
 import PDFViewer from "@/components/ui/PDFViewer";
+import { useRouter } from "next/navigation";
 
 const SearchPage = () => {
+  const router = useRouter();
   const { isDetail, setIsDetail } = useLayoutContext();
 
   // 테이블
   const { contentsColumns, externalColumns } = Columns();
   const selectedUser = data;
   const externalUser = externalData;
-  const handleSelectRow = (id: Row["id"]) => {};
+  const handleSelectRow = (id: Row["id"]) => {
+    router.push("/external-data-detail");
+  };
 
   // pdf
   const [pdfActive, setPdfActive] = useState<number | null>(null);
@@ -104,7 +108,7 @@ const SearchPage = () => {
             id="search-list-it-table"
             columns={externalColumns}
             rows={externalUser}
-            containerClassName="sub_table"
+            containerClassName="sub_table hashtag"
             onRowSelect={handleSelectRow}
             colgroup={["8%", "10%", "58%", "10%", "15%"]}
           />

@@ -17,7 +17,7 @@ const Columns = () => {
         label: "제목",
         dataAlign: "left",
         render: (title: any) => {
-          return <Link href={`${title.link}`}>{title.name}</Link>;
+          return title.name;
         },
       },
       {
@@ -27,13 +27,6 @@ const Columns = () => {
         render: (hits: any) => {
           return (
             <div className="flex items-center justify-center gap-4">
-              {/* <Image
-                src={IconViewer}
-                width={28}
-                height={28}
-                style={{ width: "1.75rem", height: "1.75rem" }}
-                alt="icon viewer hits"
-              /> */}
               <span className="leading-none">{hits}</span>
             </div>
           );

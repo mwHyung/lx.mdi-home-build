@@ -6,12 +6,22 @@ import Columns from "./Columns";
 import { Row } from "@/types/ui";
 import { PageParams } from "@/types/shared";
 import PaginationControls from "@/components/ui/Pagination/PaginationControls";
+import { useRouter } from "next/navigation";
+import { id } from "date-fns/locale";
 
 const NewsFeedList = () => {
+  const router = useRouter();
+
   // 테이블
   const { contentsColumns } = Columns();
   const selectedUser = data;
-  const handleSelectRow = (id: Row["id"]) => {};
+  const handleSelectRow = (id: Row["id"]) => {
+    selectedUser.map(user => {
+      if (user.id === id) {
+        router.push(user.title.link);
+      }
+    });
+  };
 
   const updatePageParams = (pageParams: Partial<PageParams>) => {};
 
@@ -65,6 +75,7 @@ const NewsFeedList = () => {
 
 const data = [
   {
+    id: "01",
     group: "어보브반도체",
     title: {
       name: "고성능 모터 제어용 MCU, A34M456 출시",
@@ -74,6 +85,7 @@ const data = [
     date: "2025.01.15",
   },
   {
+    id: "02",
     group: "Saint-Gobain",
     title: {
       name: "재활용 소재로 만든 첫 번째 석고보드 출시",
@@ -83,6 +95,7 @@ const data = [
     date: "2025.01.16",
   },
   {
+    id: "03",
     group: "ITOCHU",
     title: {
       name: "홋카이도 치토세시 물류 시설 개발 발표",
@@ -92,6 +105,7 @@ const data = [
     date: "2025.01.22",
   },
   {
+    id: "04",
     group: "ITOCHU",
     title: {
       name: "Kawasaki Motors와 전략적 사업 제휴 체결",
@@ -101,6 +115,7 @@ const data = [
     date: "2024.11.08",
   },
   {
+    id: "05",
     group: "Mitsubishi Corporation ",
     title: {
       name: "Tangguh LNG 프로젝트, 70억 달러 규모의 신규 투자 결정",
@@ -110,6 +125,7 @@ const data = [
     date: "2024.11.22",
   },
   {
+    id: "06",
     group: "어보브반도체",
     title: {
       name: "고성능 모터 제어용 MCU, A34M456 출시",
@@ -119,6 +135,7 @@ const data = [
     date: "2025.01.15",
   },
   {
+    id: "07",
     group: "Saint-Gobain",
     title: {
       name: "재활용 소재로 만든 첫 번째 석고보드 출시",
@@ -128,6 +145,7 @@ const data = [
     date: "2025.01.16",
   },
   {
+    id: "08",
     group: "ITOCHU",
     title: {
       name: "홋카이도 치토세시 물류 시설 개발 발표",
@@ -137,6 +155,7 @@ const data = [
     date: "2025.01.22",
   },
   {
+    id: "09",
     group: "ITOCHU",
     title: {
       name: "Kawasaki Motors와 전략적 사업 제휴 체결",
@@ -146,6 +165,7 @@ const data = [
     date: "2024.11.08",
   },
   {
+    id: "10",
     group: "Mitsubishi Corporation ",
     title: {
       name: "Tangguh LNG 프로젝트, 70억 달러 규모의 신규 투자 결정",
