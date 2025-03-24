@@ -121,7 +121,7 @@ const data = [
       name: "Tangguh LNG 프로젝트, 70억 달러 규모의 신규 투자 결정",
       link: "/news-feed-detail/05",
     },
-    hits: "10,950",
+    hits: "95",
     date: "2024.11.22",
   },
   {
@@ -171,7 +171,7 @@ const data = [
       name: "Tangguh LNG 프로젝트, 70억 달러 규모의 신규 투자 결정",
       link: "/news-feed-detail/05",
     },
-    hits: "10,950",
+    hits: "95",
     date: "2024.11.22",
   },
 ];

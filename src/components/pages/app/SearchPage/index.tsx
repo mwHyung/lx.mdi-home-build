@@ -237,7 +237,7 @@ const dummyData = [
     tag: { type: "market", label: "MI Brief" },
     tit: "AI 로봇 개발에 속도를 내고 있는 애플과 메타",
     hash: ["세계경제", "AI 로봇"],
-    hits: "10,857",
+    hits: "857",
     dateS: "2025.02.21",
   },
 ];

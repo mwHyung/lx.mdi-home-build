@@ -204,7 +204,7 @@ const dummyData = [
     tag: { type: "market", label: "MI Brief" },
     tit: "AI 로봇 개발에 속도를 내고 있는\n애플과 메타",
     hash: ["세계경제", "AI 로봇"],
-    hits: "10,857",
+    hits: "857",
     dateS: "2025.02.21",
   },
   {
@@ -213,7 +213,7 @@ const dummyData = [
     tag: { type: "market", label: "MI Brief" },
     tit: "글로벌 조선업체들이 SMR* 기술\n개발에 투자하는 이유",
     hash: ["세계경제", "조선"],
-    hits: "10,857",
+    hits: "857",
     dateS: "2025.02.21",
   },
   {
@@ -249,7 +249,7 @@ const dummyData = [
     tag: { type: "market", label: "MI Brief" },
     tit: "미국-우크라이나 광물협정 주요 내용 및 재건 사업 전망",
     hash: ["세계경제", "광물"],
-    hits: "10,857",
+    hits: "857",
     dateS: "2025.02.28",
   },
   {
@@ -291,7 +291,7 @@ const dummyList = [
       hash: ["세계경제", "AI 로봇"],
     },
     date: "2025.02.21",
-    hits: "10,857",
+    hits: "857",
   },
   {
     id: 3,
@@ -301,7 +301,7 @@ const dummyList = [
       hash: ["세계경제", "조선"],
     },
     date: "2025.02.21",
-    hits: "10,857",
+    hits: "857",
   },
   {
     id: 4,
@@ -341,7 +341,7 @@ const dummyList = [
       hash: ["세계경제", "광물"],
     },
     date: "2025.02.28",
-    hits: "10,857",
+    hits: "857",
   },
   {
     id: 8,

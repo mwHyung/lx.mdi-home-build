@@ -164,7 +164,7 @@ const dummyData = [
     tit: "가뭄에 시달리는 파나마 운하",
     category: "Industry",
     hash: ["클라우드", "IBM"],
-    hits: "10,857",
+    hits: "857",
     dateS: "2024.03.26",
   },
   {
@@ -174,7 +174,7 @@ const dummyData = [
     tit: "구리의 특성 및 중장기 수급전망",
     category: "Benchmarking",
     hash: ["클라우드", "IBM"],
-    hits: "10,857",
+    hits: "857",
     dateS: "2024.04.15",
   },
   {
@@ -214,7 +214,7 @@ const dummyData = [
     tit: "초고령화 시대의 거주변화 및 관련\n사업 소개 (Part 2)",
     category: "Benchmarking",
     hash: ["클라우드", "IBM"],
-    hits: "10,857",
+    hits: "857",
     dateS: "2024.10.07",
   },
   {
