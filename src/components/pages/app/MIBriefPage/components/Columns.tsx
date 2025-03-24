@@ -8,25 +8,23 @@ const Columns = () => {
   const contentsColumns: Column[] = useMemo(
     () => [
       {
-        id: "week",
-        label: "일자",
-        dataAlign: "center",
-      },
-      {
         id: "tit",
         label: "제목",
         dataAlign: "left",
         render: (tit: any) => {
           return (
-            <div className="pl-10">
-              {tit.name}
-              <ul className="flex flex-wrap items-center gap-[0.625rem]">
-                {tit.hash.map((item: string, idx: number) => (
-                  <li key={idx}>
-                    <span className="text-xs text-pub-gray6 before:content-['#']">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="flex items-start">
+              <div className="min-w-48 pr-10 pt-[1px] text-center">{tit.week}</div>
+              <div>
+                {tit.name}
+                <ul className="flex flex-wrap items-center gap-[0.625rem]">
+                  {tit.hash.map((item: string, idx: number) => (
+                    <li key={idx}>
+                      <span className="text-xs text-pub-gray6 before:content-['#']">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           );
         },

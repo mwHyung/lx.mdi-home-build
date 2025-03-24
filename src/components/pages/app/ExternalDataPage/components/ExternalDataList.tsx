@@ -132,17 +132,8 @@ const ExternalDataList = () => {
               rows={selectedUser}
               containerClassName="sub_table hashtag"
               onRowSelect={handleSelectRow}
-              colgroup={["8%", "10%", "10%", "48%", "10%", "15%"]}
+              colgroup={["8%", "10%", "58%", "10%", "15%"]}
             />
-            {/* {dummyData.map((item, idx) => (
-              <CardContent
-                key={idx}
-                list={item}
-                className="list_type"
-                type="list"
-                link="/external-data-detail"
-              />
-            ))} */}
           </div>
         )}
 
@@ -150,15 +141,6 @@ const ExternalDataList = () => {
           <PaginationControls onChange={updatePageParams} total={100} page={1} perPage={10} />
         </div>
       </div>
-
-      {/* {pdfActive !== null && (
-        <PDFViewer
-          pdfUrl={`/pdf/Focus/${pdfList[pdfActive]}`}
-          usePresigned={false}
-          fileName={"fileName"}
-          onClose={() => setPdfActive(null)}
-        />
-      )} */}
     </>
   );
 };
@@ -166,174 +148,197 @@ const ExternalDataList = () => {
 const dummyData = [
   {
     src: ImageCard01,
-    date: "24년 3월",
-    tag: { type: "external", label: "기관 ·  연구소" },
-    tit: "가뭄에 시달리는 파나마 운하",
     category: "Market",
-    hash: ["클라우드", "IBM"],
-    hits: "10,857",
-    dateS: "2024.03.26",
-  },
-  {
-    src: ImageCard02,
-    date: "24년 4월",
-    tag: { type: "external", label: "기관 ·  연구소" },
-    tit: "구리의 특성 및 중장기 수급전망",
-    category: "IT",
-    hash: ["클라우드", "IBM"],
-    hits: "10,857",
-    dateS: "2024.04.15",
-  },
-  {
-    src: ImageCard03,
-    date: "24년 6월",
-    tag: { type: "external", label: "기관 ·  연구소" },
-    tit: "SMR 산업동향",
-    category: "Market",
-    hash: ["청정에너지", "원자력", "SMR"],
-    hits: "2,875",
-    dateS: "2024.06.04",
-  },
-  {
-    src: ImageCard01,
-    date: "24년 7월",
-    tag: { type: "external", label: "기관 ·  연구소" },
-    tit: "우라늄 공급망 동향",
-    category: "Market",
-    hash: ["시니어", "레지던스"],
-    hits: "547",
-    dateS: "2024.07.22",
-  },
-  {
-    src: ImageCard02,
-    date: "24년 9월",
-    tag: { type: "external", label: "기관 ·  연구소" },
-    tit: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 1)",
-    category: "IT",
-    hash: ["주택매매", "부동산시장"],
-    hits: "32",
-    dateS: "2024.09.09",
-  },
-  {
-    src: ImageCard03,
-    date: "24년 10월",
-    tag: { type: "external", label: "기관 ·  연구소" },
-    tit: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 2)",
-    category: "IT",
-    hash: ["클라우드", "IBM"],
-    hits: "10,857",
-    dateS: "2024.10.07",
-  },
-  {
-    src: ImageCard02,
-    date: "24년 11월",
-    tag: { type: "external", label: "기관 ·  연구소" },
-    tit: "국내 데이터센터 산업 및 내·외장재 소개",
-    category: "Market",
-    hash: ["세계경제", "IMF"],
-    hits: "2,875",
-    dateS: "2024.11.25",
-  },
-  {
-    src: ImageCard03,
-    date: "24년 12월",
-    tag: { type: "external", label: "기관 ·  연구소" },
-    tit: "미래 에너지 자원의 게임체인저로 주목받는 천연수소",
-    category: "IT",
-    hash: ["시니어", "레지던스"],
-    hits: "547",
-    dateS: "2024.12.16",
-  },
-  {
-    src: ImageCard01,
     date: "25년 2월",
-    tag: { type: "external", label: "기관 ·  연구소" },
-    tit: "자원의 보고(寶庫) 달",
+    tit: "아시아정책연구소(NBR), 중국의 핵심광물 수출통제로 향후 공급망이 교란될 것으로 예측",
+    hash: ["미중갈등", "수출규제", "수출통제", "핵심광물"],
+    hits: "857",
+    dateS: "2025.02.20",
+  },
+  {
+    src: ImageCard02,
     category: "Market",
-    hash: ["주택매매", "부동산시장"],
+    date: "25년 2월",
+    tit: "다시 불어올 폐기물 열풍, 페플라스틱 재활용을 중심으로",
+    hash: ["재활용", "폐플라스틱", "플라스틱 폐기물", "KPMG"],
+    hits: "57",
+    dateS: "2025.02.13",
+  },
+  {
+    src: ImageCard03,
+    category: "Market",
+    date: "25년 1월",
+    tit: "2025년 국내외 경제전망",
+    hash: ["2025경제", "경제전망", "한국경제", "pwc"],
+    hits: "25",
+    dateS: "2025.01.09",
+  },
+  {
+    src: ImageCard01,
+    category: "Market",
+    date: "24년 12월",
+    tit: "2025년 수출전망 및 지역별 시장여건",
+    hash: ["세계교역", "수출전망"],
+    hits: "47",
+    dateS: "2025.01.02",
+  },
+  {
+    src: ImageCard02,
+    category: "Market",
+    date: "24년 9월",
+    tit: "웰에이징으로 주목받는 케어푸드와 비즈니스 기획",
+    hash: ["고령화", "노인", "식량", "초고령화", "케이푸드"],
     hits: "32",
-    dateS: "2025.02.04",
+    dateS: "2024.12.12",
+  },
+  {
+    src: ImageCard03,
+    category: "Market",
+    date: "24년 11월",
+    tit: "반도체 산업 6대 이슈 및 대응 방안",
+    hash: ["반도체", "반도체산업", "생성형 AI", "전력반도체", "팹리스"],
+    hits: "82",
+    dateS: "2024.11.21",
+  },
+  {
+    src: ImageCard01,
+    category: "Market",
+    date: "24년 12월",
+    tit: "2025년 수출전망 및 지역별 시장여건",
+    hash: ["세계교역", "수출전망"],
+    hits: "47",
+    dateS: "2025.01.02",
+  },
+  {
+    src: ImageCard02,
+    category: "Market",
+    date: "24년 9월",
+    tit: "웰에이징으로 주목받는 케어푸드와 비즈니스 기획",
+    hash: ["고령화", "노인", "식량", "초고령화", "케이푸드"],
+    hits: "32",
+    dateS: "2024.12.12",
+  },
+  {
+    src: ImageCard03,
+    category: "Market",
+    date: "24년 11월",
+    tit: "반도체 산업 6대 이슈 및 대응 방안",
+    hash: ["반도체", "반도체산업", "생성형 AI", "전력반도체", "팹리스"],
+    hits: "82",
+    dateS: "2024.11.21",
   },
 ];
 
 const dummyList = [
   {
-    week: "24년 3월",
     category: "Market",
-    name: "KIEP",
-    tit: { name: "가뭄에 시달리는 파나마 운하", hash: ["클라우드", "IBM"] },
-    hits: "10,857",
-    date: "2024.03.26",
+    name: "KOSTI",
+    tit: {
+      week: "25년 2월",
+      name: "아시아정책연구소(NBR), 중국의 핵심광물 수출통제로 향후 공급망이 교란될 것으로 예측",
+      hash: ["미중갈등", "수출규제", "수출통제", "핵심광물"],
+    },
+    hits: "857",
+    date: "2025.02.20",
   },
   {
-    week: "24년 4월",
-    tit: { name: "구리의 특성 및 중장기 수급전망", hash: ["클라우드", "IBM"] },
+    category: "Market",
+    name: "KPMG",
+    tit: {
+      week: "25년 2월",
+      name: "다시 불어올 폐기물 열풍, 페플라스틱 재활용을 중심으로",
+      hash: ["재활용", "폐플라스틱", "플라스틱 폐기물", "KPMG"],
+    },
+    hits: "857",
+    date: "2025.02.13",
+  },
+  {
+    category: "Market",
+    name: "PWC",
+    tit: {
+      week: "25년 1월",
+      name: "2025년 국내외 경제전망",
+      hash: ["2025경제", "경제전망", "한국경제", "pwc"],
+    },
+    hits: "275",
+    date: "2025.01.09",
+  },
+  {
+    category: "Market",
+    name: "KOTRA",
+    tit: {
+      week: "24년 12월",
+      name: "2025년 수출전망 및 지역별 시장여건",
+      hash: ["세계교역", "수출전망"],
+    },
+    hits: "80",
+    date: "2025.01.02",
+  },
+  {
+    category: "Market",
+    name: "KPMG",
+    tit: {
+      week: "24년 12월",
+      name: "웰에이징으로 주목받는 케어푸드와 비즈니스 기획",
+      hash: ["고령화", "노인", "식량", "초고령화", "케이푸드"],
+    },
+    hits: "66",
+    date: "2024.12.12",
+  },
+  {
+    category: "Market",
+    name: "KPMG",
+    tit: {
+      week: "24년 11월",
+      name: "반도체 산업 6대 이슈 및 대응 방안",
+      hash: ["반도체", "반도체산업", "생성형 AI", "전력반도체", "팹리스"],
+    },
+    hits: "82",
+    date: "2024.11.21",
+  },
+  {
+    category: "Market",
     name: "kotra",
-    category: "IT",
-    hits: "10,857",
-    date: "2024.04.15",
-  },
-  {
-    week: "24년 6월",
-    tit: { name: "SMR 산업동향", hash: ["청정에너지", "원자력", "SMR"] },
-    name: "KPMG",
-    category: "Market",
-    hits: "2,875",
-    date: "2024.06.04",
-  },
-  {
-    week: "24년 7월",
-    tit: { name: "우라늄 공급망 동향", hash: ["시니어", "레지던스"] },
-    category: "Market",
-    name: "KPMG",
-    hits: "547",
-    date: "2024.07.22",
-  },
-  {
-    week: "24년 9월",
     tit: {
-      name: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 1)",
-      hash: ["주택매매", "부동산시장"],
+      week: "24년 12월",
+      name: "2025년 수출전망 및 지역별 시장여건",
+      hash: ["세계교역", "수출전망"],
     },
-    name: "KPMG",
-    category: "IT",
-    hits: "32",
-    date: "2024.09.09",
+    hits: "80",
+    date: "2025.01.02",
   },
   {
-    week: "24년 10월",
-    tit: { name: "초고령화 시대의 거주변화 및 관련 사업 소개 (Part 2)", hash: ["클라우드", "IBM"] },
-    name: "KPMG",
-    category: "IT",
-    hits: "10,857",
-    date: "2024.10.07",
-  },
-  {
-    week: "24년 11월",
-    tit: { name: "국내 데이터센터 산업 및 내·외장재 소개", hash: ["세계경제", "IMF"] },
-    name: "KPMG",
     category: "Market",
-    hits: "2,875",
-    date: "2024.11.25",
-  },
-  {
-    week: "24년 12월",
+    name: "KPMG",
     tit: {
-      name: "미래 에너지 자원의 게임체인저로 주목받는 천연수소",
-      hash: ["시니어", "레지던스"],
+      week: "24년 12월",
+      name: "웰에이징으로 주목받는 케어푸드와 비즈니스 기획",
+      hash: ["고령화", "노인", "식량", "초고령화", "케이푸드"],
     },
-    name: "KPMG",
-    category: "IT",
-    hits: "547",
-    date: "2024.12.16",
+    hits: "66",
+    date: "2024.12.12",
   },
   {
-    week: "25년 2월",
-    tit: { name: "자원의 보고(寶庫) 달", hash: ["주택매매", "부동산시장"] },
-    name: "KPMG",
     category: "Market",
-    hits: "32",
-    date: "2025.02.04",
+    name: "KPMG",
+    tit: {
+      week: "24년 11월",
+      name: "반도체 산업 6대 이슈 및 대응 방안",
+      hash: ["반도체", "반도체산업", "생성형 AI", "전력반도체", "팹리스"],
+    },
+    hits: "82",
+    date: "2024.11.21",
+  },
+  {
+    category: "Market",
+    name: "KPMG",
+    tit: {
+      week: "24년 11월",
+      name: "반도체 산업 6대 이슈 및 대응 방안",
+      hash: ["반도체", "반도체산업", "생성형 AI", "전력반도체", "팹리스"],
+    },
+    hits: "82",
+    date: "2024.11.21",
   },
 ];
 

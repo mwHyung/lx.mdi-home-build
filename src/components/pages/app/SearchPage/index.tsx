@@ -99,14 +99,14 @@ const SearchPage = () => {
           </div>
         </SearchMain>
 
-        <SearchMain tit="강연 · 세미나 (IT)" hits="2" className="pt-0">
+        <SearchMain tit="강연 · 세미나 (Market)" hits="2" className="pt-0">
           <Table
             id="search-list-it-table"
             columns={externalColumns}
             rows={externalUser}
             containerClassName="sub_table"
             onRowSelect={handleSelectRow}
-            colgroup={["8%", "10%", "10%", "48%", "10%", "15%"]}
+            colgroup={["8%", "10%", "58%", "10%", "15%"]}
           />
         </SearchMain>
       </SearchContainer>
@@ -163,36 +163,48 @@ const data = [
 ];
 const externalData = [
   {
-    week: "24년 3월",
     category: "Market",
-    name: "KIEP",
-    tit: { name: "가뭄에 시달리는 파나마 운하", hash: ["클라우드", "IBM"] },
-    hits: "10,857",
-    date: "2024.03.26",
+    name: "KOSTI",
+    tit: {
+      week: "25년 2월",
+      name: "아시아정책연구소(NBR), 중국의 핵심광물 수출통제로 향후 공급망이 교란될 것으로 예측",
+      hash: ["미중갈등", "수출규제", "수출통제", "핵심광물"],
+    },
+    hits: "857",
+    date: "2025.02.20",
   },
   {
-    week: "24년 4월",
-    tit: { name: "구리의 특성 및 중장기 수급전망", hash: ["클라우드", "IBM"] },
-    name: "kotra",
-    category: "IT",
-    hits: "10,857",
-    date: "2024.04.15",
-  },
-  {
-    week: "24년 6월",
-    tit: { name: "SMR 산업동향", hash: ["청정에너지", "원자력", "SMR"] },
+    category: "Market",
     name: "KPMG",
-    category: "Market",
-    hits: "2,875",
-    date: "2024.06.04",
+    tit: {
+      week: "25년 2월",
+      name: "다시 불어올 폐기물 열풍, 페플라스틱 재활용을 중심으로",
+      hash: ["재활용", "폐플라스틱", "플라스틱 폐기물", "KPMG"],
+    },
+    hits: "857",
+    date: "2025.02.13",
   },
   {
-    week: "24년 7월",
-    tit: { name: "우라늄 공급망 동향", hash: ["시니어", "레지던스"] },
-    name: "KPMG",
     category: "Market",
-    hits: "547",
-    date: "2024.07.22",
+    name: "PWC",
+    tit: {
+      week: "25년 1월",
+      name: "2025년 국내외 경제전망",
+      hash: ["2025경제", "경제전망", "한국경제", "pwc"],
+    },
+    hits: "275",
+    date: "2025.01.09",
+  },
+  {
+    category: "Market",
+    name: "KOTRA",
+    tit: {
+      week: "24년 12월",
+      name: "2025년 수출전망 및 지역별 시장여건",
+      hash: ["세계교역", "수출전망"],
+    },
+    hits: "80",
+    date: "2025.01.02",
   },
 ];
 
