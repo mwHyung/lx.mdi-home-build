@@ -82,17 +82,31 @@ const MIBriefList = () => {
             <span className="text-pub-gray9 font-medium tracking-[-0.016rem]">3,762</span>
           </div>
           <div className="flex items-center gap-5">
-            <SelectBox
-              placeholder="최근 발행순"
-              list={[
-                { value: 1, label: "최근 발행순" },
-                { value: 2, label: "최근 발행순" },
-                { value: 3, label: "최근 발행순" },
-              ]}
-              size="2xl"
-              width="fit"
-              className="min-w-[12.5rem] px-5 h-[2.813rem]"
-            />
+            <div className="flex items-center">
+              <SelectBox
+                placeholder="10"
+                list={[
+                  { value: 1, label: "10" },
+                  { value: 2, label: "30" },
+                  { value: 3, label: "50" },
+                  { value: 4, label: "100" },
+                ]}
+                size="2xl"
+                width="fit"
+                className="min-w-[6.25rem] px-5 h-[2.813rem]"
+              />
+              <SelectBox
+                placeholder="최근 발행순"
+                list={[
+                  { value: 1, label: "최근 발행순" },
+                  { value: 2, label: "최근 발행순" },
+                  { value: 3, label: "최근 발행순" },
+                ]}
+                size="2xl"
+                width="fit"
+                className="min-w-[12.5rem] px-5 h-[2.813rem]"
+              />
+            </div>
             <div className="flex items-center gap-2">
               {iconList.map((icon, idx) => (
                 <button
