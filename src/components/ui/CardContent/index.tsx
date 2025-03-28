@@ -1,8 +1,14 @@
-import React, { FC } from "react";
+"use client";
+
+import React, { FC, useState } from "react";
 import styles from "./CardContent.module.scss";
 import Image from "next/image";
 import Viewer from "public/images/icon_viewers.svg";
 import Link from "next/link";
+
+import IconPlay from "public/images/icon_play.png";
+import IconPause from "public/images/icon_pause.png";
+import { useRouter } from "next/navigation";
 
 interface Props {
   list: {
@@ -16,14 +22,17 @@ interface Props {
     tit?: string;
     hash?: string[];
     hits?: string;
-    dateS?: string;
+    publicDate?: string;
   };
   className: string;
   type?: "default" | "card" | "list" | "external";
   main?: boolean;
   link?: string;
   pdf?: boolean;
+  aiSelected?: boolean;
   onClick?: () => void;
+  selectedTitle?: string;
+  setSelectedTitle?: (tit: string) => void;
 }
 
 const CardContent: FC<Props> = ({
@@ -33,16 +42,29 @@ const CardContent: FC<Props> = ({
   main,
   link = "/",
   pdf = false,
+  aiSelected = false,
   onClick,
+  selectedTitle,
+  setSelectedTitle,
 }) => {
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!pdf) return;
-    event.preventDefault();
-    console.log("링크 클릭, 화면 이동X");
+    if (aiSelected) {
+      event.preventDefault();
+      const currentTitle = list.tit ?? "";
+      setSelectedTitle?.(currentTitle === selectedTitle ? "" : currentTitle);
+      return;
+    }
+
+    if (pdf) {
+      event.preventDefault();
+      onClick?.();
+      console.log("링크 클릭, 화면 이동X");
+      return;
+    }
   };
 
   return (
-    <div className={`${styles.card} ${styles[className]}`} onClick={onClick}>
+    <div className={`${styles.card} ${styles[className]}`}>
       <Link href={`${link}`} onClick={handleClick}>
         <div className={styles.image}>
           <div className={styles.box}>
@@ -52,11 +74,19 @@ const CardContent: FC<Props> = ({
               alt="card background image"
             />
           </div>
-          {/* {type === "list" && (
-            <div className={styles.date}>
-              <h4>{list.date}</h4>
+          {aiSelected && (
+            <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center bg-white bg-opacity-40">
+              {selectedTitle === list.tit ? (
+                <button type="button">
+                  <Image src={IconPause} alt="pause icon" />
+                </button>
+              ) : (
+                <button type="button">
+                  <Image src={IconPlay} alt="play icon" />
+                </button>
+              )}
             </div>
-          )} */}
+          )}
         </div>
         <div className={styles.date}>
           <h4>{list.date}</h4>
@@ -69,13 +99,13 @@ const CardContent: FC<Props> = ({
                   <div className={styles.tag}>
                     {list.tag?.type === "market" && (
                       <>
-                        <span className={styles.market}>MDI 리포트</span>
+                        <span className={styles.market}>MDI 보고서</span>
                         <span>{list.tag?.label}</span>
                       </>
                     )}
                     {list.tag?.type === "external" && (
                       <>
-                        <span className={styles.external}>외부 리포트</span>
+                        <span className={styles.external}>외부 보고서</span>
                         <span>{list.tag?.label}</span>
                       </>
                     )}
@@ -108,10 +138,6 @@ const CardContent: FC<Props> = ({
                   {list.category && (
                     <strong>{`${list.category ? list.category + " |" : ""}`}</strong>
                   )}
-                  {/* {type === "list" ? (
-                  ) : (
-                    <strong className="block text-[1.375rem] leading-none mb-2">{`${list.category ? list.category : ""}`}</strong>
-                  )} */}
                   <h4>{list.date}</h4>
                 </div>
 
@@ -126,11 +152,9 @@ const CardContent: FC<Props> = ({
                 </ul>
 
                 <div className={styles.hits}>
-                  {/* <Image src={Viewer} width={20} height={20} alt="icon viewer" /> */}
-
                   {(type === "card" || type === "list") && (
                     <div className={styles.date}>
-                      <h4>{list.dateS}</h4>
+                      <h4>{list.publicDate}</h4>
                     </div>
                   )}
 

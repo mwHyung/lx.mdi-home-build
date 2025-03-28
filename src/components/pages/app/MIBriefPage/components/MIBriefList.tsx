@@ -68,8 +68,23 @@ const MIBriefList = () => {
         setPdfActive(Number(id));
       }
     });
-    // setPdfActive(Number(id));
   };
+
+  // AI 음성 듣기
+  const [isAISelect, setIsAISelect] = useState(false);
+  const [isLanguage, isSetLanguage] = useState<string[]>(["KR"]);
+
+  const handleClick = (lang: string) => {
+    if (isLanguage.includes(lang)) {
+      isSetLanguage([]);
+      setIsAISelect(false);
+    } else {
+      setIsAISelect(true);
+      isSetLanguage([lang]);
+    }
+  };
+
+  const [selectedTitle, setSelectedTitle] = useState<string>("");
 
   return (
     <>
@@ -135,6 +150,70 @@ const MIBriefList = () => {
           </div>
         </div>
 
+        {/* 임시 AI 음성 듣기 - 버튼 타입 */}
+        <div className="w-[25.5rem] ml-auto flex flex-col items-center justify-end gap-[0.125rem] rounded-lg overflow-hidden">
+          <button
+            className={`w-full h-[2.813rem] bg-pub-red text-[1.125rem] font-bold text-white`}
+            onClick={() => setIsAISelect(!isAISelect)}
+          >
+            AI 음성 듣기
+          </button>
+          {isAISelect && (
+            <ul className="w-full flex items-center gap-[0.125rem] text-pub-gray9 font-bold text-[1.125rem] leading-[1.05rem] tracking-[-0.009rem]">
+              {["KR", "EN"].map((lang, idx) => (
+                <li
+                  key={idx}
+                  className={`h-8 flex-1 flex items-center justify-center bg-pub-lightG cursor-pointer ${isLanguage.includes(lang) ? "text-white bg-pub-red" : ""}`}
+                  onClick={handleClick.bind(null, lang)}
+                >
+                  {lang}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* 임시 AI 음성 듣기 - 텍스트 타입1 */}
+        <div className="w-[25.5rem] ml-auto flex items-center justify-between gap-[1.125rem]">
+          <div className="flex-1 flex items-center gap-[1.75rem] text-[1.125rem] text-pub-gray9 after:content-[''] after:flex-1 after:w-auto after:h-[0.063rem] after:bg-pub-lightG">
+            AI 음성듣기
+          </div>
+          <ul className="flex items-center gap-4 text-pub-gray9 font-semibold text-[1.125rem] leading-[1.05rem] tracking-[-0.009rem]">
+            {["KR", "EN"].map((lang, idx) => (
+              <li
+                key={idx}
+                className={`w-9 h-9 rounded-sm flex items-center justify-center gap-2 cursor-pointer relative first:after:block first:after:content-[''] first:after:w-[1px] first:after:h-4 first:after:bg-pub-grayD first:after:absolute first:after:top-1/2 first:after:right-0 first:after:translate-x-2 first:after:-translate-y-1/2 ${isLanguage.includes(lang) && isAISelect ? "text-white bg-pub-red" : "bg-pub-lightG"}`}
+                onClick={handleClick.bind(null, lang)}
+              >
+                {lang}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* 임시 AI 음성 듣기 - 텍스트 타입2 */}
+        <div className="w-[25.5rem] ml-auto flex items-center justify-between gap-[1.125rem]">
+          <div
+            className="flex-1 flex items-center gap-[1.75rem] after:content-[''] after:flex-1 after:w-auto after:h-[0.063rem] after:bg-pub-lightG"
+            onClick={handleClick.bind(null, "KR")}
+          >
+            <button className="flex items-center gap-[1.75rem] text-[1.125rem] text-pub-gray9 px-3 py-1 rounded-sm bg-pub-red text-white font-bold">
+              AI 음성듣기
+            </button>
+          </div>
+          <ul className="flex items-center gap-4 text-pub-gray9 font-semibold text-[1.125rem] leading-[1.05rem] tracking-[-0.009rem]">
+            {["KR", "EN"].map((lang, idx) => (
+              <li
+                key={idx}
+                className={`flex items-center justify-center gap-2 cursor-pointer relative first:after:block first:after:content-[''] first:after:w-[1px] first:after:h-[0.75rem] first:after:bg-pub-grayD first:after:absolute first:after:top-1/2 first:after:right-0 first:after:translate-x-2 first:after:-translate-y-1/2 ${isLanguage.includes(lang) && isAISelect ? "text-pub-red" : ""}`}
+                onClick={handleClick.bind(null, lang)}
+              >
+                {lang}
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {!isActive ? (
           <div className="grid grid-cols-3 gap-[3.75rem] [@media(min-width:2560px)]:gap-[1.875rem]">
             {dummyData.map((item, idx) => (
@@ -145,7 +224,9 @@ const MIBriefList = () => {
                 type="card"
                 pdf={true}
                 onClick={() => setPdfActive(idx)}
-                // link="market-trends-detail"
+                aiSelected={isAISelect}
+                selectedTitle={selectedTitle}
+                setSelectedTitle={setSelectedTitle}
               />
             ))}
           </div>
@@ -157,7 +238,8 @@ const MIBriefList = () => {
               rows={selectedUser}
               containerClassName="sub_table hashtag"
               onRowSelect={handleSelectRow}
-              colgroup={["72%", "10%", "15%"]}
+              colgroup={["75%", "10%", "15%"]}
+              // showCheckbox={true}
             />
           </div>
         )}
@@ -187,7 +269,7 @@ const dummyData = [
     tit: "마루베니상사, 3개년 중기(’25~’27년) 전략 발표",
     hash: ["세계경제", "마루베니상사"],
     hits: "547",
-    dateS: "2025.02.14",
+    publicDate: "2025.02.14",
   },
   {
     src: ImageCard07,
@@ -196,7 +278,7 @@ const dummyData = [
     tit: "최근 스미토모상사가 투자*한 미국\n철도 침목(枕木) 제조기업 Evertrak** 소개",
     hash: ["세계경제", "스미토모상사"],
     hits: "32",
-    dateS: "2025.02.14",
+    publicDate: "2025.02.14",
   },
   {
     src: ImageCard08,
@@ -205,7 +287,7 @@ const dummyData = [
     tit: "AI 로봇 개발에 속도를 내고 있는\n애플과 메타",
     hash: ["세계경제", "AI 로봇"],
     hits: "857",
-    dateS: "2025.02.21",
+    publicDate: "2025.02.21",
   },
   {
     src: ImageCard09,
@@ -214,7 +296,7 @@ const dummyData = [
     tit: "글로벌 조선업체들이 SMR* 기술\n개발에 투자하는 이유",
     hash: ["세계경제", "조선"],
     hits: "857",
-    dateS: "2025.02.21",
+    publicDate: "2025.02.21",
   },
   {
     src: ImageCard01,
@@ -223,7 +305,7 @@ const dummyData = [
     tit: "나트륨 배터리 개발 동향",
     hash: ["글로벌 전기차", "나트륨 배터리"],
     hits: "2,875",
-    dateS: "2025.02.21",
+    publicDate: "2025.02.21",
   },
   {
     src: ImageCard02,
@@ -232,7 +314,7 @@ const dummyData = [
     tit: "중국 석탄 발전소 건설, 10년 만에\n최고치 기록",
     hash: ["중국", "석탄"],
     hits: "547",
-    dateS: "2025.02.21",
+    publicDate: "2025.02.21",
   },
   {
     src: ImageCard03,
@@ -241,7 +323,7 @@ const dummyData = [
     tit: "글로벌 소다회* 수급 전망에 대한 중국 전문가** 의견",
     hash: ["중국", "글로벌 소다회"],
     hits: "32",
-    dateS: "2025.02.28",
+    publicDate: "2025.02.28",
   },
   {
     src: ImageCard04,
@@ -250,7 +332,7 @@ const dummyData = [
     tit: "미국-우크라이나 광물협정 주요 내용 및 재건 사업 전망",
     hash: ["세계경제", "광물"],
     hits: "857",
-    dateS: "2025.02.28",
+    publicDate: "2025.02.28",
   },
   {
     src: ImageCard05,
@@ -259,7 +341,7 @@ const dummyData = [
     tit: "시진핑 주석, 중국 대표 기업들과\n좌담회 실시",
     hash: ["세계경제", "중국"],
     hits: "2,875",
-    dateS: "2025.02.28",
+    publicDate: "2025.02.28",
   },
 ];
 const dummyList = [
@@ -352,6 +434,16 @@ const dummyList = [
     },
     date: "2025.02.28",
     hits: "2,875",
+  },
+  {
+    id: 9,
+    tit: {
+      week: "25년 2월 2주차",
+      name: "마루베니상사, 3개년 중기(’25~’27년) 전략 발표",
+      hash: ["세계경제", "마루베니상사"],
+    },
+    date: "2025.02.14",
+    hits: "547",
   },
 ];
 

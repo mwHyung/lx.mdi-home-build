@@ -1,12 +1,29 @@
 import { useMemo } from "react";
 import { Column } from "@/types/ui";
-import Link from "next/link";
 import Image from "next/image";
-import IconViewer from "public/images/icon_viewers_rate.svg";
+
+import IconPlay from "public/images/icon_play.png";
+import IconPause from "public/images/icon_pause.png";
 
 const Columns = () => {
   const contentsColumns: Column[] = useMemo(
     () => [
+      // {
+      //   id: "play",
+      //   label: "",
+      //   dataAlign: "center",
+      //   render: (play: any) => {
+      //     return (
+      //       <div className="flex items-center justify-center">
+      //         {play ? (
+      //           <Image src={IconPause} alt="icon play" />
+      //         ) : (
+      //           <Image src={IconPlay} alt="icon play" />
+      //         )}
+      //       </div>
+      //     );
+      //   },
+      // },
       {
         id: "tit",
         label: "제목",

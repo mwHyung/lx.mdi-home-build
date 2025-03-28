@@ -10,7 +10,7 @@ import MIFocusList from "./components/MIFocusList";
 const MIBriefPage = () => {
   return (
     <PageContainer>
-      <TopBar src={Banner.src} title="MDI 리포트">
+      <TopBar src={Banner.src} title="MDI 보고서">
         <ContentTab list={["MI Brief", "MI Focus", "IT Trend", "Special Report"]} />
       </TopBar>
       <MainSection>

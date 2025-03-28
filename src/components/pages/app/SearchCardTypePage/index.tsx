@@ -97,7 +97,7 @@ const dummyData = [
     tit: "기획재정부, 시니어 레지던스 활성화 방안 발표 ( 24.7.23 )",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.09",
+    publicDate: "2024.12.09",
   },
   {
     src: ImageCard02,
@@ -106,7 +106,7 @@ const dummyData = [
     tit: "국내 부동산 시장 동향  ( 주택 매매 거래량은 증가, 공급물량은 아직 공급전에 있음국내 부동산 시장 동향  ( 주택 매매 거래량은 증가, 공급물량은 아직 공급전에 있음",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.09",
+    publicDate: "2024.12.09",
   },
   {
     src: ImageCard03,
@@ -115,7 +115,7 @@ const dummyData = [
     tit: "Rio Tinto, 기업 인수를 통해 세계 3위 규모의 리튬 매장량 확보Rio Tinto, 기업 인수를 통해 세계 3위 규모의 리튬 매장량 확보",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.09",
+    publicDate: "2024.12.09",
   },
   {
     src: ImageCard01,
@@ -124,7 +124,7 @@ const dummyData = [
     tit: "기획재정부, 시니어 레지던스 활성화 방안 발표 ( 24.7.23 )",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.09",
+    publicDate: "2024.12.09",
   },
   {
     src: ImageCard02,
@@ -133,7 +133,7 @@ const dummyData = [
     tit: "국내 부동산 시장 동향  ( 주택 매매 거래량은 증가, 공급물량은 아직 공급전에 있음국내 부동산 시장 동향  ( 주택 매매 거래량은 증가, 공급물량은 아직 공급전에 있음",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.09",
+    publicDate: "2024.12.09",
   },
   {
     src: ImageCard03,
@@ -142,7 +142,7 @@ const dummyData = [
     tit: "Rio Tinto, 기업 인수를 통해 세계 3위 규모의 리튬 매장량 확보Rio Tinto, 기업 인수를 통해 세계 3위 규모의 리튬 매장량 확보",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.09",
+    publicDate: "2024.12.09",
   },
   {
     src: ImageCard01,
@@ -151,7 +151,7 @@ const dummyData = [
     tit: "기획재정부, 시니어 레지던스 활성화 방안 발표 ( 24.7.23 )",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.09",
+    publicDate: "2024.12.09",
   },
   {
     src: ImageCard02,
@@ -160,7 +160,7 @@ const dummyData = [
     tit: "국내 부동산 시장 동향  ( 주택 매매 거래량은 증가, 공급물량은 아직 공급전에 있음국내 부동산 시장 동향  ( 주택 매매 거래량은 증가, 공급물량은 아직 공급전에 있음",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.09",
+    publicDate: "2024.12.09",
   },
   {
     src: ImageCard03,
@@ -169,7 +169,7 @@ const dummyData = [
     tit: "Rio Tinto, 기업 인수를 통해 세계 3위 규모의 리튬 매장량 확보Rio Tinto, 기업 인수를 통해 세계 3위 규모의 리튬 매장량 확보",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.09",
+    publicDate: "2024.12.09",
   },
 ];
 

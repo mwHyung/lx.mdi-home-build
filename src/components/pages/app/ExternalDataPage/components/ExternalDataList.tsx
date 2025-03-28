@@ -153,7 +153,7 @@ const dummyData = [
     tit: "아시아정책연구소(NBR), 중국의 핵심광물 수출통제로 향후 공급망이 교란될 것으로 예측",
     hash: ["미중갈등", "수출규제", "수출통제", "핵심광물"],
     hits: "857",
-    dateS: "2025.02.20",
+    publicDate: "2025.02.20",
   },
   {
     src: ImageCard02,
@@ -162,7 +162,7 @@ const dummyData = [
     tit: "다시 불어올 폐기물 열풍, 페플라스틱 재활용을 중심으로",
     hash: ["재활용", "폐플라스틱", "플라스틱 폐기물", "KPMG"],
     hits: "57",
-    dateS: "2025.02.13",
+    publicDate: "2025.02.13",
   },
   {
     src: ImageCard03,
@@ -171,7 +171,7 @@ const dummyData = [
     tit: "2025년 국내외 경제전망",
     hash: ["2025경제", "경제전망", "한국경제", "pwc"],
     hits: "25",
-    dateS: "2025.01.09",
+    publicDate: "2025.01.09",
   },
   {
     src: ImageCard01,
@@ -180,7 +180,7 @@ const dummyData = [
     tit: "2025년 수출전망 및 지역별 시장여건",
     hash: ["세계교역", "수출전망"],
     hits: "47",
-    dateS: "2025.01.02",
+    publicDate: "2025.01.02",
   },
   {
     src: ImageCard02,
@@ -189,7 +189,7 @@ const dummyData = [
     tit: "웰에이징으로 주목받는 케어푸드와 비즈니스 기획",
     hash: ["고령화", "노인", "식량", "초고령화", "케이푸드"],
     hits: "32",
-    dateS: "2024.12.12",
+    publicDate: "2024.12.12",
   },
   {
     src: ImageCard03,
@@ -198,7 +198,7 @@ const dummyData = [
     tit: "반도체 산업 6대 이슈 및 대응 방안",
     hash: ["반도체", "반도체산업", "생성형 AI", "전력반도체", "팹리스"],
     hits: "82",
-    dateS: "2024.11.21",
+    publicDate: "2024.11.21",
   },
   {
     src: ImageCard01,
@@ -207,7 +207,7 @@ const dummyData = [
     tit: "2025년 수출전망 및 지역별 시장여건",
     hash: ["세계교역", "수출전망"],
     hits: "47",
-    dateS: "2025.01.02",
+    publicDate: "2025.01.02",
   },
   {
     src: ImageCard02,
@@ -216,7 +216,7 @@ const dummyData = [
     tit: "웰에이징으로 주목받는 케어푸드와 비즈니스 기획",
     hash: ["고령화", "노인", "식량", "초고령화", "케이푸드"],
     hits: "32",
-    dateS: "2024.12.12",
+    publicDate: "2024.12.12",
   },
   {
     src: ImageCard03,
@@ -225,7 +225,7 @@ const dummyData = [
     tit: "반도체 산업 6대 이슈 및 대응 방안",
     hash: ["반도체", "반도체산업", "생성형 AI", "전력반도체", "팹리스"],
     hits: "82",
-    dateS: "2024.11.21",
+    publicDate: "2024.11.21",
   },
 ];
 

@@ -10,7 +10,7 @@ const ExternalDataDetailPage = () => {
     >
       <DetailTitle
         list={{
-          breadcrumb: ["외부 리포트", "기관 · 연구소"],
+          breadcrumb: ["외부 보고서", "기관 · 연구소"],
           group: "KPMG",
           tit: "무덤에서 요람으로. 대전환을 앞둔 상조서비스업",
           date: "2025.01.15",

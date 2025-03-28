@@ -19,7 +19,7 @@ const checkboxVariants = cva(
         info: "border-main-gray/40 text-main-gray data-[state=checked]:bg-info data-[state=checked]:border-info data-[state=checked]:text-info-foreground",
 
         defaultP:
-          "w-8 h-8 rounded-none border border-pub-grayC text-pub-grayC data-[state=checked]:border-pub-redD data-[state=checked]:text-pub-red",
+          "w-5 h-5 rounded-none border border-pub-grayC text-pub-grayC data-[state=checked]:border-pub-redD data-[state=checked]:text-pub-red",
       },
     },
     defaultVariants: {
@@ -71,8 +71,8 @@ const Checkbox: FC<CheckboxProps> = ({
         {...props}
       />
       {checkedValue === "indeterminate" && <Minus width={"100%"} height={"100%"} />}
-      <Check width={"100%"} height={"100%"} />
-      {/* {checkedValue === true && <Check width={"100%"} height={"100%"} />} */}
+      {/* <Check width={"100%"} height={"100%"} /> */}
+      {checkedValue === true && <Check width={"100%"} height={"100%"} />}
     </div>
   );
 };

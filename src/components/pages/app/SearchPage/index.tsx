@@ -220,7 +220,7 @@ const dummyData = [
     tit: "마루베니상사, 3개년 중기(’25~’27년) 전략 발표",
     hash: ["세계경제", "마루베니상사"],
     hits: "547",
-    dateS: "2025.02.14",
+    publicDate: "2025.02.14",
   },
   {
     src: ImageCard07,
@@ -229,7 +229,7 @@ const dummyData = [
     tit: "최근 스미토모상사가 투자*한 미국 철도 침목(枕木) 제조기업 Evertrak** 소개",
     hash: ["세계경제", "스미토모상사"],
     hits: "32",
-    dateS: "2025.02.14",
+    publicDate: "2025.02.14",
   },
   {
     src: ImageCard08,
@@ -238,7 +238,7 @@ const dummyData = [
     tit: "AI 로봇 개발에 속도를 내고 있는 애플과 메타",
     hash: ["세계경제", "AI 로봇"],
     hits: "857",
-    dateS: "2025.02.21",
+    publicDate: "2025.02.21",
   },
 ];
 

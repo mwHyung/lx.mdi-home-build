@@ -139,7 +139,7 @@ const useTable = <T extends Row>({
       label: (
         <Checkbox
           id="table-checkbox"
-          variant="info"
+          variant="defaultP"
           checked={getCheckedState()}
           onCheckedChange={handleChangeAllCheckbox}
         />
@@ -156,7 +156,7 @@ const useTable = <T extends Row>({
             id={rowId}
             checked={selectedRows?.includes(rowId)}
             disabled={disalbedRows?.includes(rowId)}
-            variant="info"
+            variant="defaultP"
           />
         );
       },

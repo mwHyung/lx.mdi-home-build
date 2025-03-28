@@ -57,6 +57,22 @@ const MIBriefList = () => {
     else if (idx === 1) setIsActive(true);
   };
 
+  // AI 음성 듣기
+  const [isAISelect, setIsAISelect] = useState(false);
+  const [isLanguage, isSetLanguage] = useState<string[]>(["KR"]);
+
+  const handleClick = (lang: string) => {
+    if (isLanguage.includes(lang)) {
+      isSetLanguage([]);
+      setIsAISelect(false);
+    } else {
+      setIsAISelect(true);
+      isSetLanguage([lang]);
+    }
+  };
+
+  const [selectedTitle, setSelectedTitle] = useState<string>("");
+
   return (
     <>
       <div className="flex flex-col gap-[1.875rem]">
@@ -107,6 +123,70 @@ const MIBriefList = () => {
           </div>
         </div>
 
+        {/* 임시 AI 음성 듣기 - 버튼 타입 */}
+        <div className="w-[25.5rem] ml-auto flex flex-col items-center justify-end gap-[0.125rem] rounded-lg overflow-hidden">
+          <button
+            className={`w-full h-[2.813rem] bg-pub-red text-[1.125rem] font-bold text-white`}
+            onClick={() => setIsAISelect(!isAISelect)}
+          >
+            AI 음성 듣기
+          </button>
+          {isAISelect && (
+            <ul className="w-full flex items-center gap-[0.125rem] text-pub-gray9 font-bold text-[1.125rem] leading-[1.05rem] tracking-[-0.009rem]">
+              {["KR", "EN"].map((lang, idx) => (
+                <li
+                  key={idx}
+                  className={`h-8 flex-1 flex items-center justify-center bg-pub-lightG cursor-pointer ${isLanguage.includes(lang) ? "text-white bg-pub-red" : ""}`}
+                  onClick={handleClick.bind(null, lang)}
+                >
+                  {lang}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* 임시 AI 음성 듣기 - 텍스트 타입1 */}
+        <div className="w-[25.5rem] ml-auto flex items-center justify-between gap-[1.125rem]">
+          <div className="flex-1 flex items-center gap-[1.75rem] text-[1.125rem] text-pub-gray9 after:content-[''] after:flex-1 after:w-auto after:h-[0.063rem] after:bg-pub-lightG">
+            AI 음성듣기
+          </div>
+          <ul className="flex items-center gap-4 text-pub-gray9 font-semibold text-[1.125rem] leading-[1.05rem] tracking-[-0.009rem]">
+            {["KR", "EN"].map((lang, idx) => (
+              <li
+                key={idx}
+                className={`w-9 h-9 rounded-sm flex items-center justify-center gap-2 cursor-pointer relative first:after:block first:after:content-[''] first:after:w-[1px] first:after:h-4 first:after:bg-pub-grayD first:after:absolute first:after:top-1/2 first:after:right-0 first:after:translate-x-2 first:after:-translate-y-1/2 ${isLanguage.includes(lang) && isAISelect ? "text-white bg-pub-red" : "bg-pub-lightG"}`}
+                onClick={handleClick.bind(null, lang)}
+              >
+                {lang}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* 임시 AI 음성 듣기 - 텍스트 타입2 */}
+        <div className="w-[25.5rem] ml-auto flex items-center justify-between gap-[1.125rem]">
+          <div
+            className="flex-1 flex items-center gap-[1.75rem] after:content-[''] after:flex-1 after:w-auto after:h-[0.063rem] after:bg-pub-lightG"
+            onClick={handleClick.bind(null, "KR")}
+          >
+            <button className="flex items-center gap-[1.75rem] text-[1.125rem] text-pub-gray9 px-3 py-1 rounded-sm bg-pub-red text-white font-bold">
+              AI 음성듣기
+            </button>
+          </div>
+          <ul className="flex items-center gap-4 text-pub-gray9 font-semibold text-[1.125rem] leading-[1.05rem] tracking-[-0.009rem]">
+            {["KR", "EN"].map((lang, idx) => (
+              <li
+                key={idx}
+                className={`flex items-center justify-center gap-2 cursor-pointer relative first:after:block first:after:content-[''] first:after:w-[1px] first:after:h-[0.75rem] first:after:bg-pub-grayD first:after:absolute first:after:top-1/2 first:after:right-0 first:after:translate-x-2 first:after:-translate-y-1/2 ${isLanguage.includes(lang) && isAISelect ? "text-pub-red" : ""}`}
+                onClick={handleClick.bind(null, lang)}
+              >
+                {lang}
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {!isActive ? (
           <div className="grid grid-cols-3 gap-[3.75rem] [@media(min-width:2560px)]:gap-[1.875rem]">
             {dummyData.map((item, idx) => (
@@ -117,7 +197,9 @@ const MIBriefList = () => {
                 type="card"
                 pdf={true}
                 onClick={() => setPdfActive(idx)}
-                // link="market-trends-detail"
+                aiSelected={isAISelect}
+                selectedTitle={selectedTitle}
+                setSelectedTitle={setSelectedTitle}
               />
             ))}
           </div>
@@ -131,7 +213,9 @@ const MIBriefList = () => {
                 type="list"
                 pdf={true}
                 onClick={() => setPdfActive(idx)}
-                // link="market-trends-detail"
+                aiSelected={isAISelect}
+                selectedTitle={selectedTitle}
+                setSelectedTitle={setSelectedTitle}
               />
             ))}
           </div>
@@ -141,8 +225,6 @@ const MIBriefList = () => {
           <PaginationControls onChange={updatePageParams} total={100} page={1} perPage={10} />
         </div>
       </div>
-
-      {/* <PDFViewer pdfUrl={'url'} usePresigned={false} fileName={'fileName'} onClose={} /> */}
 
       {pdfActive !== null && (
         <PDFViewer
@@ -165,7 +247,7 @@ const dummyData = [
     category: "Industry",
     hash: ["클라우드", "IBM"],
     hits: "857",
-    dateS: "2024.03.26",
+    publicDate: "2024.03.26",
   },
   {
     src: ImageCard09,
@@ -175,7 +257,7 @@ const dummyData = [
     category: "Benchmarking",
     hash: ["클라우드", "IBM"],
     hits: "857",
-    dateS: "2024.04.15",
+    publicDate: "2024.04.15",
   },
   {
     src: ImageCard01,
@@ -185,7 +267,7 @@ const dummyData = [
     category: "Industry",
     hash: ["청정에너지", "원자력", "SMR"],
     hits: "2,875",
-    dateS: "2024.06.04",
+    publicDate: "2024.06.04",
   },
   {
     src: ImageCard02,
@@ -195,7 +277,7 @@ const dummyData = [
     category: "Benchmarking",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.07.22",
+    publicDate: "2024.07.22",
   },
   {
     src: ImageCard03,
@@ -205,7 +287,7 @@ const dummyData = [
     category: "Industry",
     hash: ["주택매매", "부동산시장"],
     hits: "32",
-    dateS: "2024.09.09",
+    publicDate: "2024.09.09",
   },
   {
     src: ImageCard04,
@@ -215,7 +297,7 @@ const dummyData = [
     category: "Benchmarking",
     hash: ["클라우드", "IBM"],
     hits: "857",
-    dateS: "2024.10.07",
+    publicDate: "2024.10.07",
   },
   {
     src: ImageCard05,
@@ -225,7 +307,7 @@ const dummyData = [
     category: "Industry",
     hash: ["세계경제", "IMF"],
     hits: "2,875",
-    dateS: "2024.11.25",
+    publicDate: "2024.11.25",
   },
   {
     src: ImageCard06,
@@ -235,7 +317,7 @@ const dummyData = [
     category: "Benchmarking",
     hash: ["시니어", "레지던스"],
     hits: "547",
-    dateS: "2024.12.16",
+    publicDate: "2024.12.16",
   },
   {
     src: ImageCard07,
@@ -245,7 +327,7 @@ const dummyData = [
     category: "Industry",
     hash: ["주택매매", "부동산시장"],
     hits: "32",
-    dateS: "2025.02.04",
+    publicDate: "2025.02.04",
   },
 ];
 
