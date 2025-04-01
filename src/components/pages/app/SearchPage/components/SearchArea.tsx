@@ -18,7 +18,7 @@ const SearchArea = () => {
           />
         </Button>
       </div>
-      <div className="flex items-center gap-10">
+      {/* <div className="flex items-center gap-10">
         <span className="text-pub-gray6 text-[1.25rem] font-bold">검색 필터</span>
         <CheckboxGroup
           list={[
@@ -29,7 +29,7 @@ const SearchArea = () => {
           ]}
           variant="defaultP"
         />
-      </div>
+      </div> */}
     </div>
   );
 };
