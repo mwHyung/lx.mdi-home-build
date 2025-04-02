@@ -32,6 +32,23 @@ const Columns = () => {
           return (
             <div className="flex items-start">
               <div className="min-w-48 pr-10 pt-[1px] text-center">{tit.week}</div>
+              {tit.play && (
+                <div className="flex items-center justify-center pr-5">
+                  {tit.play ? (
+                    <Image
+                      src={IconPlay}
+                      style={{ width: "2rem", height: "2rem" }}
+                      alt="icon play"
+                    />
+                  ) : (
+                    <Image
+                      src={IconPause}
+                      style={{ width: "2rem", height: "2rem" }}
+                      alt="icon play"
+                    />
+                  )}
+                </div>
+              )}
               <div>
                 {tit.name}
                 <ul className="flex flex-wrap items-center gap-[0.625rem]">

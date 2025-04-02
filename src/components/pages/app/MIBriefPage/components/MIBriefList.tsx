@@ -61,7 +61,6 @@ const MIBriefList = () => {
 
   // 테이블
   const { contentsColumns } = Columns();
-  const selectedUser = dummyList;
   const handleSelectRow = (id: Row["id"]) => {
     selectedUser.map(user => {
       if (user.id === id) {
@@ -85,6 +84,120 @@ const MIBriefList = () => {
   };
 
   const [selectedTitle, setSelectedTitle] = useState<string>("");
+
+  const dummyList = [
+    {
+      id: 0,
+      tit: {
+        week: "25년 2월 2주차",
+        play: isAISelect,
+        name: "마루베니상사, 3개년 중기(’25~’27년) 전략 발표",
+        hash: ["세계경제", "마루베니상사"],
+      },
+      date: "2025.02.14",
+      hits: "547",
+    },
+    {
+      id: 1,
+      tit: {
+        week: "25년 2월 2주차",
+        play: isAISelect,
+        name: "최근 스미토모상사가 투자*한 미국\n철도 침목(枕木) 제조기업 Evertrak** 소개",
+        hash: ["세계경제", "스미토모상사"],
+      },
+      date: "2025.02.14",
+      hits: "32",
+    },
+    {
+      id: 2,
+      tit: {
+        week: "25년 2월 3주차",
+        play: isAISelect,
+        name: "AI 로봇 개발에 속도를 내고 있는\n애플과 메타",
+        hash: ["세계경제", "AI 로봇"],
+      },
+      date: "2025.02.21",
+      hits: "857",
+    },
+    {
+      id: 3,
+      tit: {
+        week: "25년 2월 3주차",
+        play: isAISelect,
+        name: "글로벌 조선업체들이 SMR* 기술\n개발에 투자하는 이유",
+        hash: ["세계경제", "조선"],
+      },
+      date: "2025.02.21",
+      hits: "857",
+    },
+    {
+      id: 4,
+      tit: {
+        week: "25년 2월 3주차",
+        play: isAISelect,
+        name: "나트륨 배터리 개발 동향",
+        hash: ["글로벌 전기차", "나트륨 배터리"],
+      },
+      date: "2025.02.21",
+      hits: "2,875",
+    },
+    {
+      id: 5,
+      tit: {
+        week: "25년 2월 3주차",
+        play: isAISelect,
+        name: "중국 석탄 발전소 건설, 10년 만에\n최고치 기록",
+        hash: ["중국", "석탄"],
+      },
+      date: "2025.02.21",
+      hits: "547",
+    },
+    {
+      id: 6,
+      tit: {
+        week: "25년 2월 4주차",
+        play: isAISelect,
+        name: "글로벌 소다회* 수급 전망에 대한 중국 전문가** 의견",
+        hash: ["중국", "글로벌 소다회"],
+      },
+      date: "2025.02.28",
+      hits: "32",
+    },
+    {
+      id: 7,
+      tit: {
+        week: "25년 2월 4주차",
+        play: isAISelect,
+        name: "미국-우크라이나 광물협정 주요 내용 및 재건 사업 전망",
+        hash: ["세계경제", "광물"],
+      },
+      date: "2025.02.28",
+      hits: "857",
+    },
+    {
+      id: 8,
+      tit: {
+        week: "25년 2월 4주차",
+        play: isAISelect,
+        name: "시진핑 주석, 중국 대표 기업들과\n좌담회 실시",
+        hash: ["세계경제", "중국"],
+      },
+      date: "2025.02.28",
+      hits: "2,875",
+    },
+    {
+      id: 9,
+      tit: {
+        week: "25년 2월 2주차",
+        play: isAISelect,
+        name: "마루베니상사, 3개년 중기(’25~’27년) 전략 발표",
+        hash: ["세계경제", "마루베니상사"],
+      },
+      date: "2025.02.14",
+      hits: "547",
+    },
+  ];
+  const selectedUser = dummyList;
 
   return (
     <>
@@ -342,108 +455,6 @@ const dummyData = [
     hash: ["세계경제", "중국"],
     hits: "2,875",
     publicDate: "2025.02.28",
-  },
-];
-const dummyList = [
-  {
-    id: 0,
-    tit: {
-      week: "25년 2월 2주차",
-      name: "마루베니상사, 3개년 중기(’25~’27년) 전략 발표",
-      hash: ["세계경제", "마루베니상사"],
-    },
-    date: "2025.02.14",
-    hits: "547",
-  },
-  {
-    id: 1,
-    tit: {
-      week: "25년 2월 2주차",
-      name: "최근 스미토모상사가 투자*한 미국\n철도 침목(枕木) 제조기업 Evertrak** 소개",
-      hash: ["세계경제", "스미토모상사"],
-    },
-    date: "2025.02.14",
-    hits: "32",
-  },
-  {
-    id: 2,
-    tit: {
-      week: "25년 2월 3주차",
-      name: "AI 로봇 개발에 속도를 내고 있는\n애플과 메타",
-      hash: ["세계경제", "AI 로봇"],
-    },
-    date: "2025.02.21",
-    hits: "857",
-  },
-  {
-    id: 3,
-    tit: {
-      week: "25년 2월 3주차",
-      name: "글로벌 조선업체들이 SMR* 기술\n개발에 투자하는 이유",
-      hash: ["세계경제", "조선"],
-    },
-    date: "2025.02.21",
-    hits: "857",
-  },
-  {
-    id: 4,
-    tit: {
-      week: "25년 2월 3주차",
-      name: "나트륨 배터리 개발 동향",
-      hash: ["글로벌 전기차", "나트륨 배터리"],
-    },
-    date: "2025.02.21",
-    hits: "2,875",
-  },
-  {
-    id: 5,
-    tit: {
-      week: "25년 2월 3주차",
-      name: "중국 석탄 발전소 건설, 10년 만에\n최고치 기록",
-      hash: ["중국", "석탄"],
-    },
-    date: "2025.02.21",
-    hits: "547",
-  },
-  {
-    id: 6,
-    tit: {
-      week: "25년 2월 4주차",
-      name: "글로벌 소다회* 수급 전망에 대한 중국 전문가** 의견",
-      hash: ["중국", "글로벌 소다회"],
-    },
-    date: "2025.02.28",
-    hits: "32",
-  },
-  {
-    id: 7,
-    tit: {
-      week: "25년 2월 4주차",
-      name: "미국-우크라이나 광물협정 주요 내용 및 재건 사업 전망",
-      hash: ["세계경제", "광물"],
-    },
-    date: "2025.02.28",
-    hits: "857",
-  },
-  {
-    id: 8,
-    tit: {
-      week: "25년 2월 4주차",
-      name: "시진핑 주석, 중국 대표 기업들과\n좌담회 실시",
-      hash: ["세계경제", "중국"],
-    },
-    date: "2025.02.28",
-    hits: "2,875",
-  },
-  {
-    id: 9,
-    tit: {
-      week: "25년 2월 2주차",
-      name: "마루베니상사, 3개년 중기(’25~’27년) 전략 발표",
-      hash: ["세계경제", "마루베니상사"],
-    },
-    date: "2025.02.14",
-    hits: "547",
   },
 ];
 
